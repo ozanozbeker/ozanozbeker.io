@@ -1,11 +1,29 @@
 ---
-title: "ozanozbeker.github.io"
+title: "Ozan Ozbeker"
+image: resources/images/casual_picture.png
+about:
+  template: trestles
+  links: 
+    - icon: github
+      text: GitHub
+      href: https://github.com/ozanozbeker/
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/ozanozbeker/
 ---
 
-This is a Quarto website.
+Hey there! Welcome to my website/blog/black hole where I will be sharing my thoughts things that I've learned working as a professional data scientist.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Experience
 
-```{r}
-1 + 1
-```
+**OneMagnify** \| Data Scientist, January 2023 - Current
+
+**Xylem** \| Operations Leadership Development Program, July 2021 - December 2022
+
+**West Virginia University** \| Undergraduate Teaching Assistant, August 2019 - May 2021
+
+**JLG Industries** \| Manufacturing Engineer Intern, June 2019 - August 2019
+
+# Education
+
+**West Virginia University** \| Bachelor of Science, Industrial Engineering, August 2017 - May 2021
