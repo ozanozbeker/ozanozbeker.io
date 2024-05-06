@@ -1,9 +1,72 @@
 [
   {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "As a Data Scientist with a solid foundation in industrial engineering and a proven track record at OneMagnify, I specialize in creating and maintaining data pipelines, dashboards, and reporting solutions that drive significant business improvements. My expertise encompasses advanced analytics using R, Tableau, Quarto, & Docker, combined with a strong background in database management and the development of internal tools to enhance organizational efficiency. Leveraging my experience in both client-facing and internal projects, I am adept at translating complex data into actionable insights, fostering data-driven decision-making across various sectors. My approach is characterized by a relentless pursuit of excellence, continuous learning, and a commitment to contributing innovative solutions within data science teams."
+  },
+  {
+    "objectID": "resume.html#data-scientist",
+    "href": "resume.html#data-scientist",
+    "title": "Resume",
+    "section": "Data Scientist",
+    "text": "Data Scientist\nRXA @ OneMagnify - Remote, USA | January 2023 - Current\n\nClient Work: Built and maintained: data pipelines, dashboards, & reporting for key stakeholders across multiple clients in the home appliance sector. Sample work includes web scraping, exploratory data analysis, & linear modeling with R; Dashboard & Finance applications with Tableau and Tableau Prep. Heavy focus on Tidyverse & Tidymodels family of R packages, with ad-hoc reporting supported with Quarto/Markdown.\nInternal Projects: Developed new standards for database usage (DuckDB), incorporated Git (GitHub) & Docker into project workflows & created internal R package for meeting company branding guidelines."
+  },
+  {
+    "objectID": "resume.html#continuous-improvement-specialist-oldp-rotation-2",
+    "href": "resume.html#continuous-improvement-specialist-oldp-rotation-2",
+    "title": "Resume",
+    "section": "Continuous Improvement Specialist (OLDP Rotation 2)",
+    "text": "Continuous Improvement Specialist (OLDP Rotation 2)\nXylem, Inc - Chicago, IL | July 2022 - December 2022\n\nExcess & Obsolete Inventory Identification & Disposition: Using the DMAIC/DMADV methodology, created a process to reduce the site’s E&O financial reserve and material in our warehouses by identifying items that are obsolete and creating rework, re-sale, & disposal opportunities. The control plan included the creation of a cross-departmental E&O taskforce, and the new process has estimated hard savings of $1M - $4M in the next 3-5 years.\nAd-Hoc Floor Workshops: Led and assisted many projects to drive Continuous Improvement initiatives at the site, including but not limited to: 5S & Safety audits, lean methodology seminars, inventory audits, & cycle counts."
+  },
+  {
+    "objectID": "resume.html#business-data-analyst-oldp-rotation-1",
+    "href": "resume.html#business-data-analyst-oldp-rotation-1",
+    "title": "Resume",
+    "section": "Business Data Analyst (OLDP Rotation 1)",
+    "text": "Business Data Analyst (OLDP Rotation 1)\nXylem, Inc - Uniontown, PA | July 2021 - July 2022\n\nExcess & Obsolete Reserve: Designed a recommendation engine for the quarterly report with an emphasis on reducing ETL time and standardizing the process across all Sensus NA Sites to meet new financial policies. The new engine reduced process time by 72 hours (-90%) per year and led to new reporting and forecasting capabilities.\nSensus North America Physical Inventory: Created documentation for the annual NA physical inventory event, including process flowcharts, work instructions, and manager checklists for tasks leading up to the event. The documentation package standardized the process across all NA sites and removed non-value-added activities during the event.\nAd-Hoc Reporting: Created various data pipelines, dashboards, and reports for unique business needs, including tracking forecasting accuracy, comparing supplier and internal bill of materials, gathering and dashboarding quality control measures, and synchronizing lot sizes across multiple sites"
+  },
+  {
+    "objectID": "resume.html#undergraduate-teaching-assistant",
+    "href": "resume.html#undergraduate-teaching-assistant",
+    "title": "Resume",
+    "section": "Undergraduate Teaching Assistant",
+    "text": "Undergraduate Teaching Assistant\nWest Virginia University - Morgantown, WV | August 2019 - May 2021\n\nSpring 2021 | IENG 220: Re-engineering Management Systems\nFall 2020 | IENG 305: Introduction to Systems Engineering\nSpring 2020 | IENG 331: Computer Applications in Industrial Engineering\nFall 2019 | IENG 445: Project Management for Engineers"
+  },
+  {
+    "objectID": "resume.html#manufacturing-engineer-intern",
+    "href": "resume.html#manufacturing-engineer-intern",
+    "title": "Resume",
+    "section": "Manufacturing Engineer Intern",
+    "text": "Manufacturing Engineer Intern\nJLG Industries - McConnellsburg, PA | June 2019 - August 2019\n\nLong-term Project: Test – Inspect – Green Tag (TIG) Line\n\n5S: Conducted a full sweep of the line, removing unnecessary equipment and parts from work stations and laid corners.\nSWIs: Created from scratch Standard Work Instructions for all 5 stations of the TIG Line for 3 different products.\nElectronic Quality Control (EQC): Implemented a scanner-based system for entering defects into EQC, standardizing the process and reducing variability in defect types and improving data collection.\n\nShort-term Project: Tire Manipulator\n\nCreated floor plans for current and future station layouts for the new Tire Manipulator with laser measures and AutoCAD."
+  },
+  {
+    "objectID": "resume.html#bachelor-of-science-in-industrial-engineering",
+    "href": "resume.html#bachelor-of-science-in-industrial-engineering",
+    "title": "Resume",
+    "section": "Bachelor of Science in Industrial Engineering",
+    "text": "Bachelor of Science in Industrial Engineering\nWest Virginia University - Morgantown, WV"
+  },
+  {
+    "objectID": "resume.html#certifications",
+    "href": "resume.html#certifications",
+    "title": "Resume",
+    "section": "Certifications",
+    "text": "Certifications\n\nLean Six Sigma Green Belt | Institute of Industrial and Systems Engineers\nContinuous Improvement Fundamentals | Oshkosh Corporation\nEligible for Certified Associate in Project Management (CAPM) | Project Management Institute"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Ozan Ozbeker",
     "section": "",
-    "text": "Hey there! Welcome to my website/blog/black hole where I will be sharing my thoughts things that I’ve learned working as a professional data scientist.\n\nExperience\nOneMagnify | Data Scientist, January 2023 - Current\nXylem | Operations Leadership Development Program, July 2021 - December 2022\nWest Virginia University | Undergraduate Teaching Assistant, August 2019 - May 2021\nJLG Industries | Manufacturing Engineer Intern, June 2019 - August 2019\n\n\nEducation\nWest Virginia University | Bachelor of Science, Industrial Engineering, August 2017 - May 2021"
+    "text": "I am a data scientist with experience in the replacement parts sector as well as manufacturing environments. In my current role, I am responsible for the end-to-end management of data projects for two of our clients. This encompasses overseeing ETL (Extract, Transform, Load) data flows, database management, conducting thorough analyses, and the development of insightful dashboards and reports. This responsibility highlights my hands-on involvement in every step of the project life-cycle, ensuring our clients’ specsific needs are met with precision and tailored strategies. I have been recognized for exceeding expectations in technology adoption, process improvement, and client communication.\nIn this website, you can find my resume, personal projects, and a blog featuring my deep dives in to tools and technologies in the data world, as well as other things I find interesting. Feel free to reach out and connect!"
   }
 ]

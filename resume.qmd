@@ -1,0 +1,77 @@
+---
+title: "Resume"
+---
+
+# Summary
+
+As a Data Scientist with a solid foundation in industrial engineering and a proven track record at OneMagnify, I specialize in creating and maintaining data pipelines, dashboards, and reporting solutions that drive significant business improvements. My expertise encompasses advanced analytics using R, Tableau, Quarto, & Docker, combined with a strong background in database management and the development of internal tools to enhance organizational efficiency. Leveraging my experience in both client-facing and internal projects, I am adept at translating complex data into actionable insights, fostering data-driven decision-making across various sectors. My approach is characterized by a relentless pursuit of excellence, continuous learning, and a commitment to contributing innovative solutions within data science teams.
+
+# Experience
+
+## Data Scientist
+
+[**RXA \@ OneMagnify**](https://rxa.io/) **- Remote, USA** \| January 2023 - Current
+
+-   **Client Work**: Built and maintained: data pipelines, dashboards, & reporting for key stakeholders across multiple clients in the home appliance sector. Sample work includes web scraping, exploratory data analysis, & linear modeling with R; Dashboard & Finance applications with Tableau and Tableau Prep. Heavy focus on Tidyverse & Tidymodels family of R packages, with ad-hoc reporting supported with Quarto/Markdown.
+
+-   **Internal Projects**: Developed new standards for database usage (DuckDB), incorporated Git (GitHub) & Docker into project workflows & created internal R package for meeting company branding guidelines.
+
+## Continuous Improvement Specialist (OLDP Rotation 2)
+
+[**Xylem, Inc**](https://www.xylem.com/en-us/) **- Chicago, IL** \| July 2022 - December 2022
+
+-   **Excess & Obsolete Inventory Identification & Disposition:** Using the DMAIC/DMADV methodology, created a process to reduce the site’s E&O financial reserve and material in our warehouses by identifying items that are obsolete and creating rework, re-sale, & disposal opportunities. The control plan included the creation of a cross-departmental E&O taskforce, and the new process has estimated hard savings of \$1M - \$4M in the next 3-5 years.
+
+-   **Ad-Hoc Floor Workshops:** Led and assisted many projects to drive Continuous Improvement initiatives at the site, including but not limited to: 5S & Safety audits, lean methodology seminars, inventory audits, & cycle counts.
+
+## Business Data Analyst (OLDP Rotation 1)
+
+[**Xylem, Inc**](https://www.xylem.com/en-us/) **- Uniontown, PA** \| July 2021 - July 2022
+
+-   **Excess & Obsolete Reserve:** Designed a recommendation engine for the quarterly report with an emphasis on reducing ETL time and standardizing the process across all Sensus NA Sites to meet new financial policies. The new engine reduced process time by 72 hours (-90%) per year and led to new reporting and forecasting capabilities.
+
+-   **Sensus North America Physical Inventory:** Created documentation for the annual NA physical inventory event, including process flowcharts, work instructions, and manager checklists for tasks leading up to the event. The documentation package standardized the process across all NA sites and removed non-value-added activities during the event.
+
+-   **Ad-Hoc Reporting:** Created various data pipelines, dashboards, and reports for unique business needs, including tracking forecasting accuracy, comparing supplier and internal bill of materials, gathering and dashboarding quality control measures, and synchronizing lot sizes across multiple sites
+
+## Undergraduate Teaching Assistant
+
+[**West Virginia University**](https://www.wvu.edu/) **- Morgantown, WV** \| August 2019 - May 2021
+
+-   **Spring 2021** \| IENG 220: Re-engineering Management Systems
+
+-   **Fall 2020** \| IENG 305: Introduction to Systems Engineering
+
+-   **Spring 2020** \| IENG 331: Computer Applications in Industrial Engineering
+
+-   **Fall 2019** \| IENG 445: Project Management for Engineers
+
+## Manufacturing Engineer Intern
+
+[**JLG Industries**](https://www.jlg.com/) **- McConnellsburg, PA** \| June 2019 - August 2019
+
+-   Long-term Project: Test – Inspect – Green Tag (TIG) Line
+
+    -   5S: Conducted a full sweep of the line, removing unnecessary equipment and parts from work stations and laid corners.
+
+    -   SWIs: Created from scratch Standard Work Instructions for all 5 stations of the TIG Line for 3 different products.
+
+    -   Electronic Quality Control (EQC): Implemented a scanner-based system for entering defects into EQC, standardizing the process and reducing variability in defect types and improving data collection.
+
+-   **Short-term Project:** Tire Manipulator
+
+    -   Created floor plans for current and future station layouts for the new Tire Manipulator with laser measures and AutoCAD.
+
+# Education
+
+## Bachelor of Science in Industrial Engineering
+
+West Virginia University - Morgantown, WV
+
+## Certifications
+
+-   **Lean Six Sigma Green Belt** \| Institute of Industrial and Systems Engineers
+
+-   **Continuous Improvement Fundamentals** \| Oshkosh Corporation
+
+-   **Eligible for Certified Associate in Project Management (CAPM)** \| Project Management Institute
