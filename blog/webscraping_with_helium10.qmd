@@ -2,6 +2,8 @@
 title: Webscraping Amazon with Helium10 & {seleninder}
 author: Ozan Ozbeker
 date: 2024-05-07
-image: https://www.helium10.com/
+format:
+  html: 
+    image: resources/images/helium10.jpg
 code-fold: show
 ---
