@@ -10,8 +10,11 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/ozanozbeker/
+    - icon: envelope
+      text: Email
+      href: mailto:ozanozbeker99@outlook.com
 ---
 
-I am a data scientist with experience in the replacement parts sector as well as manufacturing environments. In my current role, I am responsible for the end-to-end management of data projects for two of our clients. This encompasses overseeing ETL (Extract, Transform, Load) data flows, database management, conducting thorough analyses, and the development of insightful dashboards and reports. This responsibility highlights my hands-on involvement in every step of the project life-cycle, ensuring our clients' specifics needs are met with precision and tailored strategies. I have been recognized for exceeding expectations in technology adoption, process improvement, and client communication.
+I am a data scientist with experience in the replacement parts sector as well as manufacturing environments. In my current role, I am responsible for the end-to-end management of data projects for two of our clients. This encompasses overseeing ETL (Extract, Transform, Load) data flows, database management, conducting thorough analyses, and the development of insightful dashboards and reports. This responsibility highlights my hands-on involvement in every step of the project life-cycle, ensuring our clients' specifics needs are met with precision and tailored strategies. I have been recognized forS exceeding expectations in technology adoption, process improvement, and client communication.
 
 In this website, you can find my resume, personal projects, and a blog featuring my deep dives in to tools and technologies in the data world, as well as other things I find interesting. Feel free to reach out and connect!
