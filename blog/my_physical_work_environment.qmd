@@ -3,4 +3,3 @@ title: My Physical Work Environment
 author: Ozan Ozbeker
 date: 2024-05-08
 ---
-

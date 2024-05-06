@@ -3,6 +3,4 @@ title: Webscraping Amazon with Oxylabs & {httr2}
 author: Ozan Ozbeker
 date: 2024-05-06
 image: resources/images/oxylabs.png
-
-code-fold: show
 ---
