@@ -1,1 +1,8 @@
+---
+title: Webscraping Amazon with Oxylabs & {httr2}
+author: Ozan Ozbeker
+date: 2024-05-06
+image: https://oxylabs.io/
 
+code-fold: show
+---

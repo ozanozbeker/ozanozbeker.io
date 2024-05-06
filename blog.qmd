@@ -4,4 +4,7 @@ listing:
   contents: blog
   type: grid
   sort: "date"
+  image-placeholder: resources/images/coding.icon
+  date-format: long
+  categories: true
 ---

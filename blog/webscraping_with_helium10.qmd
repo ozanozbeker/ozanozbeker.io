@@ -1,1 +1,7 @@
-
+---
+title: Webscraping Amazon with Helium10 & {seleninder}
+author: Ozan Ozbeker
+date: 2024-05-07
+image: https://www.helium10.com/
+code-fold: show
+---
