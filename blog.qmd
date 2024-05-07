@@ -1,10 +1,15 @@
 ---
-title: "Blog"
+title: "Ozan's Blog"
 listing:
-  contents: blog
   type: grid
+  contents: blog/**/*.qmd
   sort: "date desc"
-  image-placeholder: resources/images/default_picture.jpg
-  date-format: short
+  sort-ui: true
+  filter-ui: true
   categories: numbered
+  feed: true
+  image-placeholder: resources/images/default_picture.jpg
+  fields: [image, title, date, author, reading-time, description, categories]
+page-layout: full
+title-block-banner: false
 ---

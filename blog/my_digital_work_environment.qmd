@@ -1,5 +1,0 @@
----
-title: My Digital Work Environment
-author: Ozan Ozbeker
-date: 2024-05-09
----

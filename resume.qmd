@@ -1,10 +1,18 @@
 ---
-title: "Resume"
+format:
+  html: 
+    toc: true
+    toc-title: "Sections"
+    other-links:
+      - text: "Resume PDF"
+        href: resources/documents/Ozan Ozbeker Resume.pdf
+        icon: file-earmark-text
+page-layout: article
 ---
 
 # Summary
 
-As a Data Scientist with a solid foundation in industrial engineering and a proven track record at OneMagnify, I specialize in creating and maintaining data pipelines, dashboards, and reporting solutions that drive significant business improvements. My expertise encompasses advanced analytics using R, Tableau, Quarto, & Docker, combined with a strong background in database management and the development of internal tools to enhance organizational efficiency. Leveraging my experience in both client-facing and internal projects, I am adept at translating complex data into actionable insights, fostering data-driven decision-making across various sectors. My approach is characterized by a relentless pursuit of excellence, continuous learning, and a commitment to contributing innovative solutions within data science teams.
+As a Data Scientist with a solid foundation in industrial engineering and a proven track record at OneMagnify, I specialize in creating and maintaining data pipelines, dashboards, and reporting solutions that drive significant business improvements. My expertise encompasses advanced analytics using R, Tableau, & Quarto, combined with a strong background in database management and the development of internal tools to enhance organizational efficiency. Leveraging my experience in both client-facing and internal projects, I am adept at translating complex data into actionable insights, fostering data-driven decision-making across various sectors. My approach is characterized by a relentless pursuit of excellence, continuous learning, and a commitment to contributing innovative solutions within data science teams.
 
 # Experience
 

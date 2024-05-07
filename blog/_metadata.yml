@@ -1,0 +1,30 @@
+# Execution
+freeze: true
+execute:
+  echo: true
+  warning: false
+
+# Authoring
+author: "Ozan Ozbeker"
+
+# Table of Contents
+toc: true
+toc-depth: 3
+
+# Layout
+page-layout: article
+resources: resources
+
+# External Links
+link-external-icon: true
+link-external-newwindow: true
+
+# Code options
+code-fold: show
+code-overflow: scroll
+code-copy: true
+code-link: true
+code-tools: true
+#code-block-border-left: true
+code-block-bg: true
+highlight-style: arrow # try different ones

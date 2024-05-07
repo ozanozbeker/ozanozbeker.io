@@ -1,0 +1,5 @@
+---
+title: "My Physical Workspace 2024"
+date: "2024-05-08"
+categories: [Workspace]
+---

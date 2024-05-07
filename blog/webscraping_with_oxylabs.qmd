@@ -1,6 +1,7 @@
 ---
-title: Webscraping Amazon with Oxylabs & {httr2}
-author: Ozan Ozbeker
-date: 2024-05-06
-image: resources/images/oxylabs.png
+title: "Webscraping Amazon with Oxylabs & {httr2}"
+description: "Automate Amazon webscraping with Oxylabs' E-Commerce Scraper API using {httr2}!"
+date: "2024-05-06"
+image: ../resources/images/oxylabs.png
+categories: [Webscraping, Amazon, R, API]
 ---
