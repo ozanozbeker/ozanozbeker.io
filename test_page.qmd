@@ -1,0 +1,7 @@
+---
+title: "Test Page"
+---
+
+# Let's see how this goes
+
+![This picture was AI generated](resources/images/professional_picture.jpg){fig-align="center"}

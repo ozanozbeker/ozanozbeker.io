@@ -12,7 +12,23 @@ page-layout: article
 
 # Summary
 
-As a Data Scientist with a solid foundation in industrial engineering and a proven track record at OneMagnify, I specialize in creating and maintaining data pipelines, dashboards, and reporting solutions that drive significant business improvements. My expertise encompasses advanced analytics using R, Tableau, & Quarto, combined with a strong background in database management and the development of internal tools to enhance organizational efficiency. Leveraging my experience in both client-facing and internal projects, I am adept at translating complex data into actionable insights, fostering data-driven decision-making across various sectors. My approach is characterized by a relentless pursuit of excellence, continuous learning, and a commitment to contributing innovative solutions within data science teams.
+**Data Scientist**
+
+Dynamic and growth-oriented Data Scientist with a background in Manufacturing Engineering and Supply Chain Analytics, I specialize in driving data-centric solutions and innovative projects across diverse industries. Starting with foundational skills in Python and SQL, I quickly became an expert in R, mastering it in real-world scenarios. My role has expanded to being the tech lead for multiple clients, running end-to-end data projects and presenting their results.
+
+Key Contributions:
+
+-   **Data Management & Visualization:** Developed robust data infrastructures using self-hosted PostgreSQL and implemented efficient ETL processes with R & the {tidyverse} family of packages, significantly enhancing data accessibility and manipulation. Expert in building insightful Tableau dashboards and Quarto/RMarkdown reports tailored to client needs.
+
+-   **Advanced Analytics:** Adopted cutting-edge tools like Helium10, Scrapfly, & Oxylabs for sophisticated web scraping, and extracting valuable data from platforms like Amazon and Walmart to inform strategic decisions.
+
+-   **Software Improvement:** Adopt the use of Docker, DuckDB, Git, & GitHub, and designed a custom {ggplot2} add-on aligning with company guidelines.
+
+In my previous roles, I led substantial Continuous Improvement initiatives, generating savings of \$1-3 million by optimizing processes on the manufacturing floor. I spearheaded quality control standardization across North American facilities and contributed to inventory management through a bespoke recommendation engine. My technical toolkit expanded during this time to include CAD for designing new machinery layouts and developing ad-hoc dashboards for strategic oversight.
+
+My analytical journey is underpinned by a strong educational foundation, including a role as a Teaching Assistant during my undergraduate studies, where I honed my skills in teaching and academic leadership.
+
+**Core Competencies**: R Programming \| Data Visualization \| Process Improvement \| Client Engagement \| Project Management \| Analytical Problem Solving \| Continuous Learning \| Database Management \| SQL
 
 # Experience
 
