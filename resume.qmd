@@ -18,11 +18,11 @@ Dynamic and growth-oriented Data Scientist with a background in Manufacturing En
 
 Key Contributions:
 
--   **Data Management & Visualization:** Developed robust data infrastructures using self-hosted PostgreSQL and implemented efficient ETL processes with R & the {tidyverse} family of packages, significantly enhancing data accessibility and manipulation. Expert in building insightful Tableau dashboards and Quarto/RMarkdown reports tailored to client needs.
+-   **Data Management & Visualization:** Developed robust data infrastructures using self-hosted [PostgreSQL](https://www.postgresql.org/) and implemented efficient ETL processes with [R](https://www.r-project.org/) & the {[tidyverse](https://www.tidyverse.org/)} family of packages, significantly enhancing data accessibility and manipulation. Expert in building insightful Tableau dashboards and [Quarto](https://quarto.org/)/[RMarkdown](https://rmarkdown.rstudio.com/) reports tailored to client needs.
 
--   **Advanced Analytics:** Adopted cutting-edge tools like Helium10, Scrapfly, & Oxylabs for sophisticated web scraping, and extracting valuable data from platforms like Amazon and Walmart to inform strategic decisions.
+-   **Advanced Analytics:** Adopted cutting-edge tools like [Helium10](https://www.helium10.com/), [Scrapfly](https://scrapfly.io/), & [Oxylabs](https://oxylabs.io/) for sophisticated web scraping, and extracting valuable data from platforms like Amazon and Walmart to inform strategic decisions.
 
--   **Software Improvement:** Adopt the use of Docker, DuckDB, Git, & GitHub, and designed a custom {ggplot2} add-on aligning with company guidelines.
+-   **Software Improvement:** Adopt the use of [Docker](https://www.docker.com/), [DuckDB](https://duckdb.org/), [Git](https://git-scm.com/), & [GitHub](https://github.com/), and designed a custom {ggplot2} add-on aligning with company guidelines.
 
 In my previous roles, I led substantial Continuous Improvement initiatives, generating savings of \$1-3 million by optimizing processes on the manufacturing floor. I spearheaded quality control standardization across North American facilities and contributed to inventory management through a bespoke recommendation engine. My technical toolkit expanded during this time to include CAD for designing new machinery layouts and developing ad-hoc dashboards for strategic oversight.
 
@@ -90,7 +90,7 @@ My analytical journey is underpinned by a strong educational foundation, includi
 
 ## Bachelor of Science in Industrial Engineering
 
-West Virginia University - Morgantown, WV
+West Virginia University \| Morgantown, WV
 
 ## Certifications
 

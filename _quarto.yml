@@ -15,12 +15,12 @@ website:
   site-url: https://ozanozbeker.github.io
   repo-url: https://github.com/ozanozbeker/ozanozbeker.github.io
   navbar:
-    left:
+    right:
       - href: resume.qmd
         text: "Resume"
         icon: file-earmark-text
       - href: blog.qmd
-        text: "My Blog"
+        text: "Blog"
         icon: journal-code
     tools:
       - icon: github
@@ -37,7 +37,8 @@ website:
 
 format:
   html:
-    theme: sandstone
-    css: styles.css
+    theme:
+      - sandstone
+      # - custom.scss
 
 editor: visual
