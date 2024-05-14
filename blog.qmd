@@ -4,8 +4,8 @@ listing:
   type: default
   contents: blog/**/*.qmd
   sort: "date desc"
-  sort-ui: true
-  filter-ui: true
+  sort-ui: false
+  filter-ui: false
   categories: numbered
   feed: true
   image-placeholder: resources/images/default_picture.jpg

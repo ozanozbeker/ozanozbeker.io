@@ -38,7 +38,7 @@ website:
 format:
   html:
     theme:
-      - sandstone
-      # - custom.scss
+      - simplex
+      - custom.scss
 
 editor: visual
