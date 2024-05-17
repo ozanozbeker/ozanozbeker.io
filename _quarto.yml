@@ -11,7 +11,7 @@ execute:
 website:
   title: "Ozan Ozbeker"
   description: "The professional website of Ozan Ozbeker."
-  favicon: resources/images/favicon.ico
+  favicon: resources/images/web-development.ico
   site-url: https://ozanozbeker.github.io
   repo-url: https://github.com/ozanozbeker/ozanozbeker.github.io
   navbar:

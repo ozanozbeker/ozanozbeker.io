@@ -8,7 +8,7 @@ listing:
   filter-ui: false
   categories: numbered
   feed: true
-  image-placeholder: resources/images/default_picture.jpg
+  image-placeholder: resources/images/web-development.png
   fields: [image, title, date, author, reading-time, description, categories]
 page-layout: full
 title-block-banner: false
