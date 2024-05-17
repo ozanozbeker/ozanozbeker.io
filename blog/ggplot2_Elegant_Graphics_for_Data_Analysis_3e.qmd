@@ -1,0 +1,19 @@
+---
+title: "ggplot2: Elegant Graphics for Data Analysis (3e)"
+description: "My run-through of the book."
+date: "2024-05-06"
+image: ../resources/images/ggplot2_book_cover.jpg
+categories: ["R", "{ggplot2}", "Textbook Workthrough"]
+---
+
+# Intro
+
+In this post, we will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0). In this post, I will not be re-iterating all of the information from the book, but running through the Exercises at the end of the chapters. Follow along to see my take on the exercises, as well as my notes and thoughts as I progress through the book.
+
+# Initialize
+
+Let's load all the packages that we will need for this textbook.
+
+```{r}
+library(tidyverse)
+```

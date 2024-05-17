@@ -18,7 +18,7 @@ Dynamic and growth-oriented Data Scientist with a background in Manufacturing En
 
 Key Contributions:
 
--   **Data Management & Visualization:** Developed robust data infrastructures using self-hosted [PostgreSQL](https://www.postgresql.org/) and implemented efficient ETL processes with [R](https://www.r-project.org/) & the {[tidyverse](https://www.tidyverse.org/)} family of packages, significantly enhancing data accessibility and manipulation. Expert in building insightful Tableau dashboards and [Quarto](https://quarto.org/)/[RMarkdown](https://rmarkdown.rstudio.com/) reports tailored to client needs.
+-   **Data Management & Visualization:** Developed robust data infrastructures using self-hosted [PostgreSQL](https://www.postgresql.org/) and implemented efficient ETL processes with [R](https://www.r-project.org/) & the [{tidyverse}](https://www.tidyverse.org/) family of packages, significantly enhancing data accessibility and manipulation. Expert in building insightful Tableau dashboards and [Quarto](https://quarto.org/)/[RMarkdown](https://rmarkdown.rstudio.com/) reports tailored to client needs.
 
 -   **Advanced Analytics:** Adopted cutting-edge tools like [Helium10](https://www.helium10.com/), [Scrapfly](https://scrapfly.io/), & [Oxylabs](https://oxylabs.io/) for sophisticated web scraping, and extracting valuable data from platforms like Amazon and Walmart to inform strategic decisions.
 
@@ -90,7 +90,7 @@ My analytical journey is underpinned by a strong educational foundation, includi
 
 ## Bachelor of Science in Industrial Engineering
 
-West Virginia University \| Morgantown, WV
+**West Virginia University** \| Morgantown, WV
 
 ## Certifications
 

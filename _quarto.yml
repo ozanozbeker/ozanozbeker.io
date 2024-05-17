@@ -15,7 +15,7 @@ website:
   site-url: https://ozanozbeker.github.io
   repo-url: https://github.com/ozanozbeker/ozanozbeker.github.io
   navbar:
-    right:
+    left:
       - href: resume.qmd
         text: "Resume"
         icon: file-earmark-text

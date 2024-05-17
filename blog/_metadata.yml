@@ -16,7 +16,7 @@ page-layout: article
 resources: resources
 
 # External Links
-link-external-icon: true
+link-external-icon: false
 link-external-newwindow: true
 
 # Code options

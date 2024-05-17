@@ -1,0 +1,15 @@
+{
+  "hash": "2af203ad424021ef835ba594969dc17a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Webscraping Amazon with Helium 10 & Selenium\"\ndescription: \"Automate Amazon webscraping with Helium 10's Xray Chrome Extension using {rvest} and {RSelenium} or {selenider}!\" \ndate: \"2024-05-07\"\nimage: ../resources/images/helium10_xray.png\ncategories: [Webscraping, Amazon, R, Selenium]\n---\n\n\n::: panel-tabset\n## {RSelenium}\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Code\n```\n:::\n\n\n## {selenider}\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Code\n```\n:::\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

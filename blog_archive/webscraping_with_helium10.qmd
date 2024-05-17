@@ -1,0 +1,26 @@
+---
+title: "Webscraping Amazon with Helium 10 & Selenium"
+description: "Automate Amazon webscraping with Helium 10's Xray Chrome Extension using {rvest} and {RSelenium} or {selenider}!" 
+date: "2024-05-07"
+image: ../resources/images/helium10_xray.png
+categories: [Webscraping, Amazon, R, Selenium]
+---
+
+::: panel-tabset
+## {RSelenium}
+
+```{r}
+#| label: rselenium_setup
+
+# Code
+
+```
+
+## {selenider}
+
+```{r}
+#| label: selenider_setup
+
+# Code
+```
+:::
