@@ -2,7 +2,7 @@
 freeze: true
 execute:
   echo: true
-  warning: false
+  cache: true
 
 # Authoring
 author: "Ozan Ozbeker"
@@ -20,11 +20,13 @@ link-external-icon: false
 link-external-newwindow: true
 
 # Code options
-code-fold: show
-code-overflow: scroll
+# code-overflow: wrap
 code-copy: true
 code-link: true
-code-tools: true
-#code-block-border-left: true
-code-block-bg: true
-highlight-style: arrow # try different ones
+code-block-border-left: "#C4A179"
+code-block-bg: false
+highlight-style: "nord"
+
+# atom-one-dark
+# nord
+# solarized

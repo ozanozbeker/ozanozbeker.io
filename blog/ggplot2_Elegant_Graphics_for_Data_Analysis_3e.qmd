@@ -1,19 +1,32 @@
 ---
-title: "ggplot2: Elegant Graphics for Data Analysis (3e)"
+title: "ggplot2: Elegant Graphics for Data Analysis (3e) | WIP"
 description: "My run-through of the book."
 date: "2024-05-06"
 image: ../resources/images/ggplot2_book_cover.jpg
 categories: ["R", "{ggplot2}", "Textbook Workthrough"]
 ---
 
-# Intro
+# Getting Started
 
-In this post, we will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0). In this post, I will not be re-iterating all of the information from the book, but running through the Exercises at the end of the chapters. Follow along to see my take on the exercises, as well as my notes and thoughts as I progress through the book.
+## 1 Introduction
 
-# Initialize
+In this post, we will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0).
 
-Let's load all the packages that we will need for this textbook.
+*"Without a grammar, there is no underlying theory, so most graphics packages are a big collection of special cases."*
+
+I will not be re-iterating all of the information from the book, but running through the Exercises at the end of the chapters. Follow along to see my take on the exercises, as well as my notes and thoughts as I progress through the book.
+
+**Required Packages**
 
 ```{r}
-library(tidyverse)
+#| label: Required Packages
+#| eval: false
+
+install.packages(c(
+  "colorBlindness", "directlabels", "dplyr", "ggforce", "gghighlight", "ggnewscale",
+  "ggplot2", "ggraph", "ggtext", "ggthemes", "hexbin", "Hmisc", "mapproj", "maps",
+  "munsell", "ozmaps", "paletteer", "patchwork", "rmapshaper", "scico", "seriation",
+  "sf", "stars", "tidygraph", "tidyr", "wesanderson"
+))
+
 ```

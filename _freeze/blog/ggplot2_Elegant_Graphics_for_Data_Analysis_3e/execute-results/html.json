@@ -1,11 +1,9 @@
 {
-  "hash": "3db39e1133598e94ac44128c75ba817e",
+  "hash": "b455ac35cc50a272978add91cbb305b0",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"ggplot2: Elegant Graphics for Data Analysis (3e)\"\ndescription: \"My run-through of the book.\"\ndate: \"2024-05-06\"\nimage: ../resources/images/ggplot2_book_cover.jpg\ncategories: [\"R\", \"{ggplot2}\", \"Textbook Workthrough\"]\n---\n\n\n# Intro\n\nIn this post, we will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0). In this post, I will not be re-iterating all of the information from the book, but running through the Exercises at the end of the chapters. Follow along to see my take on the exercises, as well as my notes and thoughts as I progress through the book.\n\n# Initialize\n\nLet's load all the packages that we will need for this textbook.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n:::\n",
-    "supporting": [
-      "ggplot2_Elegant_Graphics_for_Data_Analysis_3e_files"
-    ],
+    "markdown": "---\ntitle: \"ggplot2: Elegant Graphics for Data Analysis (3e) | WIP\"\ndescription: \"My run-through of the book.\"\ndate: \"2024-05-06\"\nimage: ../resources/images/ggplot2_book_cover.jpg\ncategories: [\"R\", \"{ggplot2}\", \"Textbook Workthrough\"]\n---\n\n\n# Getting Started\n\n## 1 Introduction\n\nIn this post, we will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0).\n\n*\"Without a grammar, there is no underlying theory, so most graphics packages are a big collection of special cases.\"*\n\nI will not be re-iterating all of the information from the book, but running through the Exercises at the end of the chapters. Follow along to see my take on the exercises, as well as my notes and thoughts as I progress through the book.\n\n**Required Packages**\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(c(\n  \"colorBlindness\", \"directlabels\", \"dplyr\", \"ggforce\", \"gghighlight\", \"ggnewscale\",\n  \"ggplot2\", \"ggraph\", \"ggtext\", \"ggthemes\", \"hexbin\", \"Hmisc\", \"mapproj\", \"maps\",\n  \"munsell\", \"ozmaps\", \"paletteer\", \"patchwork\", \"rmapshaper\", \"scico\", \"seriation\",\n  \"sf\", \"stars\", \"tidygraph\", \"tidyr\", \"wesanderson\"\n))\n```\n:::\n",
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
