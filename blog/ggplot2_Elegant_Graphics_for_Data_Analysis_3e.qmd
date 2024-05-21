@@ -33,6 +33,10 @@ install.packages(c(
 
 ## 2 First Steps
 
+### 2.1 Introduction
+
+The goal of this chapter it so introduce the reader to {ggplot2} as quickly as possible. Because it's an intro, I will not be formatting the plots any further than the questions ask for.
+
 ### 2.2 Fuel economy data
 
 In this chapter, we will be using mostly one data set, `mpg`, from <http://fueleconomy.gov>. It holds information about the fuel economy of popular car models in 1999 & 2009.
@@ -48,13 +52,13 @@ mpg
 
 A quick overview of the variables:
 
-*   `cty` and `hwy` record miles per gallon (mpg) for city and highway driving.
-*   `displ` is the engine displacement in liters.
-*   `drv` is the drivetrain: front wheel (f), rear wheel (r), or four wheel.
-*   `model` is the model of car. There are 38 models, selected because they had a new edition every year between 1999 and 2008.
-*   `class` is a categorical variable describing the "type" of car: two seater, SUV, compact, etc.
+-   `cty` and `hwy` record miles per gallon (mpg) for city and highway driving.
+-   `displ` is the engine displacement in liters.
+-   `drv` is the drivetrain: front wheel (f), rear wheel (r), or four wheel.
+-   `model` is the model of car. There are 38 models, selected because they had a new edition every year between 1999 and 2008.
+-   `class` is a categorical variable describing the "type" of car: two seater, SUV, compact, etc.
 
-#### 2.2.1 Exercises
+#### Exercises
 
 1.  List five functions that you could use to get more information about the `mpg` dataset.
 
@@ -127,13 +131,13 @@ ggplot(mpg, aes(x = displ, y = hwy)) + geom_point()
 
 ```
 
-#### 2.3.1 Exercises
+#### Exercises
 
-1.  **How would you describe the relationship between** `cty` **and** `hwy`**? Do you have any concerns about drawing conclusions from that plot?**
+1.  How would you describe the relationship between `cty` and `hwy`? Do you have any concerns about drawing conclusions from that plot?
 
 There is a strong positive linear relationship between city & highway gas mileage. Just plotting only those two might generalize too much across different classes of vehicles. Even though it may be true, maybe different classes of vehicles are more equal in city vs highway gas mileage vs performing substantially better in one or the other.
 
-2.  **What does** `ggplot(mpg, aes(model, manufacturer)) + geom_point()` **show? Is it useful? How could you modify that data to make it more informative?**
+2.  What does `ggplot(mpg, aes(model, manufacturer)) + geom_point()` show? Is it useful? How could you modify that data to make it more informative?
 
 ```{r}
 #| label: 2.3.1 Question 1
@@ -149,12 +153,12 @@ This plot just shows which manufacturers make which models. Having two categoric
 mpg |> count(manufacturer) |> ggplot(aes(n, manufacturer)) + geom_point()
 ```
 
-3.  **Describe the data, aesthetic mappings, and layers used for each of the following plots. You'll need to guess a little because you haven't seen all the datasets and functions yet, but use your common sense! See if you can predict what the plot will look like before running the code.**
+3.  Describe the data, aesthetic mappings, and layers used for each of the following plots. You'll need to guess a little because you haven't seen all the datasets and functions yet, but use your common sense! See if you can predict what the plot will look like before running the code.
 
-    1.  `ggplot(mpg, aes(cty, hwy)) + geom_point()` *A dot plot showing a positive relationship between city mpg and highway mpg.*
-    2.  `ggplot(diamonds, aes(carat, price)) + geom_point()` *A dot plot showing a positive relationship between diamond price and its carat rating.*
-    3.  `ggplot(economics, aes(date, unemploy)) + geom_line()` *A line plot showing unemployment rate across time.*
-    4.  `ggplot(mpg, aes(cty)) + geom_histogram()` *A histogram showing the distribution of cars across city mpg rating.*
+    i.  `ggplot(mpg, aes(cty, hwy)) + geom_point()` *A dot plot showing a positive relationship between city mpg and highway mpg.*
+    ii. `ggplot(diamonds, aes(carat, price)) + geom_point()` *A dot plot showing a positive relationship between diamond price and its carat rating.*
+    iii. `ggplot(economics, aes(date, unemploy)) + geom_line()` *A line plot showing unemployment rate across time.*
+    iv. `ggplot(mpg, aes(cty)) + geom_histogram()` *A histogram showing the distribution of cars across city mpg rating.*
 
 ```{r}
 #| label: 2.3.1 Question 3
@@ -165,3 +169,29 @@ ggplot(diamonds, aes(carat, price)) + geom_point()
 ggplot(economics, aes(date, unemploy)) + geom_line()
 ggplot(mpg, aes(cty)) + geom_histogram()
 ```
+
+### 2.4 Color, size, shape, and other aesthetic attributes
+
+To add additional variables to a plot, we can use other aesthetics like color, shape, and size. These work in the same way as the `x` and `y` aesthetics, and are added into the call to `aes()`:
+
+-   `aes(displ, hwy, color = class)`
+-   `aes(displ, hwy, shape = drv)`
+-   `aes(displ, hwy, size = cyl)`
+
+```{r}
+#| label: 2.4 color example
+ggplot(mpg, aes(displ, hwy, color = class)) + geom_point()
+```
+
+#### Exercises
+
+1.  Experiment with the color, shape and size aesthetics. What happens when you map them to continuous values? What about categorical values? What happens when you use more than one aesthetic in a plot?
+
+```{r}
+ggplot(mpg, aes(displ, hwy, size = cty)) + geom_point()
+```
+
+
+2.  What happens if you map a continuous variable to shape? Why? What happens if you map trans to shape? Why?
+
+3.  How is drive train related to fuel economy? How is drive train related to engine size and class?
