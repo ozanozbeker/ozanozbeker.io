@@ -1,6 +1,6 @@
 ---
 title: "ggplot2: Elegant Graphics for Data Analysis (3e) | WIP"
-description: "My run-through of the book."
+description: "Join me as I work through the book and apply my own twist to it."
 date: "2024-05-06"
 image: ../resources/images/ggplot2_book_cover.jpg
 categories: ["R", "{ggplot2}", "Textbook Workthrough"]
@@ -10,11 +10,11 @@ categories: ["R", "{ggplot2}", "Textbook Workthrough"]
 
 ## 1 Introduction
 
-In this post, we will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0).
+In this post, I will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0).
 
-*"Without a grammar, there is no underlying theory, so most graphics packages are a big collection of special cases."*
+> *"Without a grammar, there is no underlying theory, so most graphics packages are a big collection of special cases."*
 
-I will not be re-iterating all of the information from the book, but running through the Exercises at the end of the chapters. Follow along to see my take on the exercises, as well as my notes and thoughts as I progress through the book.
+I will not be re-iterating all of the information from the book, but provide a very brief summary and run through the exercises. Follow along to see my take on the exercises, as well as my notes and thoughts as I progress through the book.
 
 **Required Packages**
 
@@ -29,4 +29,139 @@ install.packages(c(
   "sf", "stars", "tidygraph", "tidyr", "wesanderson"
 ))
 
+```
+
+## 2 First Steps
+
+### 2.2 Fuel economy data
+
+In this chapter, we will be using mostly one data set, `mpg`, from <http://fueleconomy.gov>. It holds information about the fuel economy of popular car models in 1999 & 2009.
+
+```{r}
+#| label: Preview mpg dataset
+#| message: false
+
+library(tidyverse)
+mpg
+
+```
+
+A quick overview of the variables:
+
+*   `cty` and `hwy` record miles per gallon (mpg) for city and highway driving.
+*   `displ` is the engine displacement in liters.
+*   `drv` is the drivetrain: front wheel (f), rear wheel (r), or four wheel.
+*   `model` is the model of car. There are 38 models, selected because they had a new edition every year between 1999 and 2008.
+*   `class` is a categorical variable describing the "type" of car: two seater, SUV, compact, etc.
+
+#### 2.2.1 Exercises
+
+1.  List five functions that you could use to get more information about the `mpg` dataset.
+
+```{r}
+#| label: 2.2.1 Question 1
+#| eval: false
+
+help(mpg)
+glimpse(mpg)
+head(mpg)
+str(mpg)
+View(mpg)
+
+```
+
+2.  How can you find out what other datasets are included with {ggplot2}?
+
+```{r}
+#| label: 2.2.1 Question 2
+#| eval: false
+
+data(package = 'ggplot2')
+
+```
+
+3.  Apart from the US, most countries use fuel consumption (fuel consumed over fixed distance) rather than fuel economy (distance traveled with fixed amount of fuel). How could you convert `cty` and `hwy` into the European standard of `l/100km`?
+
+```{r}
+#| label: 2.2.1 Question 3
+
+us_to_euro = function(mpg) {
+  # 1 mile = 1.60934 kilometers
+  # 1 gallon (US) = 3.78541 liters
+  
+  g_p_m = 1 / mpg
+  l_p_km = 3.78541 / 1.60934    # we multiply by 100 because it's "per 100"
+  l100km = l_p_km * 100 * g_p_m # the denominator 100 cancels right hand 100
+  
+  return(l100km)
+}
+
+mpg |> mutate(cty_euro = us_to_euro(cty), hwy_euro = us_to_euro(hwy), .keep = 'used')
+```
+
+4.  Which manufacturer has the most models in this dataset? Which model has the most variations? Does your answer change if you remove the redundant specification of drivetrain (e.g. "pathfinder 4wd", "a4 quattro") from the model name?
+
+```{r}
+#| label: 2.2.1 Question 4
+
+mpg |> count(manufacturer)
+mpg |> count(model)
+mpg |> mutate(model_base = str_extract(model, "^\\w+")) |> count(model_base) # yes
+
+```
+
+### 2.3 Key Components
+
+Every {ggplot2} plot has three key components:
+
+1.  **Data**,
+2.  A set of **aesthetic mappings** between variables in the data and visual properties, and
+3.  At least one layer which describes how to render each observation. Layers are usually created with a **geom** function.
+
+Here's a simple example:
+
+```{r}
+#| label: 2.3 Example
+
+ggplot(mpg, aes(x = displ, y = hwy)) + geom_point()
+
+```
+
+#### 2.3.1 Exercises
+
+1.  **How would you describe the relationship between** `cty` **and** `hwy`**? Do you have any concerns about drawing conclusions from that plot?**
+
+There is a strong positive linear relationship between city & highway gas mileage. Just plotting only those two might generalize too much across different classes of vehicles. Even though it may be true, maybe different classes of vehicles are more equal in city vs highway gas mileage vs performing substantially better in one or the other.
+
+2.  **What does** `ggplot(mpg, aes(model, manufacturer)) + geom_point()` **show? Is it useful? How could you modify that data to make it more informative?**
+
+```{r}
+#| label: 2.3.1 Question 1
+
+ggplot(mpg, aes(model, manufacturer)) + geom_point()
+```
+
+This plot just shows which manufacturers make which models. Having two categorical variables on a dot plot is not very useful as there is no inherent value in the relationship between two categories existing. Turning one category into a count() or other stat would show a dimensional relationship across the other category.
+
+```{r}
+#| label: 2.3.1 Question 2
+
+mpg |> count(manufacturer) |> ggplot(aes(n, manufacturer)) + geom_point()
+```
+
+3.  **Describe the data, aesthetic mappings, and layers used for each of the following plots. You'll need to guess a little because you haven't seen all the datasets and functions yet, but use your common sense! See if you can predict what the plot will look like before running the code.**
+
+    1.  `ggplot(mpg, aes(cty, hwy)) + geom_point()` *A dot plot showing a positive relationship between city mpg and highway mpg.*
+    2.  `ggplot(diamonds, aes(carat, price)) + geom_point()` *A dot plot showing a positive relationship between diamond price and its carat rating.*
+    3.  `ggplot(economics, aes(date, unemploy)) + geom_line()` *A line plot showing unemployment rate across time.*
+    4.  `ggplot(mpg, aes(cty)) + geom_histogram()` *A histogram showing the distribution of cars across city mpg rating.*
+
+```{r}
+#| label: 2.3.1 Question 3
+#| message: false
+
+ggplot(mpg, aes(cty, hwy)) + geom_point()
+ggplot(diamonds, aes(carat, price)) + geom_point()
+ggplot(economics, aes(date, unemploy)) + geom_line()
+ggplot(mpg, aes(cty)) + geom_histogram()
 ```

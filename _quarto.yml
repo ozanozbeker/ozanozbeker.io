@@ -1,5 +1,10 @@
 project:
   type: website
+  render:
+    - index.qmd
+    - resume.qmd
+    - blog.qmd
+    - blog/*.qmd
   preview:
     port: 4200
     browser: true
@@ -15,20 +20,13 @@ website:
   site-url: https://ozanozbeker.github.io
   repo-url: https://github.com/ozanozbeker/ozanozbeker.github.io
   navbar:
-    left:
+    right:
       - href: resume.qmd
         text: "Resume"
-        icon: file-earmark-text
+      #  icon: file-earmark-text
       - href: blog.qmd
         text: "Blog"
-        icon: journal-code
-    tools:
-      - icon: github
-        href: https://github.com/ozanozbeker/
-      - icon: linkedin
-        href: https://www.linkedin.com/in/ozanozbeker/
-      - icon: envelope
-        href: mailto:ozanozbeker99@outlook.com
+      #  icon: journal-code
   page-navigation: true
   page-footer:
     left: "Copyright 2024, Ozan Ozbeker"
@@ -37,8 +35,6 @@ website:
 
 format:
   html:
-    theme:
-      - simplex
-      - custom.scss
+    theme: [simplex, custom.scss]
 
 editor: visual

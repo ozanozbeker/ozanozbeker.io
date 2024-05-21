@@ -1,189 +1,121 @@
 /*-- scss:defaults --*/
+// Options
+$enable-shadows:              true;
+$enable-gradients:            false;
+$enable-dark-mode:            false;
 
-// NEED TO FIGURE OUT CODE BLOCKS
+// Colors
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #ddd !default;
+$gray-300: #ccc !default;
+$gray-400: #bbb !default;
+$gray-500: #adb5bd !default;
+$gray-600: #777 !default;
+$gray-700: #444 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
 
-// Design Colors
-$white:    #fffffa !default;
-$charcoal: #1a1a1a !default;
-$black:    #000000 !default;
+$blue:    #041424;
+$indigo:  #4a49af;
+$purple:  #a861b3;
+$pink:    #eaa1c1;
+$red:     #b63824;
+$orange:  #e3900b;
+$yellow:  #e2a600;
+$green:   #189934;
+$teal:    #69e099;
+$cyan:    #0e8275;
 
-$yellow: #C4A179 !default;
-//$blue:   #297d66 !default;
-//$red:    #a51723 !default;
-$blue:   #327a7b !default;
-$red:    #67181E !default;
-$green:  #008223 !default;
-$orange: #d57f6c !default;
-$purple: #610046 !default;
-$pink:   #d8418a !default;
-$indigo: #310023 !default;
+$primary:       $yellow;
+$secondary:     $blue;
+$success:       $green;
+$info:          $cyan;
+$warning:       $orange;
+$danger:        $purple;
+$light:         $white;
+$dark:          $gray-800;
 
-$primary:       $yellow   !default;
-$secondary:     $blue     !default;
-$success:       $green    !default;
-$info:          $purple   !default;
-$warning:       $orange   !default;
-$danger:        $red      !default;
-$light:         $white    !default;
-$dark:          $charcoal !default;
+$min-contrast-ratio:   3;
+
+// Prefix for :root CSS variables
+$variable-prefix:             bs-; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix:                      $variable-prefix;
 
 // Body
-$body-color: $white !default;
-$body-bg: $charcoal !default;
+$body-bg:                   #FFF;
 
-// Topography
-$font-family-sans-serif: "Lato", Arial, sans-serif !default;
-$font-family-monospace: "Consolas", monospace !default;
-
-$headings-font-family: "Lora", sans-serif !default;
-$headings-color: $white !default;
-
-$link-color: $secondary;
-$link-decoration: underline;
-
-// Backgrounds
-$navbar-bg-color: rgb(0,0,0, 0.6);
-$footer-bg-color: rgb(0,0,0, 0.6);
-$blur-amount: 5px; // Adjust the blur amount as needed
+// Typography
+$font-family-serif:           "Lora";
+$font-family-sans-serif:      "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       Consolas, SFMono-Regular, Menlo, Monaco, "Liberation Mono", "Courier New", monospace !default;
 
 /*-- scss:rules --*/
 // Import custom fonts from Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
-body {
-  background: url('resources/images/mountain.jpg') no-repeat center center fixed; // seneca_rocks_edit
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+// Links
+a {
+  text-decoration: underline;
+  text-decoration-color: rgba($primary, 0.25);
 }
 
-div.sourceCode {
-  background-color: rgb(0,0,0, 0.5) !important;
-  border: none;
-  padding: 0;
+// Headings
+h1, h2 {
+  font-family: $font-family-serif;
+}
+
+h1.title {color: $primary;}
+
+// Code
+code {
+  color: #d8dee9;
+  background: $gray-900;
+
+  span.va {color: #d8dee9;}
+}
+
+//// Inline Code
+p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
+  background-color: $gray-900;
   border-radius: 5px;
+  padding: .25em;
 }
 
-#quarto-content>* {
-  padding-top: 15px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 15px;
-  border-radius: 20px;
-  backdrop-filter: blur($blur-amount); // Add blur effect
-  background-color: $navbar-bg-color;
+//// Code Output (text)
+.cell-output {
+  background-color: rgba($gray-500, 0.2);
+  border-radius: 5px;
+
+  pre code {
+    margin: 5.95px;
+  }
 }
 
-#quarto-content.page-columns #quarto-margin-sidebar, #quarto-content.page-columns #quarto-sidebar {
-    z-index: 1;
-    backdrop-filter: none;
-    background: none;
-}
-
-.navbar .quarto-navbar-tools .quarto-navigation-tool {
-    color: $primary;
-}
-
-.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
-    width: 26px;
-    height: 26px;
-    color: $primary;
-    opacity: 1;
-}
-
-div.quarto-about-trestles {
-    margin-top: 15px;
-    padding-top: 1em !important;
-}
-
-div.quarto-post .listing-categories .listing-category {
-    color: $secondary;
-    text-transform: none;
-    font-size: .85em;
-    opacity: 1;
-    border: solid 1px #dee2e6;
-    border-radius: 0.25rem;
-}
-
-.quarto-title .quarto-categories .quarto-category {
-    color: $secondary;
-    text-transform: none;
-    font-size: .85em;
-    opacity: 1;
-    border: solid 1px #dee2e6;
-    border-radius: 0.25rem;
-}
-
-.code-tools-button {
-    font-size: 1rem;
-    padding: 0.15rem 0.15rem;
-    margin-left: 5px;
-    color: $secondary;
-    background-color: rgba(0,0,0,0.2);
-    transition: initial;
-    cursor: pointer;
-}
-
-h1, .h1 {
-    font-size: calc(1.325rem + 0.9vw);
-    color: $primary;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-h2, .h2 {
-    font-size: calc(1.2rem + 0.48vw);
-    color: $primary;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
+// Navbar
 .navbar {
-  background-color: $navbar-bg-color;
-  backdrop-filter: blur($blur-amount); // Add blur effect
-  border: none;
+  border: $blue;
   box-shadow: none;
+  background-color: rgba($blue, 0.9);
+  backdrop-filter: blur(1px);
+  color: $black;
+}
+
+span.navbar-title {
+  color: $primary;
   text-transform: uppercase;
-  z-index: 1000; // Ensure the navbar stays on top
-
-  // Adjusting padding and margin
-  padding: 0rem;
-  margin: 0;
-
-  // Adding transparency to child elements if needed
-  .navbar-brand,
-  .navbar-nav .nav-link {
-    color: $primary; // Adjust text color as needed
-  }
+  font-weight: 300;
 }
 
-.aa-DetachedContainer--modal .aa-PanelLayout {
-    max-height: var(--aa-detached-modal-max-height);
-    padding-bottom: var(--aa-spacing-half);
-    position: static;
-    color: $secondary;
+span.menu-text {
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
-// Footer styles
-.nav-footer {
-  background-color: $footer-bg-color;
-  backdrop-filter: blur($blur-amount); // Add blur effect
-  border: none;
-  box-shadow: none;
-  z-index: 1000; // Ensure the footer stays on top
-
-  // Adjusting padding and margin
-  padding: 1rem;
-  margin: 0;
-
-  // Adding transparency to child elements if needed
-  .footer-text,
-  .footer-link {
-    color: $secondary; // Adjust text color as needed
-  }
+// Blog Catagories
+div.quarto-post .listing-categories .listing-category, .quarto-title .quarto-categories .quarto-category {
+    text-transform: none;
+    font-size: 0.8em;
 }

@@ -1,15 +1,15 @@
 ---
-title: "Ozan's Blog"
+title: "Data Science, Technology, & More"
 listing:
   type: default
-  contents: blog/**/*.qmd
+  contents: blog/*.qmd
   sort: "date desc"
-  sort-ui: false
-  filter-ui: false
+  sort-ui: true
+  filter-ui: true
   categories: numbered
   feed: true
   image-placeholder: resources/images/web-development.png
-  fields: [image, title, date, author, reading-time, description, categories]
+  fields: [image, title, date, reading-time, description, categories]
 page-layout: full
 title-block-banner: false
 ---

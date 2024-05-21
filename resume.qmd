@@ -7,6 +7,15 @@ format:
       - text: "Resume PDF"
         href: resources/documents/Ozan Ozbeker Resume.pdf
         icon: file-earmark-text
+      - text: "GitHub"
+        href: https://github.com/ozanozbeker/
+        icon: github
+      - text: "LinkedIn"
+        href: https://www.linkedin.com/in/ozanozbeker/
+        icon: linkedin
+      - text: "Email"
+        href: mailto:ozanozbeker99@outlook.com
+        icon: envelope
 page-layout: article
 ---
 
