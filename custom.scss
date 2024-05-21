@@ -17,16 +17,17 @@ $gray-800: #373a3c !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
-$blue:    #1C2534;
-$indigo:  #4a49af;
-$purple:  #a861b3;
-$pink:    #eaa1c1;
-$red:     #b63824;
-$orange:  #e3900b;
-$yellow:  #B2976B;
-$green:   #189934;
-$teal:    #69E099;
-$cyan:    #0E8275;
+// Colors picked using https://coolors.co
+$blue:    #1C2534; // Gunmetal
+$indigo:  #B9ABED; // Wisteria
+$purple:  #5a3f78; // Eminence
+$pink:    #b33f62; // Raspberry Rose
+$red:     #823038; // Wine
+$orange:  #D58020; // Bronze
+$yellow:  #B2976B; // Lion
+$green:   #34623F; // Hunter Green
+$teal:    #429E9B; // Verdigris
+$cyan:    #063537; // Midnight Green
 
 $primary:       $yellow;
 $secondary:     $blue;
@@ -105,13 +106,13 @@ p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
 span.navbar-title {
   color: $primary;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 span.menu-text {
   color: $white;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 // Blog Catagories
