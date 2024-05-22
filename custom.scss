@@ -115,8 +115,31 @@ span.menu-text {
   font-weight: 400;
 }
 
-// Blog Catagories
+// Blog
+//// Blog Catagories
 div.quarto-post .listing-categories .listing-category, .quarto-title .quarto-categories .quarto-category {
-    text-transform: none;
-    font-size: 0.8em;
+  text-transform: none;
+  font-size: 0.8em;
+}
+
+//// Subtitle
+div.quarto-post .body .listing-subtitle {
+  font-size: 0.9em;
+}
+
+p.subtitle.lead {
+  font-family: $font-family-serif;
+}
+
+//// Text Formatting
+.blog-question {
+  font-family: $font-family-serif;
+  font-weight: 500;
+  color: $black;
+  margin-top: 1rem;
+}
+
+.blog-answer {
+  font-family: $font-family-serif;
+  color: $gray-800;
 }

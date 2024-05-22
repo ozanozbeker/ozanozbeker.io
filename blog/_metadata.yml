@@ -24,9 +24,10 @@ link-external-icon: false
 link-external-newwindow: true
 
 # Code options
-# code-overflow: wrap
+code-overflow: scroll
 code-copy: true
 code-link: true
+code-tools: true
 code-block-bg: "#212529"
 highlight-style: "nord"
 

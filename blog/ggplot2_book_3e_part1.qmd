@@ -1,0 +1,335 @@
+---
+title: "ggplot2: Elegant Graphics for Data Analysis (3e, WIP)"
+subtitle: "Part 1: Getting Started"
+description: "Join me as I work through the first part of the book, *Getting Started*."
+date: "2024-05-24"
+image: ../resources/images/ggplot2_book_cover.jpg
+categories: ["R", "{ggplot2}", "Textbook Workthrough"]
+number-sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Introduction
+
+In this series of posts, I will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0).
+
+> *"Without a grammar, there is no underlying theory, so most graphics packages are a big collection of special cases."*
+
+I will not be re-iterating all of the information from the book, but provide a brief summary of each section and run through the exercises. Follow along to see my take on the exercises, as well as my notes and thoughts as I progress through the book.
+
+If you would like to see the source code behind this post, you can click on the **Code** button at the top of right of the page, sandwiched between the title of the post and the side panel.
+
+The book is split into five parts: *Getting Started*, *Layers*, *Scales*, *The Grammar*, & *Advanced Topics*. In this post, I will be working through the first part, *Getting Started*.
+
+::: callout-important
+It wasn't until I was mostly done with this post that I realized that this 3rd Edition is still under development. I do plan on finishing this series, but I might wait until the book is complete before moving on from this first part.
+:::
+
+## Required Packages
+
+```{r}
+#| label: Required Packages
+#| eval: false
+
+install.packages(c(
+  "colorBlindness", "directlabels", "dplyr", "ggforce", "gghighlight",
+  "ggnewscale", "ggplot2", "ggraph", "ggtext", "ggthemes", "hexbin", "Hmisc", 
+  "mapproj", "maps", "munsell", "ozmaps", "paletteer", "patchwork", "rmapshaper",
+  "scico", "seriation", "sf", "stars", "tidygraph", "tidyr", "wesanderson"
+))
+```
+
+# First Steps
+
+## Introduction
+
+The goal of this chapter it so introduce the reader to {ggplot2} as quickly as possible. Because it's an intro, I will not be formatting the plots any further than the questions ask for.
+
+## Fuel Economy Data
+
+In this chapter, we will be using mostly one data set, `mpg`, from <http://fueleconomy.gov>. It holds information about the fuel economy of popular car models in 1999 & 2009.
+
+```{r}
+#| label: Preview mpg dataset
+#| message: false
+
+library(tidyverse) # Data Wrangling, includes {ggplot2}
+
+mpg
+```
+
+A quick overview of the variables:
+
+-   `cty` and `hwy` record miles per gallon (mpg) for city and highway driving.
+-   `displ` is the engine displacement in liters.
+-   `drv` is the drivetrain: front wheel (f), rear wheel (r), or four wheel.
+-   `model` is the model of car. There are 38 models, selected because they had a new edition every year between 1999 and 2008.
+-   `class` is a categorical variable describing the "type" of car: two seater, SUV, compact, etc.
+
+### Exercises
+
+[1. List five functions that you could use to get more information about the `mpg` dataset.]{.blog-question}
+
+```{r}
+#| label: 2.2 Q1
+#| eval: false
+
+help(mpg)
+glimpse(mpg)
+head(mpg)
+str(mpg)
+View(mpg)
+```
+
+[2. How can you find out what other datasets are included with {ggplot2}?]{.blog-question}
+
+```{r}
+#| label: 2.2 Q2
+#| eval: false
+
+data(package = 'ggplot2')
+```
+
+[3. Apart from the US, most countries use fuel consumption (fuel consumed over fixed distance) rather than fuel economy (distance traveled with fixed amount of fuel). How could you convert `cty` and `hwy` into the European standard of `l/100km`?]{.blog-question}
+
+```{r}
+#| label: 2.2 Q3
+
+us_to_euro = function(mpg) {
+  # 1 mile = 1.60934 kilometers
+  # 1 gallon (US) = 3.78541 liters
+  
+  g_p_m = 1 / mpg
+  l_p_km = 3.78541 / 1.60934    # we multiply by 100 because it's "per 100"
+  l100km = l_p_km * 100 * g_p_m # the denominator 100 cancels right hand 100
+  
+  return(l100km)
+}
+
+mpg |> mutate(cty_euro = us_to_euro(cty), hwy_euro = us_to_euro(hwy), .keep = 'used')
+```
+
+[4. Which manufacturer has the most models in this dataset? Which model has the most variations? Does your answer change if you remove the redundant specification of drivetrain (e.g. "pathfinder 4wd", "a4 quattro") from the model name?]{.blog-question}
+
+```{r}
+#| label: 2.2 Q4
+#| layout-ncol: 3
+
+mpg |> count(manufacturer)
+mpg |> count(model)
+mpg |> mutate(model_base = str_extract(model, "^\\w+")) |> count(model_base) # yes
+```
+
+## Key Components
+
+Every {ggplot2} plot has three key components:
+
+1.  **Data**,
+2.  A set of **aesthetic mappings** between variables in the data and visual properties, and
+3.  At least one layer which describes how to render each observation. Layers are usually created with a **geom** function.
+
+Here's a simple example:
+
+```{r}
+#| label: 2.3 Example
+
+ggplot(mpg, aes(x = displ, y = hwy)) + geom_point()
+```
+
+### Exercises
+
+[1. How would you describe the relationship between `cty` and `hwy`? Do you have any concerns about drawing conclusions from that plot?]{.blog-question}
+
+There is a strong positive linear relationship between city & highway gas mileage. Just plotting only those two might generalize too much across different classes of vehicles. Even though it may be true, maybe different classes of vehicles are more equal in city vs highway gas mileage vs performing substantially better in one or the other.
+
+[2. What does `ggplot(mpg, aes(model, manufacturer)) + geom_point()` show? Is it useful? How could you modify that data to make it more informative?]{.blog-question}
+
+```{r}
+#| label: 2.3 Q1
+
+ggplot(mpg, aes(model, manufacturer)) + geom_point()
+```
+
+This plot just shows which manufacturers make which models. Having two categorical variables on a dot plot is not very useful as there is no inherent value in the relationship between two categories existing. Turning one category into a count() or other stat would show a dimensional relationship across the other category.
+
+```{r}
+#| label: 2.3 Q2
+
+mpg |> count(manufacturer) |> ggplot(aes(n, manufacturer)) + geom_point()
+```
+
+[3. Describe the data, aesthetic mappings, and layers used for each of the following plots. You'll need to guess a little because you haven't seen all the datasets and functions yet, but use your common sense! See if you can predict what the plot will look like before running the code.]{.blog-question}
+
+i.  `ggplot(mpg, aes(cty, hwy)) + geom_point()` A dot plot showing a positive relationship between city mpg and highway mpg.
+ii. `ggplot(diamonds, aes(carat, price)) + geom_point()` A dot plot showing a positive relationship between diamond price and its carat rating.
+iii. `ggplot(economics, aes(date, unemploy)) + geom_line()` A line plot showing unemployment rate across time.
+iv. `ggplot(mpg, aes(cty)) + geom_histogram()` A histogram showing the distribution of cars across city mpg rating.
+
+```{r}
+#| label: 2.3 Q3
+#| message: false
+#| layout-nrow: 2
+
+ggplot(mpg, aes(cty, hwy)) + geom_point()
+ggplot(diamonds, aes(carat, price)) + geom_point()
+ggplot(economics, aes(date, unemploy)) + geom_line()
+ggplot(mpg, aes(cty)) + geom_histogram()
+```
+
+## Color, Size, Shape, and Other Aesthetic Attributes
+
+To add additional variables to a plot, we can use other aesthetics like color, shape, and size. These work in the same way as the `x` and `y` aesthetics, and are added into the call to `aes()`:
+
+-   `aes(displ, hwy, color = class)`
+-   `aes(displ, hwy, shape = drv)`
+-   `aes(displ, hwy, size = cyl)`
+
+```{r}
+#| label: 2.4 Example
+
+ggplot(mpg, aes(displ, hwy, color = class)) + geom_point()
+```
+
+### Exercises
+
+[1. Experiment with the color, shape and size aesthetics. What happens when you map them to continuous values? What about categorical values? What happens when you use more than one aesthetic in a plot?]{.blog-question}
+
+```{r}
+#| label: 2.4 Q1
+#| layout-nrow: 2
+
+ggplot(mpg, aes(displ, hwy, color = cyl)) + geom_point()
+ggplot(mpg, aes(displ, hwy, color = as.character(year))) + geom_point()
+ggplot(mpg, aes(displ, hwy, color = cyl, shape = as.character(year))) + geom_point()
+```
+
+[2. What happens if you map a continuous variable to shape? Why? What happens if you map `trans` to shape? Why?]{.blog-question}
+
+```{r}
+#| label: 2.4 Q2.1
+#| error: true
+
+ggplot(mpg, aes(displ, hwy, shape = hwy)) + geom_point()
+```
+
+You get an error because continuous variables lie on a scale of infinity, and you cannot have infinite shapes. This is why in the previous question, converter `year` into a character because it is a continuous variable `year = 1999` in the data frame, but its use is actually as a category, comparing 1999 vehicles to 2008 vehicles.
+
+```{r}
+#| label: 2.4 Q2.2
+#| warning: true
+
+ggplot(mpg, aes(displ, hwy, shape = trans)) + geom_point()
+```
+
+You get a warning because although `trans` is a categorical variable, it has more values than {ggplot2} has shapes (6 in total), so other values do not get markers.
+
+This highlights the difference between Errors and Warnings with {ggplot2}. As with regular R code, Warnings show where the code can still run but probably with not the effect that was intended, where Errors are impossible to process and the code does not run.
+
+[3. How is drive train related to fuel economy? How is drive train related to engine size and class?]{.blog-question}
+
+```{r}
+#| label: 2.4 Q3
+#| layout-nrow: 1
+
+ggplot(mpg, aes(drv, hwy)) + geom_point()
+ggplot(mpg, aes(displ, class, color = drv)) + geom_point()
+```
+
+Front-wheel transmission vehicle seems to have the best highway gas mileage, where 4-wheel and rear-wheel show similar performance to each other.
+
+Almost all 4-wheel drive vehicles (in this dataset) are either an SUV or Pickup, and have the biggest range in engine size. The smallest vehicles (2-seater & subcompact) have bigger engines and are rear-wheel drive, probably sports cars of some sort. Finally, the regular everyday vehicles like compact & midsize cars have smaller engines and mostly front-wheel drive transmissions.
+
+## Faceting
+
+Faceting creates tables of graphics by splitting the data into subsets and displaying the same graph for each subset. The two type so faceting are **grid** and **wrapped**. We will be focusing on wrapped.
+
+```{r}
+#| label: 2.5 Example
+
+ggplot(mpg, aes(displ, hwy)) + geom_point() + facet_wrap(~class)
+```
+
+### Exercises (WIP)
+
+[1. What happens if you try to facet by a continuous variable like `hwy`? What about `cyl`? What's the key difference?]{.blog-question}
+
+```{r}
+#| label: 2.5 Q1
+
+
+```
+
+[2. Use faceting to explore the 3-way relationship between fuel economy, engine size, and number of cylinders. How does faceting by number of cylinders change your assessement of the relationship between engine size and fuel economy?]{.blog-question}
+
+```{r}
+#| label: 2.5 Q2
+
+
+```
+
+[3. Read the documentation for `facet_wrap()`. What arguments can you use to control how many rows and columns appear in the output?]{.blog-question}
+
+```{r}
+#| label: 2.5 Q3
+
+
+```
+
+[4. What does the `scales` argument to `facet_wrap()` do? When might you use it?]{.blog-question}
+
+```{r}
+#| label: 2.5 Q4
+
+
+```
+
+## Plot Geoms (WIP)
+
+Substituting `geom_point()` for a different geom function creates a different plot. *Who would've thought?* In the following sections, we will cover some of the other most used geoms provided in {ggplot2}:
+
+-   `geom_smooth()` fits a smoother to the data and displays the smooth and its standard error.
+-   `geom_boxplot()` produces a box-and-whisker plot to summarize the distribution of set of points.
+-   `geom_histogram()` and `geom_freqpoly()` show the distribution of continuous variables.
+-   `geom_bar()` shows the distribution of categorical variables.
+-   `geom_path()` and `geom_line()` draw lines between the data points. A line plot is constrained to produce lines that travel from left to right, while paths can go in any direction. Lines are typically used to explore how things change over time.
+
+### Adding a smoother to a plot
+
+If you have a scatterplot with a lot of noise, it can be hard to see the dominant pattern. In this case, it's useful to add a smoothed line to the plot with `geom_smooth()`:
+
+```{r}
+#| label: 2.6.1 Example geom_smooth()
+
+ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth()
+```
+
+An important argument to `geom_smooth()` is the `method`, which allows you to choose which type of model is used to fit the smooth curve:
+
+-   `method = "loess"`, the default for small n, uses a smooth local regression. `"span"` controls the level of smoothing.
+
+```{r}
+#| label: 2.6.1 Example geom_smooth() with span
+#| layout-nrow: 1
+
+ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(span = 0.2)
+ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(span = 1)
+```
+
+-   `method = "gam"` fits a generalized additive model provided by the {mgcv} package. You need to load in the package then use a `formula = y ~ s(x)` or `y ~ s(x, bs = "cs")` (for large data).
+
+```{r}
+#| label: 2.6.1 Example geom_smooth() with gam
+#| message: false
+
+library(mgcv)
+ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(method = "gam", formula = y ~ s(x))
+```
+
+-   `method = "lm"` fits a linear model, giving the line of best fit.
+
+```{r}
+#| label: 2.6.1 Example geom_smooth() lm
+
+ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(method = "lm")
+```
