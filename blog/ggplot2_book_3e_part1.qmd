@@ -22,6 +22,10 @@ If you would like to see the source code behind this post, you can click on the 
 
 The book is split into five parts: *Getting Started*, *Layers*, *Scales*, *The Grammar*, & *Advanced Topics*. In this post, I will be working through the first part, *Getting Started*.
 
+::: callout-tip
+Because this is book about {ggplot2}, I will use package-explicit function when using a function for the first time that is not in base R or provided by {ggplot2}. All of these packages are loaded with the {[tidyverse](https://tidyverse.tidyverse.org/)} meta-package.
+:::
+
 ::: callout-important
 It wasn't until I was mostly done with this post that I realized that this 3rd Edition is still under development. I do plan on finishing this series, but I might wait until the book is complete before moving on from this first part.
 :::
@@ -107,7 +111,10 @@ us_to_euro = function(mpg) {
   return(l100km)
 }
 
-mpg |> mutate(cty_euro = us_to_euro(cty), hwy_euro = us_to_euro(hwy), .keep = 'used')
+mpg |> dplyr::mutate(
+  cty_euro = us_to_euro(cty), 
+  hwy_euro = us_to_euro(hwy), 
+  .keep = 'used')
 ```
 
 [4. Which manufacturer has the most models in this dataset? Which model has the most variations? Does your answer change if you remove the redundant specification of drivetrain (e.g. "pathfinder 4wd", "a4 quattro") from the model name?]{.blog-question}
@@ -116,9 +123,12 @@ mpg |> mutate(cty_euro = us_to_euro(cty), hwy_euro = us_to_euro(hwy), .keep = 'u
 #| label: 2.2 Q4
 #| layout-ncol: 3
 
-mpg |> count(manufacturer)
+mpg |> dplyr::count(manufacturer)
 mpg |> count(model)
-mpg |> mutate(model_base = str_extract(model, "^\\w+")) |> count(model_base) # yes
+
+mpg |> 
+  mutate(model_base = stringr::str_extract(model, "^\\w+")) |> 
+  count(model_base) # yes
 ```
 
 ## Key Components
@@ -260,7 +270,7 @@ ggplot(mpg, aes(displ, hwy)) + geom_point() + facet_wrap(~class)
 
 ```
 
-[2. Use faceting to explore the 3-way relationship between fuel economy, engine size, and number of cylinders. How does faceting by number of cylinders change your assessement of the relationship between engine size and fuel economy?]{.blog-question}
+[2. Use faceting to explore the 3-way relationship between fuel economy, engine size, and number of cylinders. How does faceting by number of cylinders change your assessment of the relationship between engine size and fuel economy?]{.blog-question}
 
 ```{r}
 #| label: 2.5 Q2
@@ -284,7 +294,7 @@ ggplot(mpg, aes(displ, hwy)) + geom_point() + facet_wrap(~class)
 
 ```
 
-## Plot Geoms (WIP)
+## Plot Geoms
 
 Substituting `geom_point()` for a different geom function creates a different plot. *Who would've thought?* In the following sections, we will cover some of the other most used geoms provided in {ggplot2}:
 
@@ -332,4 +342,303 @@ ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(method = "gam", formul
 #| label: 2.6.1 Example geom_smooth() lm
 
 ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(method = "lm")
+```
+
+### Boxplots and jittered points
+
+When a dataset contains a categorical variable and one or more continuous variables, we might be interested in the distribution of the continuous variable(s) relative to the categorical variable.
+
+```{r}
+#| label: 2.6.2 Example plot with overplotting
+
+ggplot(mpg, aes(drv, hwy)) + geom_point()
+```
+
+Because there a few unique number of values for both `drv` and `hwy`, there is a lot of overplotting (where one or more points are plotted in the same location). There are a few useful techniques to help with this issue:
+
+-   *Jitter Plots*, `geom_jitter()`, add a little random noise to the data which can help avoid overplotting.
+-   *Boxplots*, `geom_boxplot()`, summarize the shape of the distribution with a handful of summary statistics.
+-   *Violin Plots*, `geom_violin()`, show a compact representation of the "density" of the distribution, highlighting the areas where more points are found.
+
+```{r}
+#| label: 2.6.2 Example different plots
+#| layout-nrow: 1
+
+ggplot(mpg, aes(drv, hwy)) + geom_jitter()
+ggplot(mpg, aes(drv, hwy)) + geom_boxplot()
+ggplot(mpg, aes(drv, hwy)) + geom_violin()
+```
+
+Each method has its strength and weaknesses:
+
+-   *Jitter Plots* show every point but only work with relatively small datasets.
+-   *Boxplots* summarize the whole distribution with 5 statistics.
+-   *Violin Plots* give the richest display, but the density estimate can be hard to interpret.
+
+#### Bonus
+
+It's not mentioned here in the book, but you can also adjust the transparency, `alpha`, of the geom to also help with this issue. This is especially useful when comparing two different continuous variables where the geoms above are not able to be plotted.
+
+```{r}
+#| label: 2.6.2 Example different alphas
+#| layout-nrow: 1
+
+ggplot(mpg, aes(drv, hwy)) + geom_point(alpha = 0.2) # Category vs Continuous
+ggplot(mpg, aes(cty, hwy)) + geom_point(alpha = 0.2) # Continuous vs Continuous
+```
+
+### Histograms and frequency polygons
+
+Histograms and frequency polygons show the distribution of a single numeric variable with more detail than a boxplot but at the expense of needing more space. The only difference between the two is that the prior uses columns and the latter uses lines.
+
+```{r}
+#| label: 2.6.3 Example plots
+#| message: false
+#| layout-nrow: 1
+
+ggplot(mpg, aes(hwy)) + geom_histogram()
+ggplot(mpg, aes(hwy)) + geom_freqpoly()
+```
+
+It is highly recommended to experiment with the `binwidth` as the default value is 30 and it is unlikely that 30 is the best choice for your dataset.
+
+```{r}
+#| label: 2.6.3 Example binwidth
+#| message: false
+#| layout-nrow: 1
+
+ggplot(mpg, aes(hwy)) + geom_freqpoly(binwidth = 2.5)
+ggplot(mpg, aes(hwy)) + geom_freqpoly(binwidth = 1)
+```
+
+To compare distributions of subgroups, you can map a categorical variable to either fill (for `geom_histogram()`) or color (for `geom_freqpoly()`).
+
+```{r}
+#| label: 2.6.3 Example comparing distributions
+#| message: false
+#| layout-nrow: 1
+
+ggplot(mpg, aes(displ, colour = drv)) + 
+  geom_freqpoly(binwidth = 0.5)
+
+ggplot(mpg, aes(displ, fill = drv)) + 
+  geom_histogram(binwidth = 0.5) + 
+  facet_wrap(~drv, ncol = 1)
+```
+
+### Bar charts
+
+The discrete analogue of the histogram is the bar chart, `geom_bar()`.
+
+```{r}
+#| label: 2.6.4 Example bar chart
+
+ggplot(mpg, aes(manufacturer)) + geom_bar()
+```
+
+Bar charts can be confusing because there are two very different plots that are both commonly called bar charts.
+
+1.  The first form, like above, assumes your data is **not summarized**, and each observation contributes to one unit to the height of each bar.
+2.  The second form is used for **pre-summarized** data.
+
+For example, you might have three drugs with the their *average* effect:
+
+```{r}
+#| label: 2.6.4 Example drug data
+
+drugs = tibble(drug = c("a", "b", "c"), effect = c(4.2, 9.7, 6.1))
+```
+
+To display this type of data, you have to tell `geom_bar()` to not run the default stat which bins and counts data. In this case, it's better to use `geom_point()` because it takes up less space than bars, and don't require that the axis includes 0.
+
+```{r}
+#| label: 2.6.4 Example summary bar chart
+#| layout-nrow: 1
+
+ggplot(drugs, aes(drug, effect)) + geom_bar(stat = "identity")
+ggplot(drugs, aes(drug, effect)) + geom_point()
+```
+
+#### Bonus
+
+Even if using `geom_point()` might be preferred, because the second type of bar/column chart is so popular, {ggplot2} includes a `geom_col()` that acts exactly the same as `geom_bar(stat = "identity")`:
+
+```{r}
+#| label: 2.6.4 Example geom_col()
+#| layout-nrow: 1
+
+ggplot(drugs, aes(drug, effect)) + geom_bar(stat = "identity")
+ggplot(drugs, aes(drug, effect)) + geom_col()
+```
+
+### Time series with line and path plots
+
+Line and path plots are typically used for time series data, where the order of the data matters to the context of the visual. Line plots join the data points from left to right, while path plots join the points in the order that they appear in the dataset.
+
+|             Line Plot              |                                                      Path Plot                                                      |
+|:---------------------------------:|:-----------------------------------:|
+| Plots the data from left to right. |                                Plots the points in the order they appear in dataset.                                |
+|        Show time on x-axis.        | Show how two variables simultaneously change over time, with time encoded in the way the data points are connected. |
+
+: Line Plot vs Path Plot
+
+The two plots below show unemployment over time, both with `geom_line()`. The firsts shows unemployment rate while the second shows the median number of weeks unemployed.
+
+```{r}
+#| label: 2.6.5 Example geom_line()
+#| layout-nrow: 1
+
+ggplot(economics, aes(date, unemploy / pop)) + geom_line()
+ggplot(economics, aes(date, uempmed)) + geom_line()
+```
+
+To compare the relationship, we would like to draw both time series on the same plot. We could draw a scatterplot of unemployment rate vs length of time unemployed, but then we lose the dimension of time. The solution is to join points adjacent in time with line segments, forming a *path* plot. We will add some aesthetics to help see the direction of time.
+
+```{r}
+#| label: 2.6.5 Example geom_path()
+#| layout-nrow: 1
+
+ggplot(economics, aes(unemploy / pop, uempmed)) + 
+  geom_path() +
+  geom_point()
+
+ggplot(economics, aes(unemploy / pop, uempmed)) + 
+  geom_path(color = "grey50") +
+  geom_point(aes(color = lubridate::year(date)))
+```
+
+We can see that unemployment rate and length of unemployment are highly correlated, but in recent years the length of unemployment has been increasing relative to the unemployment rate.
+
+### Exercises (WIP)
+
+[1. What’s the problem with the plot created by `ggplot(mpg, aes(cty, hwy)) + geom_point()`? Which of the geoms described above is most effective at remedying the problem?]{.blog-question}
+
+```{r}
+#| label: 2.6 Q1
+
+
+```
+
+[2. One challenge with `ggplot(mpg, aes(class, hwy)) + geom_boxplot()` is that the ordering of class is alphabetical, which is not terribly useful. How could you change the factor levels to be more informative? Rather than reordering the factor by hand, you can do it automatically based on the data: `ggplot(mpg, aes(reorder(class, hwy), hwy)) + geom_boxplot()`. What does `reorder()` do? Read the documentation.]{.blog-question}
+
+```{r}
+#| label: 2.6 Q2
+
+
+```
+
+[3. Explore the distribution of the carat variable in the `diamonds` dataset. What `binwidth` reveals the most interesting patterns?]{.blog-question}
+
+```{r}
+#| label: 2.6 Q3
+
+
+```
+
+[4. Explore the distribution of the price variable in the `diamonds` data. How does the distribution vary by cut?]{.blog-question}
+
+```{r}
+#| label: 2.6 Q4
+
+
+```
+
+[5. You now know (at least) three ways to compare the distributions of subgroups: `geom_violin()`, `geom_freqpoly()`, and the color aesthetic, or `geom_histogram()` and faceting. What are the strengths and weaknesses of each approach? What other approaches could you try?]{.blog-question}
+
+```{r}
+#| label: 2.6 Q5
+
+
+```
+
+[6. Read the documentation for `geom_bar()`. What does the weight aesthetic do?]{.blog-question}
+
+```{r}
+#| label: 2.6 Q6
+
+
+```
+
+[7. Using the techniques already discussed in this chapter, come up with three ways to visualize a 2d categorical distribution. Try them out by visualizing the distribution of `model` and `manufacturer`, `trans` and `class`, and `cyl` and `trans`.]{.blog-question}
+
+```{r}
+#| label: 2.6 Q7
+
+
+```
+
+## Modifying the Axes
+
+There are two families of useful helpers that let you make the most common modifications.
+
+-   `xlab()` and `ylab()` modify the x-axis and y-axis labels:
+
+```{r}
+#| label: 2.7 Example xlab() and ylab()
+#| layout-nrow: 1
+
+ggplot(mpg, aes(cty, hwy)) + geom_point(alpha = 1 / 3)
+
+ggplot(mpg, aes(cty, hwy)) + geom_point(alpha = 1 / 3) + 
+  xlab("city driving (mpg)") + ylab("highway driving (mpg)")
+
+# Remove the axis labels with NULL
+ggplot(mpg, aes(cty, hwy)) + geom_point(alpha = 1 / 3) + xlab(NULL) + ylab(NULL)
+```
+
+-   `xlim()` and `ylim()` modify the limits of the axes:
+
+```{r}
+#| label: 2.7 Example xlim() and ylim()
+#| layout-nrow: 1
+#| warning: false
+
+ggplot(mpg, aes(drv, hwy)) + geom_jitter(width = 0.25)
+
+ggplot(mpg, aes(drv, hwy)) + geom_jitter(width = 0.25) + xlim("f", "r") + ylim(20, 30)
+  
+# For continuous scales, use NA to set only one limit
+ggplot(mpg, aes(drv, hwy)) + geom_jitter(width = 0.25, na.rm = TRUE) + ylim(NA, 30)
+```
+
+::: callout-warning
+Changing the axes limits sets values outside the range to `NA` **before** it calculates summary statistics. You may use `na.rm = TRUE` to filter out the new `NA` values, but it is important to understand the order of operations.
+:::
+
+## Output
+
+Plots are usually generated to view immediately, but they can be saved to a variable:
+
+```{r}
+#| label: 2.8 Example saving a plot
+
+p = ggplot(mpg, aes(displ, hwy, color = factor(cyl))) + geom_point()
+```
+
+Once you have a plot object, you can do a variety of things with it:
+
+-   Render it on screen with `print()` (this happens automatically when running interactively, but needs to be called explicitly in a loop or function):
+
+```{r}
+#| label: 2.8 Example sprinting saved plot
+
+print(p)
+```
+
+-   Save it to disc with `ggsave()`:
+
+```{r}
+#| label: 2.8 Example save plot to disc
+#| eval: false
+
+ggsave("plot.png", p, width = 5 , height = 5)
+```
+
+-   Briefly describe its structure with `summary()`:
+
+```{r}
+#| label: 2.8 Example view plot structure
+#| 
+
+summary(p)
 ```
