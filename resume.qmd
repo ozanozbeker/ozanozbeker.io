@@ -19,13 +19,13 @@ format:
 page-layout: article
 ---
 
-# Summary
+# Summary {#sec-summary .title}
 
-**Data Scientist**
+## Data Analytics & Consulting
 
 Dynamic and growth-oriented Data Scientist with a background in Manufacturing Engineering and Supply Chain Analytics, I specialize in driving data-centric solutions and innovative projects across diverse industries. Starting with foundational skills in Python and SQL, I quickly became an expert in R, mastering it in real-world scenarios. My role has expanded to being the tech lead for multiple clients, running end-to-end data projects and presenting their results.
 
-Key Contributions:
+## Key Contributions
 
 -   **Data Management & Visualization:** Developed robust data infrastructures using self-hosted [PostgreSQL](https://www.postgresql.org/) and implemented efficient ETL processes with [R](https://www.r-project.org/) & the [{tidyverse}](https://www.tidyverse.org/) family of packages, significantly enhancing data accessibility and manipulation. Expert in building insightful Tableau dashboards and [Quarto](https://quarto.org/)/[RMarkdown](https://rmarkdown.rstudio.com/) reports tailored to client needs.
 
@@ -33,13 +33,13 @@ Key Contributions:
 
 -   **Software Improvement:** Adopt the use of [Docker](https://www.docker.com/), [DuckDB](https://duckdb.org/), [Git](https://git-scm.com/), & [GitHub](https://github.com/), and designed a custom {ggplot2} add-on aligning with company guidelines.
 
-In my previous roles, I led substantial Continuous Improvement initiatives, generating savings of \$1-3 million by optimizing processes on the manufacturing floor. I spearheaded quality control standardization across North American facilities and contributed to inventory management through a bespoke recommendation engine. My technical toolkit expanded during this time to include CAD for designing new machinery layouts and developing ad-hoc dashboards for strategic oversight.
+In my previous roles, I led substantial Continuous Improvement initiatives, generating savings of \$1-3 million by optimizing processes on the manufacturing floor. I spearheaded quality control standardization across North American facilities and contributed to inventory management through a bespoke recommendation engine. My technical toolkit expanded during this time to include CAD for designing new machinery layouts and developing ad-hoc dashboards for strategic oversight. My analytical journey is underpinned by a strong educational foundation, including a role as a Teaching Assistant during my undergraduate studies, where I honed my skills in teaching and academic leadership.
 
-My analytical journey is underpinned by a strong educational foundation, including a role as a Teaching Assistant during my undergraduate studies, where I honed my skills in teaching and academic leadership.
+## Core Competencies
 
-**Core Competencies**: R Programming \| Data Visualization \| Process Improvement \| Client Engagement \| Project Management \| Analytical Problem Solving \| Continuous Learning \| Database Management \| SQL
+R Programming \| Data Visualization \| Process Improvement \| Client Engagement \| Project Management \| Analytical Problem Solving \| Database Management \| SQL
 
-# Experience
+# Experience {#sec-experience .title}
 
 ## Data Scientist
 
@@ -83,19 +83,19 @@ My analytical journey is underpinned by a strong educational foundation, includi
 
 [**JLG Industries**](https://www.jlg.com/) **- McConnellsburg, PA** \| June 2019 - August 2019
 
--   Long-term Project: Test – Inspect – Green Tag (TIG) Line
+-   **Long-term Project: Test – Inspect – Green Tag (TIG) Line**
 
-    -   5S: Conducted a full sweep of the line, removing unnecessary equipment and parts from work stations and laid corners.
+    -   Conducted a full 5S sweep of the line, removing unnecessary equipment and parts from work stations and laid corners.
 
-    -   SWIs: Created from scratch Standard Work Instructions for all 5 stations of the TIG Line for 3 different products.
+    -   Created from scratch Standard Work Instructions (SWI) for all 5 stations of the TIG Line for 3 different products.
 
-    -   Electronic Quality Control (EQC): Implemented a scanner-based system for entering defects into EQC, standardizing the process and reducing variability in defect types and improving data collection.
+    -   Implemented a scanner-based system for entering defects for Electronic Quality Control (EQC), standardizing the process and reducing variability in defect types and improving data collection.
 
--   **Short-term Project:** Tire Manipulator
+-   **Short-term Project:** **Tire Manipulator**
 
     -   Created floor plans for current and future station layouts for the new Tire Manipulator with laser measures and AutoCAD.
 
-# Education
+# Education {#sec-education .title}
 
 ## Bachelor of Science in Industrial Engineering
 

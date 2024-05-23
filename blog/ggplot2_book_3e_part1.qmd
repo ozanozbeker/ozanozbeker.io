@@ -545,7 +545,8 @@ Using `binwidth` values of `1/50` & `1/100` shows that the caret values heavily 
 
 ```{r}
 #| label: 2.6 Q4
-#| layout-nrow: 2
+#| layout-nrow: 1
+#| message: false
 
 ggplot(diamonds, aes(price)) + geom_freqpoly()
 ggplot(diamonds, aes(price)) + geom_freqpoly(aes(color = cut))
