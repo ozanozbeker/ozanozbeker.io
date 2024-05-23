@@ -260,38 +260,56 @@ Faceting creates tables of graphics by splitting the data into subsets and displ
 ggplot(mpg, aes(displ, hwy)) + geom_point() + facet_wrap(~class)
 ```
 
-### Exercises (WIP)
+### Exercises
 
 [1. What happens if you try to facet by a continuous variable like `hwy`? What about `cyl`? What's the key difference?]{.blog-question}
 
 ```{r}
 #| label: 2.5 Q1
+#| warning: false
+#| layout-nrow: 1
 
-
+ggplot(mpg, aes(displ, cty)) + geom_point() + facet_wrap(~hwy)
+ggplot(mpg, aes(displ, cty)) + geom_point() + facet_wrap(~cyl)
 ```
+
+They both facet by the number of unique values in the variable. In the case of `hwy`, there were 27 unique values in this limited dataset because it truly represents a continuous variable. This makes it a bad choice for faceting.
+
+`cyl` on the other hand, actually represents a category (# of cylinders in an engine) although it's in the data frame as a continuous. This may be because it is a number, which is usually continuous.
 
 [2. Use faceting to explore the 3-way relationship between fuel economy, engine size, and number of cylinders. How does faceting by number of cylinders change your assessment of the relationship between engine size and fuel economy?]{.blog-question}
 
 ```{r}
 #| label: 2.5 Q2
 
-
+ggplot(mpg, aes(displ, hwy)) + geom_point() + facet_wrap(~cyl)
 ```
 
+Faceting by cylinders shows a clearly that smaller engines perform better on fuel economy vs their bigger counterparts, though being a smaller engine does not necessarily mean that it will have good gas mileage.
+
 [3. Read the documentation for `facet_wrap()`. What arguments can you use to control how many rows and columns appear in the output?]{.blog-question}
+
+`nrow` & `ncol` are the arguments to control the number of rows & columns. Here is an extreme example:
 
 ```{r}
 #| label: 2.5 Q3
 
-
+ggplot(mpg, aes(displ, hwy)) + geom_point() + facet_wrap(~trans, nrow = 1)
 ```
 
 [4. What does the `scales` argument to `facet_wrap()` do? When might you use it?]{.blog-question}
 
+By default, the scales locks both the x and y scales on all faceted plots to show the same range, regardless of the range of values in each facet. You might want to free a scale if the axis doesn't have any values for that facet, and the missing range doesn't affect the analysis.
+
+In this example, we don't need x-axis values for vehicles that don't exist, but keeping the y-axis values on the same scale helps to compare the values across all manufacturers.
+
 ```{r}
 #| label: 2.5 Q4
 
-
+mpg |> 
+  ggplot(aes(as_factor(cyl), hwy)) + 
+  geom_point() + 
+  facet_wrap(~manufacturer, scales = "free_x", nrow = 3)
 ```
 
 ## Plot Geoms
@@ -317,75 +335,45 @@ ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth()
 An important argument to `geom_smooth()` is the `method`, which allows you to choose which type of model is used to fit the smooth curve:
 
 -   `method = "loess"`, the default for small n, uses a smooth local regression. `"span"` controls the level of smoothing.
-
-```{r}
-#| label: 2.6.1 Example geom_smooth() with span
-#| layout-nrow: 1
-
-ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(span = 0.2)
-ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(span = 1)
-```
-
 -   `method = "gam"` fits a generalized additive model provided by the {mgcv} package. You need to load in the package then use a `formula = y ~ s(x)` or `y ~ s(x, bs = "cs")` (for large data).
-
-```{r}
-#| label: 2.6.1 Example geom_smooth() with gam
-#| message: false
-
-library(mgcv)
-ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(method = "gam", formula = y ~ s(x))
-```
-
 -   `method = "lm"` fits a linear model, giving the line of best fit.
 
 ```{r}
-#| label: 2.6.1 Example geom_smooth() lm
+#| label: 2.6.1 Example geom_smooth() with span
+#| layout-nrow: 2
+#| message: false
+
+ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(span = 0.2)
+ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(span = 1)
+
+library(mgcv)
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() + 
+  geom_smooth(method = "gam", formula = y ~ s(x))
 
 ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth(method = "lm")
 ```
 
 ### Boxplots and jittered points
 
-When a dataset contains a categorical variable and one or more continuous variables, we might be interested in the distribution of the continuous variable(s) relative to the categorical variable.
+When a dataset contains a categorical variable and one or more continuous variables, we might be interested in the distribution of the continuous variable(s) relative to the categorical variable. Because there a few unique number of values for both `drv` and `hwy`, there is a lot of overplotting. There are a few useful techniques to help with this issue:
 
 ```{r}
 #| label: 2.6.2 Example plot with overplotting
+#| layout-nrow: 2
 
 ggplot(mpg, aes(drv, hwy)) + geom_point()
-```
-
-Because there a few unique number of values for both `drv` and `hwy`, there is a lot of overplotting (where one or more points are plotted in the same location). There are a few useful techniques to help with this issue:
-
--   *Jitter Plots*, `geom_jitter()`, add a little random noise to the data which can help avoid overplotting.
--   *Boxplots*, `geom_boxplot()`, summarize the shape of the distribution with a handful of summary statistics.
--   *Violin Plots*, `geom_violin()`, show a compact representation of the "density" of the distribution, highlighting the areas where more points are found.
-
-```{r}
-#| label: 2.6.2 Example different plots
-#| layout-nrow: 1
-
 ggplot(mpg, aes(drv, hwy)) + geom_jitter()
 ggplot(mpg, aes(drv, hwy)) + geom_boxplot()
 ggplot(mpg, aes(drv, hwy)) + geom_violin()
 ```
 
-Each method has its strength and weaknesses:
+Though these are useful techniques, they also have their own drawbacks.
 
--   *Jitter Plots* show every point but only work with relatively small datasets.
--   *Boxplots* summarize the whole distribution with 5 statistics.
--   *Violin Plots* give the richest display, but the density estimate can be hard to interpret.
-
-#### Bonus
-
-It's not mentioned here in the book, but you can also adjust the transparency, `alpha`, of the geom to also help with this issue. This is especially useful when comparing two different continuous variables where the geoms above are not able to be plotted.
-
-```{r}
-#| label: 2.6.2 Example different alphas
-#| layout-nrow: 1
-
-ggplot(mpg, aes(drv, hwy)) + geom_point(alpha = 0.2) # Category vs Continuous
-ggplot(mpg, aes(cty, hwy)) + geom_point(alpha = 0.2) # Continuous vs Continuous
-```
+|                               Jitter Plots                               |                                   Boxplots                                    |                                                      Violin Plots                                                       |
+|:------------------------------------------------------------------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|
+| Add a little random noise to the data which can help avoid overplotting. | Summarize the shape of the distribution with a handful of summary statistics. | Show a compact representation of the "density" of the distribution, highlighting the areas where more points are found. |
+|      Show every point but only work with relatively small datasets.      |              Summarize the whole distribution with 5 statistics.              |                      Give the richest display, but the density estimate can be hard to interpret.                       |
 
 ### Histograms and frequency polygons
 
@@ -441,19 +429,13 @@ Bar charts can be confusing because there are two very different plots that are 
 1.  The first form, like above, assumes your data is **not summarized**, and each observation contributes to one unit to the height of each bar.
 2.  The second form is used for **pre-summarized** data.
 
-For example, you might have three drugs with the their *average* effect:
-
-```{r}
-#| label: 2.6.4 Example drug data
-
-drugs = tibble(drug = c("a", "b", "c"), effect = c(4.2, 9.7, 6.1))
-```
-
-To display this type of data, you have to tell `geom_bar()` to not run the default stat which bins and counts data. In this case, it's better to use `geom_point()` because it takes up less space than bars, and don't require that the axis includes 0.
+For example, you might have three drugs with the their *average* effect. To display this type of data, you have to tell `geom_bar()` to not run the default stat which bins and counts data. In this case, it's better to use `geom_point()` because it takes up less space than bars, and don't require that the axis includes 0.
 
 ```{r}
 #| label: 2.6.4 Example summary bar chart
 #| layout-nrow: 1
+
+drugs = tibble(drug = c("a", "b", "c"), effect = c(4.2, 9.7, 6.1))
 
 ggplot(drugs, aes(drug, effect)) + geom_bar(stat = "identity")
 ggplot(drugs, aes(drug, effect)) + geom_point()
@@ -480,8 +462,6 @@ Line and path plots are typically used for time series data, where the order of 
 | Plots the data from left to right. |                                Plots the points in the order they appear in dataset.                                |
 |        Show time on x-axis.        | Show how two variables simultaneously change over time, with time encoded in the way the data points are connected. |
 
-: Line Plot vs Path Plot
-
 The two plots below show unemployment over time, both with `geom_line()`. The firsts shows unemployment rate while the second shows the median number of weeks unemployed.
 
 ```{r}
@@ -492,7 +472,7 @@ ggplot(economics, aes(date, unemploy / pop)) + geom_line()
 ggplot(economics, aes(date, uempmed)) + geom_line()
 ```
 
-To compare the relationship, we would like to draw both time series on the same plot. We could draw a scatterplot of unemployment rate vs length of time unemployed, but then we lose the dimension of time. The solution is to join points adjacent in time with line segments, forming a *path* plot. We will add some aesthetics to help see the direction of time.
+To compare the relationship, we would like to draw both time series on the same plot. We could draw a scatterplot of unemployment rate vs length of time unemployed, but then we lose the dimension of time. The solution is to join points adjacent in time with line segments, forming a *path* plot.
 
 ```{r}
 #| label: 2.6.5 Example geom_path()
@@ -506,8 +486,6 @@ ggplot(economics, aes(unemploy / pop, uempmed)) +
   geom_path(color = "grey50") +
   geom_point(aes(color = lubridate::year(date)))
 ```
-
-We can see that unemployment rate and length of unemployment are highly correlated, but in recent years the length of unemployment has been increasing relative to the unemployment rate.
 
 ### Exercises (WIP)
 
@@ -545,10 +523,14 @@ We can see that unemployment rate and length of unemployment are highly correlat
 
 [5. You now know (at least) three ways to compare the distributions of subgroups: `geom_violin()`, `geom_freqpoly()`, and the color aesthetic, or `geom_histogram()` and faceting. What are the strengths and weaknesses of each approach? What other approaches could you try?]{.blog-question}
 
+asdf. You could also try adjust with the transparency of the data points, which also can be used with two sets of continuous variables.
+
 ```{r}
 #| label: 2.6 Q5
+#| layout-nrow: 1
 
-
+ggplot(mpg, aes(drv, hwy)) + geom_point(alpha = 0.2) # Category vs Continuous
+ggplot(mpg, aes(cty, hwy)) + geom_point(alpha = 0.2) # Continuous vs Continuous
 ```
 
 [6. Read the documentation for `geom_bar()`. What does the weight aesthetic do?]{.blog-question}
