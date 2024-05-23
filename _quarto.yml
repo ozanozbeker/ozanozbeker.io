@@ -35,6 +35,6 @@ website:
 
 format:
   html:
-    theme: [simplex, custom.scss]
+    theme: [simplex, simplex_ozbeker.scss]
 
 editor: visual
