@@ -1,6 +1,6 @@
 ---
-title: "ggplot2: Elegant Graphics for Data Analysis (3e, WIP)"
-subtitle: "Part 1: Getting Started"
+title: "ggplot2: Elegant Graphics for Data Analysis (3e)"
+subtitle: "Part 1: *Getting Started*"
 description: "Join me as I work through the first part of the book, *Getting Started*."
 date: "2024-05-24"
 image: ../resources/images/ggplot2_book_cover.jpg
@@ -207,7 +207,7 @@ ggplot(mpg, aes(displ, hwy, color = class)) + geom_point()
 
 ```{r}
 #| label: 2.4 Q1
-#| layout-nrow: 2
+#| layout-ncol: 3
 
 ggplot(mpg, aes(displ, hwy, color = cyl)) + geom_point()
 ggplot(mpg, aes(displ, hwy, color = as.character(year))) + geom_point()
@@ -371,7 +371,7 @@ ggplot(mpg, aes(drv, hwy)) + geom_violin()
 Though these are useful techniques, they also have their own drawbacks.
 
 |                               Jitter Plots                               |                                   Boxplots                                    |                                                      Violin Plots                                                       |
-|:------------------------------------------------------------------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|
+|:------------------:|:-------------------:|:-----------------------------:|
 | Add a little random noise to the data which can help avoid overplotting. | Summarize the shape of the distribution with a handful of summary statistics. | Show a compact representation of the "density" of the distribution, highlighting the areas where more points are found. |
 |      Show every point but only work with relatively small datasets.      |              Summarize the whole distribution with 5 statistics.              |                      Give the richest display, but the density estimate can be hard to interpret.                       |
 
@@ -388,15 +388,15 @@ ggplot(mpg, aes(hwy)) + geom_histogram()
 ggplot(mpg, aes(hwy)) + geom_freqpoly()
 ```
 
-It is highly recommended to experiment with the `binwidth` as the default value is 30 and it is unlikely that 30 is the best choice for your dataset.
+It is highly recommended to experiment with the `bins` as the default value is 30 and it is unlikely that 30 is the best choice for your dataset.
 
 ```{r}
 #| label: 2.6.3 Example binwidth
 #| message: false
 #| layout-nrow: 1
 
-ggplot(mpg, aes(hwy)) + geom_freqpoly(binwidth = 2.5)
-ggplot(mpg, aes(hwy)) + geom_freqpoly(binwidth = 1)
+ggplot(mpg, aes(hwy)) + geom_freqpoly(bins = 15)
+ggplot(mpg, aes(hwy)) + geom_freqpoly(bins = 45)
 ```
 
 To compare distributions of subgroups, you can map a categorical variable to either fill (for `geom_histogram()`) or color (for `geom_freqpoly()`).
@@ -487,43 +487,75 @@ ggplot(economics, aes(unemploy / pop, uempmed)) +
   geom_point(aes(color = lubridate::year(date)))
 ```
 
-### Exercises (WIP)
+### Exercises
+
+::: callout-note
+Going through the exercises of this section, they don't all completely line up with content above, so I believe this part is still a WIP. Regardless, I tried to answered the questions to the best of what I think the exercises are going for.
+:::
 
 [1. What’s the problem with the plot created by `ggplot(mpg, aes(cty, hwy)) + geom_point()`? Which of the geoms described above is most effective at remedying the problem?]{.blog-question}
 
+Because the two values are so highly correlated, there might be some overplotting in the plot. We can check for overplotting imonn a scatterplot by adjust the alpha value of the points.
+
 ```{r}
 #| label: 2.6 Q1
+#| layout-nrow: 1
 
-
+ggplot(mpg, aes(cty, hwy)) + geom_point()
+ggplot(mpg, aes(cty, hwy)) + geom_point(alpha = 0.2)
 ```
 
 [2. One challenge with `ggplot(mpg, aes(class, hwy)) + geom_boxplot()` is that the ordering of class is alphabetical, which is not terribly useful. How could you change the factor levels to be more informative? Rather than reordering the factor by hand, you can do it automatically based on the data: `ggplot(mpg, aes(reorder(class, hwy), hwy)) + geom_boxplot()`. What does `reorder()` do? Read the documentation.]{.blog-question}
 
 ```{r}
 #| label: 2.6 Q2
+#| layout-nrow: 1
 
+ggplot(mpg, aes(class, hwy)) + geom_boxplot()
 
+ggplot(mpg, aes(
+  x = factor(class, levels = c(
+    "pickup", "suv", "minivan", "2seater", "subcompact", "compact", "midsize")), 
+  y = hwy)) + 
+  geom_boxplot()
+
+ggplot(mpg, aes(reorder(class, hwy), hwy)) + geom_boxplot()
 ```
+
+`reorder()` treats its first argument as a categorical variable, and reorders its levels based on the values of a second variable, usually numeric. Comparing my manual reordering (based on the median line of the boxplots), `reorder()` takes a different approach that doesn't look apparently clear from the boxplot.
 
 [3. Explore the distribution of the carat variable in the `diamonds` dataset. What `binwidth` reveals the most interesting patterns?]{.blog-question}
 
+You can use either `bin` or `binwidth` to distribute the columns of a histogram. You can test `bin` values arbitrarily until you find a plot that looks good, but using the `binwidth` argument, you can make educated guess as to where to begin and go because the value is directly related to the value/scaling of the x-axis.
+
 ```{r}
 #| label: 2.6 Q3
+#| layout-nrow: 2
+#| message: false
 
-
+ggplot(diamonds, aes(carat)) + geom_histogram(binwidth = 1/10)
+ggplot(diamonds, aes(carat)) + geom_histogram(binwidth = 1/50) 
+ggplot(diamonds, aes(carat)) + geom_histogram(binwidth = 1/100)
+ggplot(diamonds, aes(carat)) + geom_histogram(binwidth = 1/500)
 ```
+
+Using `binwidth` values of `1/50` & `1/100` shows that the caret values heavily sit on half and quarter caret values, skewing right until it breaks again.
 
 [4. Explore the distribution of the price variable in the `diamonds` data. How does the distribution vary by cut?]{.blog-question}
 
 ```{r}
 #| label: 2.6 Q4
+#| layout-nrow: 2
 
-
+ggplot(diamonds, aes(price)) + geom_freqpoly()
+ggplot(diamonds, aes(price)) + geom_freqpoly(aes(color = cut))
 ```
+
+The regular and segmented plots both show a similar distribution. I'm not surprised that higher value cuts sell more, but I am surprised that all the cuts sell the most at the same price range. I would've thought that higher value cuts would seller at higher prices more frequently.
 
 [5. You now know (at least) three ways to compare the distributions of subgroups: `geom_violin()`, `geom_freqpoly()`, and the color aesthetic, or `geom_histogram()` and faceting. What are the strengths and weaknesses of each approach? What other approaches could you try?]{.blog-question}
 
-asdf. You could also try adjust with the transparency of the data points, which also can be used with two sets of continuous variables.
+The strengths and weakness were outlined pretty well above, but you could also try adjust with the transparency of the data points, which also can be used with two sets of continuous variables.
 
 ```{r}
 #| label: 2.6 Q5
@@ -535,19 +567,36 @@ ggplot(mpg, aes(cty, hwy)) + geom_point(alpha = 0.2) # Continuous vs Continuous
 
 [6. Read the documentation for `geom_bar()`. What does the weight aesthetic do?]{.blog-question}
 
+The weight argument in the `geom_bar()` function allows you to adjust the heights of the bars according to the weights of the observations rather than simply counting the number of observations. This can be useful when you have a frequency or probability data set and you want to visualize it accurately.
+
 ```{r}
 #| label: 2.6 Q6
+#| layout-nrow: 1
 
+data = tibble(
+  category = c("A", "A", "B", "B", "B", "C", "C"),
+  weight = c(1, 2, 1, 3, 1, 2, 1)
+)
 
+# Plot without weights
+ggplot(data, aes(category)) + geom_bar()
+
+# Plot with weights
+ggplot(data, aes(category, weight = weight)) + geom_bar()
 ```
 
 [7. Using the techniques already discussed in this chapter, come up with three ways to visualize a 2d categorical distribution. Try them out by visualizing the distribution of `model` and `manufacturer`, `trans` and `class`, and `cyl` and `trans`.]{.blog-question}
 
 ```{r}
 #| label: 2.6 Q7
+ggplot(mpg, aes(manufacturer, model)) + geom_point(aes(size = hwy))
 
+ggplot(mpg, aes(class, fill = trans)) + geom_bar()
 
+ggplot(mpg, aes(cyl)) + geom_bar() + facet_wrap(~trans, nrow = 2)
 ```
+
+Not the most insightful plots in the world, but the restrictions were met :)
 
 ## Modifying the Axes
 
@@ -620,7 +669,6 @@ ggsave("plot.png", p, width = 5 , height = 5)
 
 ```{r}
 #| label: 2.8 Example view plot structure
-#| 
 
 summary(p)
 ```
