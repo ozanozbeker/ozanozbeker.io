@@ -4,6 +4,9 @@ format:
     toc: true
     toc-title: "Sections"
     other-links:
+      - text: "Cover Letter PDF"
+        href: resources/documents/Ozan Ozbeker Cover Letter.pdf
+        icon: file-earmark-text
       - text: "Resume PDF"
         href: resources/documents/Ozan Ozbeker Resume.pdf
         icon: file-earmark-text
@@ -37,7 +40,7 @@ In my previous roles, I led substantial Continuous Improvement initiatives, gene
 
 ## Core Competencies
 
-**Analytics**: R (Tidyverse), SQL (PostgreSQL, DuckDB), Git & Github, Excel
+**Analytics**: R (Tidyverse), SQL (PostgreSQL, DuckDB), Git & GitHub, Excel
 
 **Communication**: Quarto, ggplot2, gt, shiny, HTML & SCSS/CSS
 
