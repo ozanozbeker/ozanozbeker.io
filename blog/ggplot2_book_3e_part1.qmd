@@ -1,7 +1,7 @@
 ---
-title: "ggplot2: Elegant Graphics for Data Analysis (3e)"
-subtitle: "Part 1: *Getting Started*"
-description: "Join me as I work through the first part of the book, *Getting Started*."
+title: "ggplot2: Elegant Graphics for Data Analysis (3e) | Part 1"
+subtitle: "*Getting Started*"
+description: "Join me as I work through the exercises in the textbook."
 date: "2024-05-24"
 image: ../resources/images/ggplot2_book_cover.jpg
 categories: ["R", "{ggplot2}", "Textbook Workthrough"]
@@ -27,7 +27,7 @@ Because this is book about {ggplot2}, I will use package-explicit function when 
 :::
 
 ::: callout-important
-It wasn't until I was mostly done with this post that I realized that this 3rd Edition is still under development. I do plan on finishing this series, but I might wait until the book is complete before moving on from this first part.
+The book was still in development when writing this post, so some exercises might not match depending on when you are reading of this post.
 :::
 
 ## Required Packages
@@ -371,7 +371,7 @@ ggplot(mpg, aes(drv, hwy)) + geom_violin()
 Though these are useful techniques, they also have their own drawbacks.
 
 |                               Jitter Plots                               |                                   Boxplots                                    |                                                      Violin Plots                                                       |
-|:------------------:|:-------------------:|:-----------------------------:|
+|:------------------------------------------------------------------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|
 | Add a little random noise to the data which can help avoid overplotting. | Summarize the shape of the distribution with a handful of summary statistics. | Show a compact representation of the "density" of the distribution, highlighting the areas where more points are found. |
 |      Show every point but only work with relatively small datasets.      |              Summarize the whole distribution with 5 statistics.              |                      Give the richest display, but the density estimate can be hard to interpret.                       |
 
@@ -458,7 +458,7 @@ ggplot(drugs, aes(drug, effect)) + geom_col()
 Line and path plots are typically used for time series data, where the order of the data matters to the context of the visual. Line plots join the data points from left to right, while path plots join the points in the order that they appear in the dataset.
 
 |             Line Plot              |                                                      Path Plot                                                      |
-|:---------------------------------:|:-----------------------------------:|
+|:----------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
 | Plots the data from left to right. |                                Plots the points in the order they appear in dataset.                                |
 |        Show time on x-axis.        | Show how two variables simultaneously change over time, with time encoded in the way the data points are connected. |
 

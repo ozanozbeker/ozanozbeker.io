@@ -1,0 +1,28 @@
+---
+title: "ggplot2: Elegant Graphics for Data Analysis (3e) | Part 2"
+subtitle: "*Layers*"
+description: "Join me as I work through the exercises in the textbook."
+date: "2024-05-27"
+image: ../resources/images/ggplot2_book_cover.jpg
+categories: ["R", "{ggplot2}", "Textbook Workthrough"]
+number-sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Introduction
+
+In this series of posts, I will be completing the exercises in [*ggplot2: Elegant Graphics for Data Analysis (3e)*](https://ggplot2-book.org/), the ultimate guide to [{ggplot2}](https://ggplot2.tidyverse.org/). I wanted to practice this textbook to better my knowledge of {ggplot2}, but also get a feel for the design behind the package, [*The Grammar of Graphics*](https://link.springer.com/book/10.1007/0-387-28695-0).
+
+If you would like to see the source code behind this post, you can click on the **Code** button at the top of right of the page, sandwiched between the title of the post and the side panel.
+
+The book is split into five parts: *Getting Started*, *Layers*, *Scales*, *The Grammar*, & *Advanced Topics*. In this post, I will be working through the second part, *Layers*.
+
+::: callout-tip
+Because this is book about {ggplot2}, I will use package-explicit function when using a function for the first time that is not in base R or provided by {ggplot2}. Most of these packages are loaded with the {[tidyverse](https://tidyverse.tidyverse.org/)} meta-package.
+:::
+
+::: callout-important
+The book was still in development when writing this post, so some exercises might not match depending on when you are reading of this post.
+:::
+
