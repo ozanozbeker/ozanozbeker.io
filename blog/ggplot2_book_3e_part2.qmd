@@ -26,3 +26,4 @@ Because this is book about {ggplot2}, I will use package-explicit function when 
 The book was still in development when writing this post, so some exercises might not match depending on when you are reading of this post.
 :::
 
+test
