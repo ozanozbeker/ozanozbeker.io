@@ -1,0 +1,153 @@
+// Edits to Darkly by https://bootswatch.com
+// Color theme based on Nord by https://www.nordtheme.com
+
+/*-- scss:defaults --*/
+// Options
+$enable-shadows: true;
+$enable-gradients: false;
+$enable-dark-mode: true;
+
+// Colors, https://www.nordtheme.com/docs/colors-and-palettes
+//// Polar Night
+$nord0: #2E3440;
+$nord1: #3B4252;
+$nord2: #434C5E;
+$nord3: #4C566A;
+//// Snow Storm
+$nord4: #D8DEE9;
+$nord5: #E5E9F0;
+$nord6: #ECEFF4;
+//// Frost
+$nord7: #8FBCBB;
+$nord8: #88C0D0;
+$nord9: #81A1C1;
+$nord10: #5E81AC;
+//// Aurora
+$nord11: #BF616A;
+$nord12: #D08770;
+$nord13: #EBCB8B;
+$nord14: #A3BE8C;
+$nord15: #B48EAD;
+
+//// Bootstrap
+$white: #ffffff;
+$gray-100: $nord6;
+$gray-200: $nord6;
+$gray-300: $nord5;
+$gray-400: $nord5;
+$gray-500: $nord4;
+$gray-600: $nord3;
+$gray-700: $nord2;
+$gray-800: $nord1;
+$gray-900: $nord0;
+$black: #000000;
+
+//// Custom Colors
+$ozan1: #B2976B;
+$code-bg-color: #212529; // Hardcoded in blog/_metadata.yml
+
+//// Color Options
+$primary: $ozan1;
+$secondary: $nord10;
+$success: $nord14;
+$info: $nord8;
+$warning: $nord12;
+$danger: $nord11;
+$light: $nord6;
+$dark: $nord0;
+
+$min-contrast-ratio: 2.00;
+
+// Body
+$body-bg: $dark;
+$body-color: $light;
+
+// Links
+$link-color: $primary;
+
+// Typography
+$font-family-serif: "Lora";
+$font-family-sans-serif: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: Consolas, SFMono-Regular, Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
+
+/*-- scss:rules --*/
+// Import custom fonts from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+// Headings
+h1 {
+    font-family: $font-family-serif;
+
+    &.title {
+        color: $primary;
+        font-size: 3.1rem;
+    }
+}
+
+// Code
+code {
+    color: $nord4;
+    background: $code-bg-color;
+
+    span.va {
+        color: $nord4;
+    }
+}
+
+//// Inline Code
+p code:not(.sourceCode),
+li code:not(.sourceCode),
+td code:not(.sourceCode) {
+    background-color: $code-bg-color;
+    border-radius: 5px;
+    padding: .25em;
+}
+
+//// Code Output (text)
+.cell-output {
+    background-color: $nord6;
+    border-radius: 5px;
+
+    pre code {
+        margin: 5.95px;
+    }
+}
+
+// Navbar
+.navbar {
+    border: $code-bg-color;
+    box-shadow: none;
+    background-color: rgba($code-bg-color, 0.7);
+    backdrop-filter: blur(3px);
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: $primary;
+}
+
+// Blog
+//// Blog Categories
+div.quarto-post .listing-categories .listing-category,
+.quarto-title .quarto-categories .quarto-category {
+    text-transform: none;
+    font-size: 0.8em;
+    color: $nord4;
+}
+
+//// Subtitle
+div.quarto-post .body .listing-subtitle {
+    font-size: 0.9em;
+}
+
+p.subtitle.lead {
+    font-family: $font-family-serif;
+}
+
+//// Text Formatting
+.blog-question {
+    font-family: $font-family-serif;
+    font-weight: 500;
+    color: $body-color;
+    margin-top: 1rem;
+}

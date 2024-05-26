@@ -1,0 +1,147 @@
+// Edits to Simplex by https://bootswatch.com
+
+/*-- scss:defaults --*/
+// Options
+$enable-shadows:   true;
+$enable-gradients: false;
+$enable-dark-mode: false;
+
+// Colors
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #ddd !default;
+$gray-300: #ccc !default;
+$gray-400: #bbb !default;
+$gray-500: #adb5bd !default;
+$gray-600: #777 !default;
+$gray-700: #444 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// Colors picked using https://coolors.co
+$blue:    #1C2534; // Gunmetal
+$indigo:  #B9ABED; // Wisteria
+$purple:  #5a3f78; // Eminence
+$pink:    #b33f62; // Raspberry Rose
+$red:     #823038; // Wine
+$orange:  #D58020; // Bronze
+$yellow:  #B2976B; // Lion
+$green:   #34623F; // Hunter Green
+$teal:    #429E9B; // Verdigris
+$cyan:    #063537; // Midnight Green
+
+$primary:       $yellow;
+$secondary:     $blue;
+$success:       $green;
+$info:          $cyan;
+$warning:       $orange;
+$danger:        $purple;
+$light:         $white;
+$dark:          $gray-800;
+
+$min-contrast-ratio:   3;
+
+// Prefix for :root CSS variables
+$variable-prefix:             bs-; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix:                      $variable-prefix;
+
+// Body
+$body-bg:                   #FFF;
+
+// Typography
+$font-family-serif:           "Lora";
+$font-family-sans-serif:      "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       Consolas, SFMono-Regular, Menlo, Monaco, "Liberation Mono", "Courier New", monospace !default;
+
+/*-- scss:rules --*/
+// Import custom fonts from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+// Links
+a {
+  text-decoration: underline;
+  text-decoration-color: rgba($primary, 0.25);
+}
+
+// Headings
+h1, h2 {
+  font-family: $font-family-serif;
+}
+
+h1.title {color: $primary;}
+
+// Code
+code {
+  color: #d8dee9;
+  background: $gray-900;
+
+  span.va {color: #d8dee9;}
+}
+
+//// Inline Code
+p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
+  background-color: $gray-900;
+  border-radius: 5px;
+  padding: .25em;
+}
+
+//// Code Output (text)
+.cell-output {
+  background-color: rgba($gray-500, 0.2);
+  border-radius: 5px;
+
+  pre code {
+    margin: 5.95px;
+  }
+}
+
+// Navbar
+.navbar {
+  border: $blue;
+  box-shadow: none;
+  background-color: rgba($blue, 0.9);
+  backdrop-filter: blur(1px);
+  color: $black;
+}
+
+span.navbar-title {
+  color: $primary;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+span.menu-text {
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+// Blog
+//// Blog Catagories
+div.quarto-post .listing-categories .listing-category, .quarto-title .quarto-categories .quarto-category {
+  text-transform: none;
+  font-size: 0.8em;
+}
+
+//// Subtitle
+div.quarto-post .body .listing-subtitle {
+  font-size: 0.9em;
+}
+
+p.subtitle.lead {
+  font-family: $font-family-serif;
+}
+
+//// Text Formatting
+.blog-question {
+  font-family: $font-family-serif;
+  font-weight: 500;
+  color: $black;
+  margin-top: 1rem;
+}
+
+.blog-answer {
+  font-family: $font-family-serif;
+  color: $gray-800;
+}
