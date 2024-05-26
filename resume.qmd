@@ -37,7 +37,9 @@ In my previous roles, I led substantial Continuous Improvement initiatives, gene
 
 ## Core Competencies
 
-R Programming \| Data Visualization \| Process Improvement \| Client Engagement \| Project Management \| Analytical Problem Solving \| Database Management \| SQL
+**Analytics**: R (Tidyverse), SQL (PostgreSQL, DuckDB), Git & Github, Excel
+
+**Communication**: Quarto, ggplot2, gt, shiny, HTML & SCSS/CSS
 
 # Experience {#sec-experience .title}
 
