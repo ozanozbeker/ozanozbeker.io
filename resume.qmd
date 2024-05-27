@@ -58,7 +58,7 @@ In my previous roles, I led substantial Continuous Improvement initiatives, gene
 
 [**Xylem, Inc**](https://www.xylem.com/en-us/) **- Chicago, IL** \| July 2022 - December 2022
 
--   **Excess & Obsolete Inventory Identification & Disposition:** Using the DMAIC/DMADV methodology, created a process to reduce the site’s E&O financial reserve and material in our warehouses by identifying items that are obsolete and creating rework, re-sale, & disposal opportunities. The control plan included the creation of a cross-departmental E&O taskforce, and the new process has estimated hard savings of \$1M - \$4M in the next 3-5 years.
+-   **Excess & Obsolete Inventory Identification & Disposition:** Using the DMAIC/DMADV methodology, created a process to reduce the site’s E&O financial reserve and material in our warehouses by identifying items that are obsolete and creating rework, re-sale, & disposal opportunities. The control plan included the creation of a cross-departmental E&O task force, and the new process has estimated hard savings of \$1M - \$4M in the next 3-5 years.
 
 -   **Ad-Hoc Floor Workshops:** Led and assisted many projects to drive Continuous Improvement initiatives at the site, including but not limited to: 5S & Safety audits, lean methodology seminars, inventory audits, & cycle counts.
 
@@ -66,7 +66,7 @@ In my previous roles, I led substantial Continuous Improvement initiatives, gene
 
 [**Xylem, Inc**](https://www.xylem.com/en-us/) **- Uniontown, PA** \| July 2021 - July 2022
 
--   **Excess & Obsolete Reserve:** Designed a recommendation engine for the quarterly report with an emphasis on reducing ETL time and standardizing the process across all Sensus NA Sites to meet new financial policies. The new engine reduced process time by 72 hours (-90%) per year and led to new reporting and forecasting capabilities.
+-   **Excess & Obsolete Reserve:** Designed a recommendation engine for the quarterly report with an emphasis on reducing ETL time and standardizing the process across all Sensus North America sites to meet new financial policies. The new engine reduced process time by 72 hours (-90%) per year and led to new reporting and forecasting capabilities.
 
 -   **Sensus North America Physical Inventory:** Created documentation for the annual NA physical inventory event, including process flowcharts, work instructions, and manager checklists for tasks leading up to the event. The documentation package standardized the process across all NA sites and removed non-value-added activities during the event.
 

@@ -67,7 +67,7 @@ Important
   <media:content url="https://ozanozbeker.github.io/resources/images/ggplot2_book_cover.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>ggplot2: Elegant Graphics for Data Analysis (3e)</title>
+  <title>ggplot2: Elegant Graphics for Data Analysis (3e) | Part 1</title>
   <dc:creator>Ozan Ozbeker</dc:creator>
   <link>https://ozanozbeker.github.io/blog/ggplot2_book_3e_part1.html</link>
   <description><![CDATA[ <section id="introduction" class="level1" data-number="1"><h1 data-number="1">
@@ -102,7 +102,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It wasn’t until I was mostly done with this post that I realized that this 3rd Edition is still under development. I do plan on finishing this series, but I might wait until the book is complete before moving on from this first part.</p>
+<p>The book was still in development when writing this post, so some exercises might not match depending on when you are reading of this post.</p>
 </div>
 </div>
 <section id="required-packages" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="required-packages">
@@ -1891,8 +1891,8 @@ font-style: inherit;">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
 <col style="width: 27%">
-<col style="width: 29%">
-<col style="width: 43%">
+<col style="width: 28%">
+<col style="width: 44%">
 </colgroup>
 <thead><tr class="header">
 <th style="text-align: center;">Jitter Plots</th>
@@ -1997,11 +1997,11 @@ font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_freqpoly</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">(</span>binwidth <span class="op" style="color: #5E5E5E;
+font-style: inherit;">(</span>bins <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">30</span><span class="op" style="color: #5E5E5E;
+font-style: inherit;">15</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span>
 <span><span class="fu" style="color: #4758AB;
@@ -2026,7 +2026,7 @@ font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_freqpoly</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">(</span>binwidth <span class="op" style="color: #5E5E5E;
+font-style: inherit;">(</span>bins <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
 background-color: null;
@@ -2365,8 +2365,8 @@ font-style: inherit;">)</span></span></code></pre></div>
 <p>Line and path plots are typically used for time series data, where the order of the data matters to the context of the visual. Line plots join the data points from left to right, while path plots join the points in the order that they appear in the dataset.</p>
 <table class="table">
 <colgroup>
-<col style="width: 48%">
-<col style="width: 51%">
+<col style="width: 23%">
+<col style="width: 76%">
 </colgroup>
 <thead><tr class="header">
 <th style="text-align: center;">Line Plot</th>
@@ -2972,11 +2972,8 @@ font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/geom_hist
 background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">)</span></span></code></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="sourceCode" id="cb46" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+font-style: inherit;">)</span></span>
+<span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3011,17 +3008,12 @@ background-color: null;
 font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-nrow="1">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="https://ozanozbeker.github.io/blog/ggplot2_book_3e_part1_files/figure-html/2.6 Q4-1.png" class="img-fluid" width="672"></p>
 </div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="https://ozanozbeker.github.io/blog/ggplot2_book_3e_part1_files/figure-html/2.6 Q4-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -3029,7 +3021,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 <p>The regular and segmented plots both show a similar distribution. I’m not surprised that higher value cuts sell more, but I am surprised that all the cuts sell the most at the same price range. I would’ve thought that higher value cuts would seller at higher prices more frequently.</p>
 <p><span class="blog-question">5. You now know (at least) three ways to compare the distributions of subgroups: <code><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_freqpoly()</a></code>, and the color aesthetic, or <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code> and faceting. What are the strengths and weaknesses of each approach? What other approaches could you try?</span></p>
 <p>The strengths and weakness were outlined pretty well above, but you could also try adjust with the transparency of the data points, which also can be used with two sets of continuous variables.</p>
-<div class="sourceCode" id="cb48" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb45" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3107,7 +3099,7 @@ font-style: inherit;"># Continuous vs Continuous</span></span></code></pre></div
 </div>
 <p><span class="blog-question">6. Read the documentation for <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code>. What does the weight aesthetic do?</span></p>
 <p>The weight argument in the <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> function allows you to adjust the heights of the bars according to the weights of the observations rather than simply counting the number of observations. This can be useful when you have a frequency or probability data set and you want to visualize it accurately.</p>
-<div class="sourceCode" id="cb49" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
+<div class="sourceCode" id="cb46" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">data</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3226,21 +3218,19 @@ background-color: null;
 font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">)</span></span></code></pre></div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-nrow="1">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="https://ozanozbeker.github.io/blog/ggplot2_book_3e_part1_files/figure-html/2.6 Q6-1.png" class="img-fluid" width="672"></p>
 </div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="https://ozanozbeker.github.io/blog/ggplot2_book_3e_part1_files/figure-html/2.6 Q6-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 <p><span class="blog-question">7. Using the techniques already discussed in this chapter, come up with three ways to visualize a 2d categorical distribution. Try them out by visualizing the distribution of <code>model</code> and <code>manufacturer</code>, <code>trans</code> and <code>class</code>, and <code>cyl</code> and <code>trans</code>.</span></p>
 <div class="cell">
-<div class="sourceCode" id="cb50" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb47" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3283,7 +3273,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb51" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb48" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3318,7 +3308,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb52" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb49" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3374,7 +3364,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 <li>
 <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab()</a></code> modify the x-axis and y-axis labels:</li>
 </ul>
-<div class="sourceCode" id="cb53" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb50" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3540,7 +3530,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 <li>
 <code><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim()</a></code> modify the limits of the axes:</li>
 </ul>
-<div class="sourceCode" id="cb54" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb51" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3706,7 +3696,7 @@ Warning
 <span class="header-section-number">2.8</span> Output</h2>
 <p>Plots are usually generated to view immediately, but they can be saved to a variable:</p>
 <div class="cell">
-<div class="sourceCode" id="cb55" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
+<div class="sourceCode" id="cb52" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">p</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3753,7 +3743,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 <li>Render it on screen with <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> (this happens automatically when running interactively, but needs to be called explicitly in a loop or function):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb56" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb53" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3773,7 +3763,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 <li>Save it to disc with <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb57" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb54" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3797,7 +3787,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 <li>Briefly describe its structure with <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb58" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb55" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op" style="color: #5E5E5E;
 background-color: null;
