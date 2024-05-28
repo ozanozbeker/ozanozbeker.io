@@ -1,5 +1,6 @@
 ---
 title: "404"
+page-layout: article
 ---
 
 # Oops! Page Not Found

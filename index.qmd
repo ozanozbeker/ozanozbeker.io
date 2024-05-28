@@ -1,6 +1,7 @@
 ---
 title: "Ozan Ozbeker"
 image: resources/images/professional_picture.jpg
+page-layout: full
 about:
   template: trestles
   image-shape: rounded

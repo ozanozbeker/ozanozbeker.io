@@ -19,7 +19,7 @@ format:
       - text: "Email"
         href: mailto:ozanozbeker99@outlook.com
         icon: envelope
-page-layout: article
+page-layout: full
 ---
 
 # Summary {#sec-summary .title}
