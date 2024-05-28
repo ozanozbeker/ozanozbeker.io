@@ -3,6 +3,7 @@ title: "Ozan Ozbeker"
 image: resources/images/professional_picture.jpg
 about:
   template: trestles
+  image-shape: rounded
   links: 
     - icon: github
       text: "GitHub"

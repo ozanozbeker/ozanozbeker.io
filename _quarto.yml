@@ -32,7 +32,7 @@ website:
   back-to-top-navigation: true
   page-footer:
     left: "Copyright 2024, Ozan Ozbeker"
-    right: "This website was made by me and powered by Quarto!"
+    right: "This website was made by me and powered by [Quarto](https://www.quarto.com)!"
   open-graph: true
 
 format:
