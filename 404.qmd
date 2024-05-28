@@ -1,4 +1,8 @@
-# Oops! Page Not Found (404)
+---
+title: "404"
+---
+
+# Oops! Page Not Found
 
 It looks like you've stumbled upon a page that doesn't exist. How did you get here? Was it:
 
