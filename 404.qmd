@@ -1,0 +1,17 @@
+# Oops! Page Not Found (404)
+
+It looks like you've stumbled upon a page that doesn't exist. How did you get here? Was it:
+
+-   A typo in the URL?
+-   A broken link?
+-   A glitch in the matrix?
+
+Don't worry, it happens to the best of us. Here's what you can do next:
+
+-   [Go Back Home](https://ozanozbeker.io)
+-   [Check Out My Resume](https://ozanozbeker.io/resume)
+-   [Read My Blog](https://ozanozbeker.io/blog)
+
+------------------------------------------------------------------------
+
+*P.S. If you keep ending up here, it might be a sign that the internet is broken. Try turning it off and on again.*
