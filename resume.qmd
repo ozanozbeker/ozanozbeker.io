@@ -41,38 +41,33 @@ I am highly proficient in R within a professional setting, with a strong emphasi
 
 ### Key Areas of Expertise
 
-1. **Import (& Data Management):**
-   - **Data Sources:** Extensive experience importing from databases, spreadsheets, web scraping, and APIs.
-   - **Database Connections:** Accessing client data through SQL Server, PostgreSQL, and SAP HANA.
-   - **Web Scraping and Automation:** Creating and automating scrapes and API calls for data collection from services like Amazon and Walmart. Using Selenium to automate browsers and bypass bot detection.
-   - **Recent Tools:** Working with DuckDB for local data analysis and storage, though it is less frequently needed due to ample memory on work servers.
-   - **Data Management:** Managing PostgreSQL databases for clients, including data modeling and management.
-   - **Key Tools:** {httr2}, {rvest}, {RSelenium}, Selenium, Oxylabs, Helium10, {DuckDB}, {Rpostgres}, {DBI}, {odbc}
-
-2. **Tidy & Transform:**
-   - **Data Wrangling:** Extensive experience in focusing on grouping, filtering, and summarizing data.
-   - **Data Tidying:** Transforming data by pivoting and converting data types (e.g., strings to dates, floats).
-   - **Regex Expertise:** Skilled in using regular expressions for data cleaning and manipulation.
-   - **Key Tools:** {tidyverse}, {janitor}
-
-3. **Visualize:**
-   - **Exploratory Data Analysis:** Frequently use {ggplot2} and its extensions for data visualization.
-   - **Client Preferences:** While initial exploration and cleaning are done in R, clients prefer Tableau or other BI tools for final dashboards.
-   - **Key Tools:** {ggplot2}, {gganimate}, {ggthemes}, {ggraph}.
-
-4. **Model:**
-   - **Forecasting and Classification:** Professional experience in forecasting with linear regression models and classification with support vector machines and recommendation engines for pricing.
-   - **Key Tools:** Base R Stats, {tidymodels}.
-
-5. **Communicate:**
-   - **Automated Reports:** Building automated reports for clients to support financial decision-making, including dashboards and executive reports.
-   - **Customization:** Using HTML and CSS to customize and enhance the visual appeal of reports.
-   - **Key Tools:** Quarto, {gt}, {ggplot2}, {htmlwidgets}, {htmltools}.
-
-6. **Programming:**
-   - **Functional Programming:** Using the {purrr} package for mapping functions and other utilities within the Tidyverse framework.
-   - **Version Control:** Incorporating Git and GitHub into workflows and managing project structure.
-   - **Key Tools:** Task Scheduler, Git for Windows, GitHub, {fs}.
+1.  **Import (& Data Management):**
+    -   **Data Sources:** Extensive experience importing from databases, spreadsheets, web scraping, and APIs.
+    -   **Database Connections:** Accessing client data through SQL Server, PostgreSQL, and SAP HANA.
+    -   **Web Scraping and Automation:** Creating and automating scrapes and API calls for data collection from services like Amazon and Walmart. Using Selenium to automate browsers and bypass bot detection.
+    -   **Recent Tools:** Working with DuckDB for local data analysis and storage, though it is less frequently needed due to ample memory on work servers.
+    -   **Data Management:** Managing PostgreSQL databases for clients, including data modeling and management.
+    -   **Key Tools:** [{httr2}](https://httr2.r-lib.org/), [{rvest}](https://rvest.tidyverse.org/index.html), [{RSelenium}](https://docs.ropensci.org/RSelenium/index.html), [{DBI}](https://dbi.r-dbi.org/), [DuckDB](https://duckdb.org/), [Oxylabs](https://oxylabs.io/), [Helium 10](https://www.helium10.com/)
+2.  **Tidy & Transform:**
+    -   **Data Wrangling:** Extensive experience in focusing on grouping, filtering, and summarizing data.
+    -   **Data Tidying:** Transforming data by pivoting and converting data types (e.g., strings to dates, floats).
+    -   **Regex Expertise:** Skilled in using regular expressions for data cleaning and manipulation.
+    -   **Key Tools:** [{tidyverse}](https://www.tidyverse.org/), [{janitor}](https://sfirke.github.io/janitor/index.html)
+3.  **Visualize:**
+    -   **Exploratory Data Analysis:** Frequently use {ggplot2} and its extensions for data visualization.
+    -   **Client Preferences:** While initial exploration and cleaning are done in R, clients prefer Tableau or other BI tools for final dashboards.
+    -   **Key Tools:** [{ggplot2}](https://ggplot2.tidyverse.org/), [{gganimate}](https://gganimate.com/), [{ggthemes}](http://jrnold.github.io/ggthemes/)
+4.  **Model:**
+    -   **Forecasting and Classification:** Professional experience in forecasting with linear regression models and classification with support vector machines and recommendation engines for pricing.
+    -   **Key Tools:** [Base R Stats](https://rdrr.io/r/stats/stats-package.html), [{tidymodels}](https://www.tidymodels.org/)
+5.  **Communicate:**
+    -   **Automated Reports:** Building automated reports for clients to support financial decision-making, including dashboards and executive reports.
+    -   **Customization:** Using HTML and CSS to customize and enhance the visual appeal of reports. This website was built with Quarto and edited with custom CSS.
+    -   **Key Tools:** [Quarto](https://quarto.org/), [{gt}](https://gt.rstudio.com/), [{htmlwidgets}](https://www.htmlwidgets.org/), [{htmltools}](https://rstudio.github.io/htmltools/index.html)
+6.  **Programming:**
+    -   **Functional Programming:** Using the {purrr} package for mapping functions and other utilities within the Tidyverse framework.
+    -   **Version Control:** Incorporating Git and GitHub into workflows and managing project structure.
+    -   **Key Tools:** Task Scheduler, Git & GitHub, [{fs}](https://fs.r-lib.org/)
 
 ## Tableau, Tableau Prep, & Power BI
 
@@ -80,51 +75,48 @@ I am highly proficient in R within a professional setting, with a strong emphasi
 
 I have developed a strong competency in Tableau through both formal education and practical application in professional settings. Here is a detailed summary of my Tableau experience:
 
-- **Learning and Initial Skills Development:**
-  - Gained foundational knowledge of Tableau through DataCamp's introductory course, which covered the most common functions and features.
-  - Acquired skills to create various charts and dashboards tailored to managerial needs.
-
-- **Practical Applications:**
-  - **Dashboard Creation:**
-    - Created dashboards linked to the company's ERP system, primarily displaying aggregated data for daily, weekly, and monthly performance metrics.
-    - Developed dashboards for clients that connect to their specific data sources, published on their Tableau Servers. These dashboards cover:
-      - Parts distribution across distributors.
-      - Performance metrics for Amazon marketplace.
-      - Internal supply chain performance monitoring.
-    - Utilized a mix of database connections, custom ETL processes, and multifaceted dashboards combining tables and charts for comprehensive stakeholder reporting.
-
-  - **Tableau Prep for ETL:**
-    - Used Tableau Prep for ETL tasks to prepare data for analysis and visualization in Tableau. Despite finding Tableau Prep to be slow, this experience motivated me to learn SQL for more efficient data processing.
-
-- **Advanced Tableau Functions:**
-  - Maintained multiple dashboards with regular updates and enhancements based on client feedback and evolving data needs.
-  - Ensured data integrity and accuracy through rigorous testing and validation of ETL processes and dashboard outputs.
+-   **Learning and Initial Skills Development:**
+    -   Gained foundational knowledge of Tableau through DataCamp's introductory course, which covered the most common functions and features.
+    -   Acquired skills to create various charts and dashboards tailored to managerial needs.
+-   **Practical Applications:**
+    -   **Dashboard Creation:**
+        -   Created dashboards linked to the company's ERP system, primarily displaying aggregated data for daily, weekly, and monthly performance metrics.
+        -   Developed dashboards for clients that connect to their specific data sources, published on their Tableau Servers. These dashboards cover:
+            -   Parts distribution across distributors.
+            -   Performance metrics for Amazon marketplace.
+            -   Internal supply chain performance monitoring.
+        -   Utilized a mix of database connections, custom ETL processes, and multifaceted dashboards combining tables and charts for comprehensive stakeholder reporting.
+    -   **Tableau Prep for ETL:**
+        -   Used Tableau Prep for ETL tasks to prepare data for analysis and visualization in Tableau. Despite finding Tableau Prep to be slow, this experience motivated me to learn SQL for more efficient data processing.
+-   **Advanced Tableau Functions:**
+    -   Maintained multiple dashboards with regular updates and enhancements based on client feedback and evolving data needs.
+    -   Ensured data integrity and accuracy through rigorous testing and validation of ETL processes and dashboard outputs.
 
 ### Power BI Experience
 
 My experience with Power BI stems from a company-wide transition from Tableau to Power BI, where I acquired the basics and applied them in a professional context. Here is a detailed summary of my Power BI experience:
 
-- **Learning and Initial Skills Development:**
-  - Gained foundational knowledge of Power BI during a transition from Tableau to Power BI as part of a Microsoft 365 (M365) integration at my previous company.
-  - Learned the basics of creating visualizations, reports, and dashboards within Power BI.
-
-- **Practical Applications:**
-  - Applied Power BI skills to create and maintain reports and dashboards, similar to those previously developed in Tableau.
-  - Utilized Power BI's features to connect to various data sources, perform data transformations, and build interactive visualizations.
+-   **Learning and Initial Skills Development:**
+    -   Gained foundational knowledge of Power BI during a transition from Tableau to Power BI as part of a Microsoft 365 (M365) integration at my previous company.
+    -   Learned the basics of creating visualizations, reports, and dashboards within Power BI.
+-   **Practical Applications:**
+    -   Applied Power BI skills to create and maintain reports and dashboards, similar to those previously developed in Tableau.
+    -   Utilized Power BI's features to connect to various data sources, perform data transformations, and build interactive visualizations.
 
 ## SQL & Python
 
 ### SQL Professional Experience
+
 I have significant professional experience in creating complex SQL queries to generate custom reports for internal customers. This involves:
 
-- **Complex Queries:**
-  - **Common Table Expressions (CTEs):** Utilizing CTEs for better readability and modular query design.
-  - **Subqueries:** Embedding subqueries within main queries for dynamic data retrieval.
-  - **Nested Case-When Statements:** Implementing conditional logic within queries to handle complex data manipulation.
-  - **Aggregate Calculations:** Performing aggregations such as SUM, AVG, COUNT, etc., to summarize data.
-  - **Filtering:** Applying WHERE clauses and HAVING conditions to filter data as per requirements.
-  - **Date/Time Functions:** Manipulating and formatting date and time data.
-  - **String Functions:** Using functions like CONCAT, SUBSTRING, and LENGTH for string manipulation.
+-   **Complex Queries:**
+    -   **Common Table Expressions (CTEs):** Utilizing CTEs for better readability and modular query design.
+    -   **Subqueries:** Embedding subqueries within main queries for dynamic data retrieval.
+    -   **Nested Case-When Statements:** Implementing conditional logic within queries to handle complex data manipulation.
+    -   **Aggregate Calculations:** Performing aggregations such as SUM, AVG, COUNT, etc., to summarize data.
+    -   **Filtering:** Applying WHERE clauses and HAVING conditions to filter data as per requirements.
+    -   **Date/Time Functions:** Manipulating and formatting date and time data.
+    -   **String Functions:** Using functions like CONCAT, SUBSTRING, and LENGTH for string manipulation.
 
 The most challenging aspects of reporting often involve not the SQL code itself but the process of identifying and validating the required data sources. Ensuring data accuracy and consistency is paramount in delivering reliable reports.
 
@@ -132,38 +124,37 @@ The most challenging aspects of reporting often involve not the SQL code itself 
 
 In my continuous pursuit of knowledge and skill enhancement, I have learned and practiced several advanced SQL techniques, including:
 
-- **Window Functions:** Applying functions like ROW_NUMBER, RANK, and LEAD/LAG to perform calculations across specific partitions of data.
-- **Transactions and Error Handling:** Implementing transaction control (BEGIN, COMMIT, ROLLBACK) and error handling mechanisms to ensure data integrity.
-- **Arrays:** Using arrays for more complex data structures and operations.
-- **Pivoting Tables:** Creating pivot tables using the CROSSTAB function to transform data from rows to columns.
-- **Creating Totals and Grand Totals:**
-  - **ROLLUP:** Generating subtotals and grand totals in query results.
-  - **CUBE:** Extending ROLLUP to include cross-tabulated totals.
+-   **Window Functions:** Applying functions like ROW_NUMBER, RANK, and LEAD/LAG to perform calculations across specific partitions of data.
+-   **Transactions and Error Handling:** Implementing transaction control (BEGIN, COMMIT, ROLLBACK) and error handling mechanisms to ensure data integrity.
+-   **Arrays:** Using arrays for more complex data structures and operations.
+-   **Pivoting Tables:** Creating pivot tables using the CROSSTAB function to transform data from rows to columns.
+-   **Creating Totals and Grand Totals:**
+    -   **ROLLUP:** Generating subtotals and grand totals in query results.
+    -   **CUBE:** Extending ROLLUP to include cross-tabulated totals.
 
 #### SQL Varieties and Environments
 
-- **PostgreSQL:**
-  - Most of my SQL experience is in PostgreSQL, where I have developed and executed a wide range of queries and scripts.
-  
-- **Other SQL Environments:**
-  - **MS Access:** Occasionally used the SQL editor in MS Access for database management tasks.
-  - **SQL Server:** Completed a formal class in school focused on SQL Server, gaining foundational knowledge and skills in this environment.
+-   **PostgreSQL:**
+    -   Most of my SQL experience is in PostgreSQL, where I have developed and executed a wide range of queries and scripts.
+-   **Other SQL Environments:**
+    -   **MS Access:** Occasionally used the SQL editor in MS Access for database management tasks.
+    -   **SQL Server:** Completed a formal class in school focused on SQL Server, gaining foundational knowledge and skills in this environment.
 
 ### Python Teaching Experience
 
-- **Undergraduate Teaching Assistant:**
-  - While I haven't used Python in a professional setting, my proficiency in Python was recognized when I served as an undergraduate teaching assistant. In this role, I:
-    - Assisted students in understanding and applying Python for data analysis and visualization.
-    - Helped design and grade assignments, projects, and exams.
-    - Conducted review sessions and provided one-on-one tutoring to students.
-  - Although I haven't used Python extensively in a professional setting recently, my foundational skills remain strong. I have a solid understanding of the core libraries and techniques needed for data manipulation, analysis, and visualization.
+-   **Undergraduate Teaching Assistant:**
+    -   While I haven't used Python in a professional setting, my proficiency in Python was recognized when I served as an undergraduate teaching assistant. In this role, I:
+        -   Assisted students in understanding and applying Python for data analysis and visualization.
+        -   Helped design and grade assignments, projects, and exams.
+        -   Conducted review sessions and provided one-on-one tutoring to students.
+    -   Although I haven't used Python extensively in a professional setting recently, my foundational skills remain strong. I have a solid understanding of the core libraries and techniques needed for data manipulation, analysis, and visualization.
 
 #### Key Python Skills
 
-- **Pandas:** Data manipulation, cleaning, aggregation, and merging.
-- **NumPy:** Numerical computations, array manipulation, and mathematical functions.
-- **Matplotlib:** Creating static visualizations, customizing plots, and adjusting aesthetics.
-- **Seaborn:** Advanced statistical visualizations, integrating with Matplotlib, and enhancing visual appeal.
+-   **Pandas:** Data manipulation, cleaning, aggregation, and merging.
+-   **NumPy:** Numerical computations, array manipulation, and mathematical functions.
+-   **Matplotlib:** Creating static visualizations, customizing plots, and adjusting aesthetics.
+-   **Seaborn:** Advanced statistical visualizations, integrating with Matplotlib, and enhancing visual appeal.
 
 ## Excel
 
@@ -186,30 +177,30 @@ I am highly proficient in using Pivot Tables and Pivot Charts, which are essenti
 
 ### Power Query for ETL
 
-I frequently utilize Power Query for Extract, Transform, Load (ETL) functions, which allows me to automate data processing workflows. Power Query's capabilities enable me to: 
+I frequently utilize Power Query for Extract, Transform, Load (ETL) functions, which allows me to automate data processing workflows. Power Query's capabilities enable me to:
 
-- Extract data from various sources. 
-- Transform and clean the data. 
-- Load the processed data into Excel for analysis.
+-   Extract data from various sources.
+-   Transform and clean the data.
+-   Load the processed data into Excel for analysis.
 
 This automation significantly enhances efficiency and accuracy in data handling.
 
 ### Professional Applications
 
-In a professional setting, I have applied my Excel skills primarily for: 
+In a professional setting, I have applied my Excel skills primarily for:
 
-- Descriptive analytics related to inventory management. 
-- Conducting ABC analyses to classify inventory based on importance. 
-- Identifying trends and patterns in data usage.
+-   Descriptive analytics related to inventory management.
+-   Conducting ABC analyses to classify inventory based on importance.
+-   Identifying trends and patterns in data usage.
 
 ### Academic Projects
 
-In school, I designed an ERP system within Excel for a small business simulation. This project involved: 
+In school, I designed an ERP system within Excel for a small business simulation. This project involved:
 
-- Creating Bills of Materials (BOM) for two products. 
-- Forecasting sales using dummy data. 
-- Calculating safety stock levels. 
-- Setting product prices based on estimated labor and material costs.
+-   Creating Bills of Materials (BOM) for two products.
+-   Forecasting sales using dummy data.
+-   Calculating safety stock levels.
+-   Setting product prices based on estimated labor and material costs.
 
 #### A note on VBA and Macros
 
