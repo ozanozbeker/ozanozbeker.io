@@ -240,29 +240,22 @@ While I have dabbled in VBA for creating macros, I prefer using standard Excel f
 
 [**West Virginia University**](https://www.wvu.edu/) **- Morgantown, WV** \| August 2019 - May 2021
 
--   **Spring 2021** \| IENG 220: Re-engineering Management Systems
+As a Teaching Assistant at West Virginia University from August 2019 to May 2021, I contributed to the academic development of students across multiple courses in the Industrial Engineering department. I assisted in teaching: 
 
--   **Fall 2020** \| IENG 305: Introduction to Systems Engineering
+- **Spring 2021** \| IENG 220: Re-engineering Management Systems,
+- **Fall 2020** \| IENG 305: Intro to Systems Engineering,
+- **Spring 2020** \| IENG 331: Computer Applications in Industrial Engineering, and 
+- **Fall 2019** \| IENG 445: Project Management for Engineers. 
 
--   **Spring 2020** \| IENG 331: Computer Applications in Industrial Engineering
-
--   **Fall 2019** \| IENG 445: Project Management for Engineers
+Throughout these roles, I gained valuable skills in teaching and curriculum development. My responsibilities included conducting lectures, leading lab sessions, grading assignments, and providing one-on-one support to students, helping them grasp complex concepts and apply theoretical knowledge to practical projects.
 
 ## Manufacturing Engineer Intern
 
 [**JLG Industries**](https://www.jlg.com/) **- McConnellsburg, PA** \| June 2019 - August 2019
 
--   **Long-term Project: Test – Inspect – Green Tag (TIG) Line**
+-   **Long-term Project, Test – Inspect – Green Tag (TIG) Line:** Conducted a comprehensive 6S audit, removing unnecessary equipment and parts from workstations and organizing the layout to enhance efficiency. I developed detailed Standard Work Instructions (SWIs) from scratch for all five stations of the TIG Line, covering three different products to ensure consistent and efficient processes.
 
-    -   Conducted a full 5S sweep of the line, removing unnecessary equipment and parts from work stations and laid corners.
-
-    -   Created from scratch Standard Work Instructions (SWI) for all 5 stations of the TIG Line for 3 different products.
-
-    -   Implemented a scanner-based system for entering defects for Electronic Quality Control (EQC), standardizing the process and reducing variability in defect types and improving data collection.
-
--   **Short-term Project:** **Tire Manipulator**
-
-    -   Created floor plans for current and future station layouts for the new Tire Manipulator with laser measures and AutoCAD.
+-   **Short-term Project, Tire Manipulator:** Implemented a scanner-based system for defect entry into Electronic Quality Control (EQC), standardizing the process, reducing variability in defect types, and improving data collection. In a short-term project focused on the Tire Manipulator, I created detailed floor plans for current and future station layouts using laser measurements and AutoCAD.
 
 # Education {#sec-education .title}
 
@@ -277,4 +270,3 @@ While I have dabbled in VBA for creating macros, I prefer using standard Excel f
 -   **Continuous Improvement Fundamentals** \| Oshkosh Corporation
 
 -   **Eligible for Certified Associate in Project Management (CAPM)** \| Project Management Institute
-

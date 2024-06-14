@@ -192,8 +192,8 @@ gtag('config', 'G-T6F80J4W70', { 'anonymize_ip': true});
   <div class="quarto-categories">
     <div class="quarto-category">R</div>
     <div class="quarto-category">RStudio</div>
-    <div class="quarto-category">Workstation</div>
-    <div class="quarto-category">Living Post</div>
+    <div class="quarto-category">Work Setup</div>
+    <div class="quarto-category">“Living” Post</div>
   </div>
   </div>
 
@@ -336,7 +336,7 @@ Note
 </div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/purrr/man/map.html">walk</a></span><span class="op">(</span></span>
 <span>  .x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'themes'</span>, <span class="st">'keybindings'</span>, <span class="st">'snippets'</span><span class="op">)</span>,</span>
-<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">directory</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"C:/Users/"</span>, <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'user'</span><span class="op">]</span><span class="op">]</span><span class="op">}</span>, <span class="st">"/AppData/Roaming/RStudio/"</span>, <span class="va">directory</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html">dir_create</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">directory</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"C:/Users/"</span>, <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'user'</span><span class="op">]</span><span class="op">]</span><span class="op">}</span>, <span class="st">"/AppData/Roaming/RStudio/"</span>, <span class="va">directory</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fs/man/create.html">dir_create</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -354,7 +354,7 @@ Note
 <span>    <span class="st">'r.snippets'</span>,             <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/snippets/r.snippets"</span><span class="op">)</span>,</span>
 <span>    <span class="st">'rstudio-prefs.json'</span>,     <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/rstudio-prefs.json"</span><span class="op">)</span>,</span>
 <span>    <span class="st">'.Rprofile'</span>,              <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/Documents/.Rprofile"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">file</span>, <span class="va">destination</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/copy.html">file_copy</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">file</span>, new_path <span class="op">=</span> <span class="va">destination</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">file</span>, <span class="va">destination</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fs/man/copy.html">file_copy</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">file</span>, new_path <span class="op">=</span> <span class="va">destination</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -376,7 +376,7 @@ Note
 </ul>
 <p>If either of these interest you, please go check them out. They were a staple to my R experience and I would like to support the creator as best as I can.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/remotes/man/install_github.html">install_github</a></span><span class="op">(</span><span class="st">'rileytwo/darkstudio'</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">'rileytwo/darkstudio'</span><span class="op">)</span></span>
 <span><span class="fu">darkstudio</span><span class="fu">::</span><span class="fu">activate</span><span class="op">(</span><span class="op">)</span> <span class="co"># This requires admin privileges</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section></section><section id="settings-files" class="level1" data-number="3"><h1 data-number="3">
@@ -1210,7 +1210,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My R &amp; RStudio Setup"</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "The code and the 'why' behind my setup, as well as some shoutouts."</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-06-13"</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["R", "RStudio", "Workstation", "Living Post"]</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["R", "RStudio", "Work Setup", "\"Living\" Post"]</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ../resources/images/rstudio_logo.png</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
@@ -1380,11 +1380,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a>All of the settings for R &amp; RStudio that I customized are controlled with the following files:</span>
 <span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span>.Rprofile</span>
-<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span>r.snippets</span>
-<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span>rstudio_bindings.json</span>
-<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span>addins.json</span>
-<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span>rstudio-prefs.json</span>
+<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>.Rprofile</span>
+<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>r.snippets</span>
+<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>rstudio_bindings.json</span>
+<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>addins.json</span>
+<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>rstudio-prefs.json</span>
 <span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## .Rprofile</span></span>
 <span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a></span>
@@ -1487,7 +1487,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-281"><a href="#cb12-281" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-282"><a href="#cb12-282" aria-hidden="true" tabindex="-1"></a><span class="fu">## rstudio-prefs.json</span></span>
 <span id="cb12-283"><a href="#cb12-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-284"><a href="#cb12-284" aria-hidden="true" tabindex="-1"></a>Last but not least, we have the file that began it all. <span class="in">`rstudio-prefs.json`</span> holds all of your custom settings that you change in Tools &gt; Global Options. Every time I had to setup RStudio on a new machine, I could never remember all the settings I liked, and I figured that there was a file somewhere which holds these settings that I could overwrite. That is exactly what this file is. These settings allow you to customize various aspects of the IDE, such as appearance, editor behavior, and default options for projects. </span>
+<span id="cb12-284"><a href="#cb12-284" aria-hidden="true" tabindex="-1"></a>Last but not least, we have the file that began it all. <span class="in">`rstudio-prefs.json`</span> holds all of your custom settings that you change in Tools <span class="sc">\&gt;</span> Global Options. Every time I had to setup RStudio on a new machine, I could never remember all the settings I liked, and I figured that there was a file somewhere which holds these settings that I could overwrite. That is exactly what this file is. These settings allow you to customize various aspects of the IDE, such as appearance, editor behavior, and default options for projects.</span>
 <span id="cb12-285"><a href="#cb12-285" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-286"><a href="#cb12-286" aria-hidden="true" tabindex="-1"></a>JSON files don't have a great way of adding in-line comments, but the settings names are pretty descriptive of what they do. Since this is the last section of the blog post, I have no shame printing all 67 lines 😈</span>
 <span id="cb12-287"><a href="#cb12-287" aria-hidden="true" tabindex="-1"></a></span>

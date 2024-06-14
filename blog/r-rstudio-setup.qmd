@@ -2,7 +2,7 @@
 title: "My R & RStudio Setup"
 description: "The code and the 'why' behind my setup, as well as some shoutouts."
 date: "2024-06-13"
-categories: ["R", "RStudio", "Workstation", "Living Post"]
+categories: ["R", "RStudio", "Work Setup", "\"Living\" Post"]
 image: ../resources/images/rstudio_logo.png
 execute: 
   eval: false
@@ -172,11 +172,11 @@ darkstudio::activate() # This requires admin privileges
 
 All of the settings for R & RStudio that I customized are controlled with the following files:
 
--  .Rprofile
--  r.snippets
--  rstudio_bindings.json
--  addins.json
--  rstudio-prefs.json
+-   .Rprofile
+-   r.snippets
+-   rstudio_bindings.json
+-   addins.json
+-   rstudio-prefs.json
 
 ## .Rprofile
 
@@ -279,7 +279,7 @@ RStudio uses a separate file for key bindings for addins, and the {rsthemes} pac
 
 ## rstudio-prefs.json
 
-Last but not least, we have the file that began it all. `rstudio-prefs.json` holds all of your custom settings that you change in Tools > Global Options. Every time I had to setup RStudio on a new machine, I could never remember all the settings I liked, and I figured that there was a file somewhere which holds these settings that I could overwrite. That is exactly what this file is. These settings allow you to customize various aspects of the IDE, such as appearance, editor behavior, and default options for projects. 
+Last but not least, we have the file that began it all. `rstudio-prefs.json` holds all of your custom settings that you change in Tools \> Global Options. Every time I had to setup RStudio on a new machine, I could never remember all the settings I liked, and I figured that there was a file somewhere which holds these settings that I could overwrite. That is exactly what this file is. These settings allow you to customize various aspects of the IDE, such as appearance, editor behavior, and default options for projects.
 
 JSON files don't have a great way of adding in-line comments, but the settings names are pretty descriptive of what they do. Since this is the last section of the blog post, I have no shame printing all 67 lines 😈
 

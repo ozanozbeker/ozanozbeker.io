@@ -116,14 +116,14 @@
     "href": "resume.html#undergraduate-teaching-assistant",
     "title": "Summary",
     "section": "Undergraduate Teaching Assistant",
-    "text": "Undergraduate Teaching Assistant\nWest Virginia University - Morgantown, WV | August 2019 - May 2021\n\nSpring 2021 | IENG 220: Re-engineering Management Systems\nFall 2020 | IENG 305: Introduction to Systems Engineering\nSpring 2020 | IENG 331: Computer Applications in Industrial Engineering\nFall 2019 | IENG 445: Project Management for Engineers"
+    "text": "Undergraduate Teaching Assistant\nWest Virginia University - Morgantown, WV | August 2019 - May 2021\nAs a Teaching Assistant at West Virginia University from August 2019 to May 2021, I contributed to the academic development of students across multiple courses in the Industrial Engineering department. I assisted in teaching:\n\nSpring 2021 | IENG 220: Re-engineering Management Systems,\nFall 2020 | IENG 305: Intro to Systems Engineering,\nSpring 2020 | IENG 331: Computer Applications in Industrial Engineering, and\nFall 2019 | IENG 445: Project Management for Engineers.\n\nThroughout these roles, I gained valuable skills in teaching and curriculum development. My responsibilities included conducting lectures, leading lab sessions, grading assignments, and providing one-on-one support to students, helping them grasp complex concepts and apply theoretical knowledge to practical projects."
   },
   {
     "objectID": "resume.html#manufacturing-engineer-intern",
     "href": "resume.html#manufacturing-engineer-intern",
     "title": "Summary",
     "section": "Manufacturing Engineer Intern",
-    "text": "Manufacturing Engineer Intern\nJLG Industries - McConnellsburg, PA | June 2019 - August 2019\n\nLong-term Project: Test – Inspect – Green Tag (TIG) Line\n\nConducted a full 5S sweep of the line, removing unnecessary equipment and parts from work stations and laid corners.\nCreated from scratch Standard Work Instructions (SWI) for all 5 stations of the TIG Line for 3 different products.\nImplemented a scanner-based system for entering defects for Electronic Quality Control (EQC), standardizing the process and reducing variability in defect types and improving data collection.\n\nShort-term Project: Tire Manipulator\n\nCreated floor plans for current and future station layouts for the new Tire Manipulator with laser measures and AutoCAD."
+    "text": "Manufacturing Engineer Intern\nJLG Industries - McConnellsburg, PA | June 2019 - August 2019\n\nLong-term Project, Test – Inspect – Green Tag (TIG) Line: Conducted a comprehensive 6S audit, removing unnecessary equipment and parts from workstations and organizing the layout to enhance efficiency. I developed detailed Standard Work Instructions (SWIs) from scratch for all five stations of the TIG Line, covering three different products to ensure consistent and efficient processes.\nShort-term Project, Tire Manipulator: Implemented a scanner-based system for defect entry into Electronic Quality Control (EQC), standardizing the process, reducing variability in defect types, and improving data collection. In a short-term project focused on the Tire Manipulator, I created detailed floor plans for current and future station layouts using laser measurements and AutoCAD."
   },
   {
     "objectID": "resume.html#bachelor-of-science-in-industrial-engineering",
@@ -151,7 +151,7 @@
     "href": "blog.html",
     "title": "Data Science, Technology, & More",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMy R & RStudio Setup\n\n\n\n\n\n\nR\n\n\nRStudio\n\n\nWorkstation\n\n\nLiving Post\n\n\n\nThe code and the ‘why’ behind my setup, as well as some shoutouts.\n\n\n\n\n\nJun 13, 2024\n\n\n14 min\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2: Elegant Graphics for Data Analysis (3e) | Part 1\n\n\nGetting Started\n\n\n\nR\n\n\n{ggplot2}\n\n\nTextbook Workthrough\n\n\n\nJoin me as I work through the exercises in the textbook.\n\n\n\n\n\nMay 24, 2024\n\n\n23 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMy R & RStudio Setup\n\n\n\n\n\n\nR\n\n\nRStudio\n\n\nWork Setup\n\n\"Living\" Post\n\n\nThe code and the ‘why’ behind my setup, as well as some shoutouts.\n\n\n\n\n\nJun 13, 2024\n\n\n14 min\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2: Elegant Graphics for Data Analysis (3e) | Part 1\n\n\nGetting Started\n\n\n\nR\n\n\nData Visualization\n\n\nTextbook Workthrough\n\n\n\nJoin me as I work through the exercises in the textbook.\n\n\n\n\n\nMay 24, 2024\n\n\n23 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "blog/r-rstudio-setup.html",
