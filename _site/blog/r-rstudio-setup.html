@@ -100,7 +100,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T6F80J4W70"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-T6F80J4W70', { 'anonymize_ip': true});
+</script>
 <meta property="og:title" content="Ozan Ozbeker - My R &amp; RStudio Setup">
 <meta property="og:description" content="The code and the ‘why’ behind my setup, as well as some shoutouts.">
 <meta property="og:image" content="https://ozanozbeker.io/resources/images/rstudio_logo.png">
@@ -328,9 +334,9 @@ Note
 <div class="code-with-filename-file">
 <pre><strong>r-and-rstudio-setup.R</strong></pre>
 </div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/purrr/man/map.html">walk</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">walk</a></span><span class="op">(</span></span>
 <span>  .x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'themes'</span>, <span class="st">'keybindings'</span>, <span class="st">'snippets'</span><span class="op">)</span>,</span>
-<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">directory</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"C:/Users/"</span>, <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'user'</span><span class="op">]</span><span class="op">]</span><span class="op">}</span>, <span class="st">"/AppData/Roaming/RStudio/"</span>, <span class="va">directory</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fs/man/create.html">dir_create</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">directory</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"C:/Users/"</span>, <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'user'</span><span class="op">]</span><span class="op">]</span><span class="op">}</span>, <span class="st">"/AppData/Roaming/RStudio/"</span>, <span class="va">directory</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html">dir_create</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -340,15 +346,15 @@ Note
 <div class="code-with-filename-file">
 <pre><strong>r-and-rstudio-setup.R</strong></pre>
 </div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/purrr/man/pmap.html">pwalk</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/pmap.html">pwalk</a></span><span class="op">(</span></span>
 <span>  .l <span class="op">=</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tibble/man/tribble.html">tribble</a></span><span class="op">(</span></span>
 <span>    <span class="op">~</span><span class="va">file</span>,                   <span class="op">~</span><span class="va">destination</span>,</span>
-<span>    <span class="st">'rstudio_bindings.json'</span>,  <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/keybindings/rstudio_bindings.json"</span><span class="op">)</span>,</span>
-<span>    <span class="st">'addins.json'</span>,            <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/keybindings/addins.json"</span><span class="op">)</span>,</span>
-<span>    <span class="st">'r.snippets'</span>,             <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/snippets/r.snippets"</span><span class="op">)</span>,</span>
-<span>    <span class="st">'rstudio-prefs.json'</span>,     <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/rstudio-prefs.json"</span><span class="op">)</span>,</span>
-<span>    <span class="st">'.Rprofile'</span>,              <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/Documents/.Rprofile"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">file</span>, <span class="va">destination</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fs/man/copy.html">file_copy</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">file</span>, new_path <span class="op">=</span> <span class="va">destination</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>    <span class="st">'rstudio_bindings.json'</span>,  <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/keybindings/rstudio_bindings.json"</span><span class="op">)</span>,</span>
+<span>    <span class="st">'addins.json'</span>,            <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/keybindings/addins.json"</span><span class="op">)</span>,</span>
+<span>    <span class="st">'r.snippets'</span>,             <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/snippets/r.snippets"</span><span class="op">)</span>,</span>
+<span>    <span class="st">'rstudio-prefs.json'</span>,     <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/rstudio-prefs.json"</span><span class="op">)</span>,</span>
+<span>    <span class="st">'.Rprofile'</span>,              <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/Documents/.Rprofile"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">file</span>, <span class="va">destination</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/copy.html">file_copy</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">file</span>, new_path <span class="op">=</span> <span class="va">destination</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -370,7 +376,7 @@ Note
 </ul>
 <p>If either of these interest you, please go check them out. They were a staple to my R experience and I would like to support the creator as best as I can.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">'rileytwo/darkstudio'</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/remotes/man/install_github.html">install_github</a></span><span class="op">(</span><span class="st">'rileytwo/darkstudio'</span><span class="op">)</span></span>
 <span><span class="fu">darkstudio</span><span class="fu">::</span><span class="fu">activate</span><span class="op">(</span><span class="op">)</span> <span class="co"># This requires admin privileges</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section></section><section id="settings-files" class="level1" data-number="3"><h1 data-number="3">
