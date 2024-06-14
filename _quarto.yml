@@ -8,7 +8,6 @@ project:
     - 404.qmd
   preview:
     port: 4200
-    browser: true
 
 execute:
   freeze: auto

@@ -70,20 +70,6 @@
     "text": "2.8 Output\nPlots are usually generated to view immediately, but they can be saved to a variable:\n\np = ggplot(mpg, aes(displ, hwy, color = factor(cyl))) + geom_point()\n\nOnce you have a plot object, you can do a variety of things with it:\n\nRender it on screen with print() (this happens automatically when running interactively, but needs to be called explicitly in a loop or function):\n\n\nprint(p)\n\n\n\n\n\n\n\n\nSave it to disc with ggsave():\n\n\nggsave(\"plot.png\", p, width = 5 , height = 5)\n\n\nBriefly describe its structure with summary():\n\n\nsummary(p)\n\ndata: manufacturer, model, displ, year, cyl, trans, drv, cty, hwy, fl,\n  class [234x11]\nmapping:  x = ~displ, y = ~hwy, colour = ~factor(cyl)\nfaceting: &lt;ggproto object: Class FacetNull, Facet, gg&gt;\n    compute_layout: function\n    draw_back: function\n    draw_front: function\n    draw_labels: function\n    draw_panels: function\n    finish_data: function\n    init_scales: function\n    map_data: function\n    params: list\n    setup_data: function\n    setup_params: function\n    shrink: TRUE\n    train_scales: function\n    vars: function\n    super:  &lt;ggproto object: Class FacetNull, Facet, gg&gt;\n-----------------------------------\ngeom_point: na.rm = FALSE\nstat_identity: na.rm = FALSE\nposition_identity"
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Data Science, Technology, & More",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMy R & RStudio Setup\n\n\n\n\n\n\nR\n\n\nRStudio\n\n\nWorkstation\n\n\nLiving Post\n\n\n\nThe code and the ‘why’ behind my setup, as well as some shoutouts.\n\n\n\n\n\nJun 13, 2024\n\n\n14 min\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2: Elegant Graphics for Data Analysis (3e) | Part 2\n\n\nLayers\n\n\n\nR\n\n\n{ggplot2}\n\n\nTextbook Workthrough\n\n\n\nJoin me as I work through the exercises in the textbook.\n\n\n\n\n\nMay 27, 2024\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2: Elegant Graphics for Data Analysis (3e) | Part 1\n\n\nGetting Started\n\n\n\nR\n\n\n{ggplot2}\n\n\nTextbook Workthrough\n\n\n\nJoin me as I work through the exercises in the textbook.\n\n\n\n\n\nMay 24, 2024\n\n\n23 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ozan Ozbeker",
-    "section": "",
-    "text": "As a Data Scientist, I specialize in leveraging advanced analytics to solve complex business challenges, managing the entire data science process from importing and tidying data to modeling and communicating insights. With a strong foundation in R, I extensively use the Tidyverse and Tidymodels for data management and analysis, and I am skilled in importing data from databases, spreadsheets, web scraping, and API calls. My expertise includes creating automated ETL processes, developing complex SQL queries, and managing PostgreSQL databases. I have successfully led end-to-end client projects in the replacement parts business, building reporting tools and dashboards to support key decision-making for both B2B and B2C sales. I frequently use {ggplot2} for data visualization and deliver final insights through Tableau and other BI tools. My modeling experience includes forecasting, classification, and recommendation engines. Additionally, I am adept at building automated reports and executive dashboards using Quarto, incorporating HTML and CSS for customization. My ability to manage complete data pipelines and present findings to high-value stakeholders makes me a valuable asset in driving data-driven decision-making and strategic initiatives.\nOutside of work, I’m a huge fan of live music, especially Rock and EDM, and I’m making a bigger effort to travel and create experiences this year. I’ve been playing the guitar for about 10 years and creating a budget for around 3 years. When the weather’s nice, I enjoy cycling, hiking, and taking photos. Recently, I’ve developed a keen interest in learning more about the R language outside of my direct work, inspired by the fantastic blogs I’ve come across, which led me to create this website.\nOn this site, you’ll find my resume, personal projects, and a blog where I dive deep into various tools and technologies in the data world, along with other topics I find interesting. Feel free to reach out and connect!\n\n\n Back to top"
-  },
-  {
     "objectID": "resume.html",
     "href": "resume.html",
     "title": "Summary",
@@ -152,6 +138,20 @@
     "title": "Summary",
     "section": "Certifications",
     "text": "Certifications\n\nLean Six Sigma Green Belt | Institute of Industrial and Systems Engineers\nContinuous Improvement Fundamentals | Oshkosh Corporation\nEligible for Certified Associate in Project Management (CAPM) | Project Management Institute"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ozan Ozbeker",
+    "section": "",
+    "text": "As a Data Scientist, I specialize in leveraging advanced analytics to solve complex business challenges, managing the entire data science process from importing and tidying data to modeling and communicating insights. With a strong foundation in R, I extensively use the Tidyverse and Tidymodels for data management and analysis, and I am skilled in importing data from databases, spreadsheets, web scraping, and API calls. My expertise includes creating automated ETL processes, developing complex SQL queries, and managing PostgreSQL databases. I have successfully led end-to-end client projects in the replacement parts business, building reporting tools and dashboards to support key decision-making for both B2B and B2C sales. I frequently use {ggplot2} for data visualization and deliver final insights through Tableau and other BI tools. My modeling experience includes forecasting, classification, and recommendation engines. Additionally, I am adept at building automated reports and executive dashboards using Quarto, incorporating HTML and CSS for customization. My ability to manage complete data pipelines and present findings to high-value stakeholders makes me a valuable asset in driving data-driven decision-making and strategic initiatives.\nOutside of work, I’m a huge fan of live music, especially Rock and EDM, and I’m making a bigger effort to travel and create experiences this year. I’ve been playing the guitar for about 10 years and creating a budget for around 3 years. When the weather’s nice, I enjoy cycling, hiking, and taking photos. Recently, I’ve developed a keen interest in learning more about the R language outside of my direct work, inspired by the fantastic blogs I’ve come across, which led me to create this website.\nOn this site, you’ll find my resume, personal projects, and a blog where I dive deep into various tools and technologies in the data world, along with other topics I find interesting. Feel free to reach out and connect!\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Data Science, Technology, & More",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMy R & RStudio Setup\n\n\n\n\n\n\nR\n\n\nRStudio\n\n\nWorkstation\n\n\nLiving Post\n\n\n\nThe code and the ‘why’ behind my setup, as well as some shoutouts.\n\n\n\n\n\nJun 13, 2024\n\n\n14 min\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2: Elegant Graphics for Data Analysis (3e) | Part 1\n\n\nGetting Started\n\n\n\nR\n\n\n{ggplot2}\n\n\nTextbook Workthrough\n\n\n\nJoin me as I work through the exercises in the textbook.\n\n\n\n\n\nMay 24, 2024\n\n\n23 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "blog/r-rstudio-setup.html",
