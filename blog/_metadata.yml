@@ -1,5 +1,4 @@
 # Execution
-freeze: true
 execute:
   echo: true
   cache: true
@@ -14,10 +13,10 @@ editor_options:
 # Table of Contents
 toc: true
 toc-depth: 3
+number-sections: true
 
 # Layout
 page-layout: article
-resources: resources
 
 # External Links
 link-external-icon: false

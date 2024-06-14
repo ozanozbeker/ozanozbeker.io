@@ -213,27 +213,27 @@ While I have dabbled in VBA for creating macros, I prefer using standard Excel f
 
 [**RXA \@ OneMagnify**](https://rxa.io/) **- Remote, USA** \| January 2023 - Current
 
--   **Client Work**: Built and maintained: data pipelines, dashboards, & reporting for key stakeholders across multiple clients in the home appliance sector. Sample work includes web scraping, exploratory data analysis, & linear modeling with R; Dashboard & Finance applications with Tableau and Tableau Prep. Heavy focus on Tidyverse & Tidymodels family of R packages, with ad-hoc reporting supported with Quarto/Markdown.
+-   **Client Work**: Led end-to-end data science projects, developed dashboards, and managed client relationships. Developed a Tableau Dashboard for a major client to monitor Parts Distributors' (PD) performance on Amazon, integrating sales, inventory, return, and review data to assess PD performance, strengthen relationships, and identify top-performing parts for promotions. Implemented a monthly Amazon marketplace scrape to track knock-off parts listings and estimate sales and revenue, with data aggregated in the Tableau Dashboard to highlight competitive market dynamics. Created a weekly price recommendation report for another client, incorporating knock-off data, confidential price sheets, margin information, and competitive ASIN analysis using R and Quarto. Maintained continuous communication with clients through biweekly meetings and regular email updates.
 
--   **Internal Projects**: Developed new standards for database usage (DuckDB), incorporated Git (GitHub) & Docker into project workflows & created internal R package for meeting company branding guidelines.
+-   **Internal Projects**: Extracting and analyzing data, developing automated reports, and managing databases. Employed various data extraction methods, including connecting to MS SQL Server and SAP HANA via VPN, and ingesting CSV, TSV, and XLSX files into PostgreSQL using R and {tidyverse} packages. Utilized tools like Oxylabs, Helium10, and {httr2} for web scraping and modeling competitive Amazon marketplace dynamics. Streamlined workflows using R for data manipulation, saving data in flat files for compatibility with Tableau. Developed automated email reports using R and Quarto, integrating data from PostgreSQL and rendering with {gt} and {ggplot2}. Managed PostgreSQL databases by applying database schema knowledge and tidy data principles. Implemented structured version control with Git/GitHub, organizing project directories according to CRAN standards.
 
 ## Continuous Improvement Specialist (OLDP Rotation 2)
 
 [**Xylem, Inc**](https://www.xylem.com/en-us/) **- Chicago, IL** \| July 2022 - December 2022
 
--   **Excess & Obsolete Inventory Identification & Disposition:** Using the DMAIC/DMADV methodology, created a process to reduce the site’s E&O financial reserve and material in our warehouses by identifying items that are obsolete and creating rework, re-sale, & disposal opportunities. The control plan included the creation of a cross-departmental E&O task force, and the new process has estimated hard savings of \$1M - \$4M in the next 3-5 years.
+-   **Excess & Obsolete Inventory Identification & Disposition:** Employed the DMAIC/DMADV methodology to create a process aimed at reducing the site’s E&O financial reserve and material in warehouses by identifying obsolete items and creating opportunities for rework, resale, and disposal. The control plan included establishing a cross-departmental E&O taskforce, with the new process projected to achieve estimated hard savings of $1M - $4M over the next 3-5 years. Utilized skills in Process Flowcharts, Value Stream Mapping, and Control Charts.
 
--   **Ad-Hoc Floor Workshops:** Led and assisted many projects to drive Continuous Improvement initiatives at the site, including but not limited to: 5S & Safety audits, lean methodology seminars, inventory audits, & cycle counts.
+-   **Ad-Hoc Floor Workshops:** Led and assisted various projects to drive Continuous Improvement initiatives at the site. These included 5S audits, lean methodology seminars, inventory audits, and cycle counts, applying skills in 5S, FMEA, and Process Capability Analysis.
 
 ## Business Data Analyst (OLDP Rotation 1)
 
 [**Xylem, Inc**](https://www.xylem.com/en-us/) **- Uniontown, PA** \| July 2021 - July 2022
 
--   **Excess & Obsolete Reserve:** Designed a recommendation engine for the quarterly report with an emphasis on reducing ETL time and standardizing the process across all Sensus North America sites to meet new financial policies. The new engine reduced process time by 72 hours (-90%) per year and led to new reporting and forecasting capabilities.
+-   **Excess & Obsolete Reserve:** Designed a recommendation engine for the quarterly report, focusing on reducing ETL time and standardizing the process across all Sensus NA sites to comply with new financial policies. This effort reduced process time by 72 hours per month and enabled new reporting and forecasting capabilities. Leveraged Advanced Excel (Power Query, PivotTables, XLOOKUP) and Microsoft SQL Server.
 
--   **Sensus North America Physical Inventory:** Created documentation for the annual NA physical inventory event, including process flowcharts, work instructions, and manager checklists for tasks leading up to the event. The documentation package standardized the process across all NA sites and removed non-value-added activities during the event.
+-   **Sensus North America Physical Inventory:** Created documentation for the annual NA physical inventory event, including process flowcharts, work instructions, and manager checklists for tasks leading up to the event. This documentation package standardized the process across all NA sites and eliminated non-value-added activities during the event, utilizing skills in Project Management and Process Flowcharts.
 
--   **Ad-Hoc Reporting:** Created various data pipelines, dashboards, and reports for unique business needs, including tracking forecasting accuracy, comparing supplier and internal bill of materials, gathering and dashboarding quality control measures, and synchronizing lot sizes across multiple sites
+-   **Ad-Hoc Reporting:** Developed various data pipelines, dashboards, and reports to meet unique business needs. This included tracking forecasting accuracy, comparing supplier and internal bill of materials, gathering and visualizing quality control measures, and synchronizing lot sizes across multiple sites.
 
 ## Undergraduate Teaching Assistant
 
