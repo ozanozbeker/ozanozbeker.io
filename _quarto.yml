@@ -32,6 +32,9 @@ website:
     right: "This website was made by me and powered by [Quarto](https://www.quarto.com)!"
   open-graph: true
   google-analytics: "G-T6F80J4W70"
+  cookie-consent:
+    type: express
+    style: headline
   comments:
     giscus:
       repo: "ozanozbeker/ozanozbeker.io"
