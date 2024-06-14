@@ -64,8 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../resources/icons/code.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -102,28 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T6F80J4W70"></script><script type="text/plain" cookie-consent="tracking">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-T6F80J4W70', { 'anonymize_ip': true});
-</script><script type="text/javascript" charset="UTF-8">
-document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({
-  "notice_banner_type":"headline",
-  "consent_type":"express",
-  "palette":"light",
-  "language":"en",
-  "page_load_consent_levels":["strictly-necessary"],
-  "notice_banner_reject_button_hide":false,
-  "preferences_center_close_button_hide":false,
-  "website_name":""
-  ,
-"language":"en"
-  });
-});
-</script>
+}</script>
 <meta property="og:title" content="Ozan Ozbeker - My R &amp; RStudio Setup">
 <meta property="og:description" content="The code and the ‘why’ behind my setup, as well as some shoutouts.">
 <meta property="og:image" content="https://ozanozbeker.io/resources/images/rstudio_logo.png">
@@ -353,7 +330,7 @@ Note
 </div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/purrr/man/map.html">walk</a></span><span class="op">(</span></span>
 <span>  .x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'themes'</span>, <span class="st">'keybindings'</span>, <span class="st">'snippets'</span><span class="op">)</span>,</span>
-<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">directory</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"C:/Users/"</span>, <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'user'</span><span class="op">]</span><span class="op">]</span><span class="op">}</span>, <span class="st">"/AppData/Roaming/RStudio/"</span>, <span class="va">directory</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fs/man/create.html">dir_create</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">directory</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"C:/Users/"</span>, <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'user'</span><span class="op">]</span><span class="op">]</span><span class="op">}</span>, <span class="st">"/AppData/Roaming/RStudio/"</span>, <span class="va">directory</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html">dir_create</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -371,7 +348,7 @@ Note
 <span>    <span class="st">'r.snippets'</span>,             <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/snippets/r.snippets"</span><span class="op">)</span>,</span>
 <span>    <span class="st">'rstudio-prefs.json'</span>,     <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/rstudio-prefs.json"</span><span class="op">)</span>,</span>
 <span>    <span class="st">'.Rprofile'</span>,              <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/Documents/.Rprofile"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">file</span>, <span class="va">destination</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fs/man/copy.html">file_copy</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">file</span>, new_path <span class="op">=</span> <span class="va">destination</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">file</span>, <span class="va">destination</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/copy.html">file_copy</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">file</span>, new_path <span class="op">=</span> <span class="va">destination</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -1585,8 +1562,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>Copyright 2024, Ozan Ozbeker</p>
 </div>   
     <div class="nav-footer-center">
-
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
 <p>This website was made by me and powered by <a href="https://www.quarto.com">Quarto</a>!</p>
 </div>
