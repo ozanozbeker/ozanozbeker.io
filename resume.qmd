@@ -20,6 +20,7 @@ format:
         href: mailto:ozanozbeker99@outlook.com
         icon: envelope
 page-layout: full
+comments: false
 ---
 
 # Summary {#sec-summary .title}
@@ -221,7 +222,7 @@ While I have dabbled in VBA for creating macros, I prefer using standard Excel f
 
 [**Xylem, Inc**](https://www.xylem.com/en-us/) **- Chicago, IL** \| July 2022 - December 2022
 
--   **Excess & Obsolete Inventory Identification & Disposition:** Employed the DMAIC/DMADV methodology to create a process aimed at reducing the site’s E&O financial reserve and material in warehouses by identifying obsolete items and creating opportunities for rework, resale, and disposal. The control plan included establishing a cross-departmental E&O taskforce, with the new process projected to achieve estimated hard savings of $1M - $4M over the next 3-5 years. Utilized skills in Process Flowcharts, Value Stream Mapping, and Control Charts.
+-   **Excess & Obsolete Inventory Identification & Disposition:** Employed the DMAIC/DMADV methodology to create a process aimed at reducing the site’s E&O financial reserve and material in warehouses by identifying obsolete items and creating opportunities for rework, resale, and disposal. The control plan included establishing a cross-departmental E&O taskforce, with the new process projected to achieve estimated hard savings of \$1M - \$4M over the next 3-5 years. Utilized skills in Process Flowcharts, Value Stream Mapping, and Control Charts.
 
 -   **Ad-Hoc Floor Workshops:** Led and assisted various projects to drive Continuous Improvement initiatives at the site. These included 5S audits, lean methodology seminars, inventory audits, and cycle counts, applying skills in 5S, FMEA, and Process Capability Analysis.
 
@@ -276,3 +277,4 @@ While I have dabbled in VBA for creating macros, I prefer using standard Excel f
 -   **Continuous Improvement Fundamentals** \| Oshkosh Corporation
 
 -   **Eligible for Certified Associate in Project Management (CAPM)** \| Project Management Institute
+

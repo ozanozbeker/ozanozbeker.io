@@ -1,6 +1,7 @@
 ---
 title: "404"
 page-layout: article
+comments: false
 ---
 
 # Oops! Page Not Found
@@ -20,3 +21,4 @@ Don't worry, it happens to the best of us. Here's what you can do next:
 ------------------------------------------------------------------------
 
 *P.S. If you keep ending up here, it might be a sign that the internet is broken. Try turning it off and on again.*
+

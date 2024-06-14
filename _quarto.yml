@@ -34,6 +34,20 @@ website:
     right: "This website was made by me and powered by [Quarto](https://www.quarto.com)!"
   open-graph: true
   google-analytics: "G-T6F80J4W70"
+  comments:
+    giscus:
+      repo: "ozanozbeker/ozanozbeker.io"
+      repo-id: "R_kgDOLeHEqA"
+      category: "Announcements"
+      category-id: "DIC_kwDOLeHEqM4Cfkfa"
+      mapping: pathname
+      reactions-enabled: true
+      loading: lazy
+      language: "en"
+      input-position: bottom
+      theme:
+        light: light
+        dark: dark
 
 format:
   html:
