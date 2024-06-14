@@ -207,7 +207,7 @@ gtag('config', 'G-T6F80J4W70', { 'anonymize_ip': true});
 <p class="subtitle lead"><em>Getting Started</em></p>
   <div class="quarto-categories">
     <div class="quarto-category">R</div>
-    <div class="quarto-category">{ggplot2}</div>
+    <div class="quarto-category">Data Visualization</div>
     <div class="quarto-category">Textbook Workthrough</div>
   </div>
   </div>
@@ -332,7 +332,7 @@ Important
 <p><span class="blog-question">1. List five functions that you could use to get more information about the <code>mpg</code> dataset.</span></p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/pillar/man/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -654,7 +654,7 @@ than 6 becomes difficult to discriminate
 <p>In this example, we don’t need x-axis values for vehicles that don’t exist, but keeping the y-axis values on the same scale helps to compare the values across all manufacturers.</p>
 <div class="cell">
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mpg</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="fu"><a href="https://forcats.tidyverse.org/reference/as_factor.html">as_factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/forcats/man/as_factor.html">as_factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">manufacturer</span>, scales <span class="op">=</span> <span class="st">"free_x"</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -757,8 +757,8 @@ than 6 becomes difficult to discriminate
 <table class="caption-top table">
 <colgroup>
 <col style="width: 27%">
-<col style="width: 28%">
-<col style="width: 44%">
+<col style="width: 29%">
+<col style="width: 43%">
 </colgroup>
 <thead><tr class="header">
 <th style="text-align: center;">Jitter Plots</th>
@@ -839,7 +839,7 @@ than 6 becomes difficult to discriminate
 <li>The second form is used for <strong>pre-summarized</strong> data.</li>
 </ol>
 <p>For example, you might have three drugs with the their <em>average</em> effect. To display this type of data, you have to tell <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> to not run the default stat which bins and counts data. In this case, it’s better to use <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> because it takes up less space than bars, and don’t require that the axis includes 0.</p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">drugs</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tibble/man/tibble.html">tibble</a></span><span class="op">(</span>drug <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>, effect <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4.2</span>, <span class="fl">9.7</span>, <span class="fl">6.1</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">drugs</span> <span class="op">=</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>drug <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>, effect <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4.2</span>, <span class="fl">9.7</span>, <span class="fl">6.1</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">drugs</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">drug</span>, <span class="va">effect</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">drugs</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">drug</span>, <span class="va">effect</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -873,8 +873,8 @@ than 6 becomes difficult to discriminate
 <p>Line and path plots are typically used for time series data, where the order of the data matters to the context of the visual. Line plots join the data points from left to right, while path plots join the points in the order that they appear in the dataset.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 76%">
+<col style="width: 25%">
+<col style="width: 75%">
 </colgroup>
 <thead><tr class="header">
 <th style="text-align: center;">Line Plot</th>
@@ -910,7 +910,7 @@ than 6 becomes difficult to discriminate
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">economics</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">unemploy</span> <span class="op">/</span> <span class="va">pop</span>, <span class="va">uempmed</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_path</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"grey50"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lubridate/man/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell quarto-layout-panel" data-layout-nrow="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -1027,7 +1027,7 @@ Note
 </div>
 <p><span class="blog-question">6. Read the documentation for <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code>. What does the weight aesthetic do?</span></p>
 <p>The weight argument in the <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> function allows you to adjust the heights of the bars according to the weights of the observations rather than simply counting the number of observations. This can be useful when you have a frequency or probability data set and you want to visualize it accurately.</p>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tibble/man/tibble.html">tibble</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
 <span>  category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"C"</span><span class="op">)</span>,</span>
 <span>  weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">3</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
@@ -1817,7 +1817,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Join me as I work through the exercises in the textbook."</span></span>
 <span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-05-24"</span></span>
 <span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ../resources/images/ggplot2_book_cover.jpg</span></span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["R", "{ggplot2}", "Textbook Workthrough"]</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["R", "Data Visualization", "Textbook Workthrough"]</span></span>
 <span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
 <span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
 <span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
@@ -2184,7 +2184,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb57-417"><a href="#cb57-417" aria-hidden="true" tabindex="-1"></a>Though these are useful techniques, they also have their own drawbacks.</span>
 <span id="cb57-418"><a href="#cb57-418" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-419"><a href="#cb57-419" aria-hidden="true" tabindex="-1"></a>|                               Jitter Plots                               |                                   Boxplots                                    |                                                      Violin Plots                                                       |</span>
-<span id="cb57-420"><a href="#cb57-420" aria-hidden="true" tabindex="-1"></a>|:------------------------------------------------------------------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|</span>
+<span id="cb57-420"><a href="#cb57-420" aria-hidden="true" tabindex="-1"></a>|:------------------:|:-------------------:|:-----------------------------:|</span>
 <span id="cb57-421"><a href="#cb57-421" aria-hidden="true" tabindex="-1"></a>| Add a little random noise to the data which can help avoid overplotting. | Summarize the shape of the distribution with a handful of summary statistics. | Show a compact representation of the "density" of the distribution, highlighting the areas where more points are found. |</span>
 <span id="cb57-422"><a href="#cb57-422" aria-hidden="true" tabindex="-1"></a>|      Show every point but only work with relatively small datasets.      |              Summarize the whole distribution with 5 statistics.              |                      Give the richest display, but the density estimate can be hard to interpret.                       |</span>
 <span id="cb57-423"><a href="#cb57-423" aria-hidden="true" tabindex="-1"></a></span>
@@ -2271,7 +2271,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb57-516"><a href="#cb57-516" aria-hidden="true" tabindex="-1"></a>Line and path plots are typically used for time series data, where the order of the data matters to the context of the visual. Line plots join the data points from left to right, while path plots join the points in the order that they appear in the dataset.</span>
 <span id="cb57-517"><a href="#cb57-517" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-518"><a href="#cb57-518" aria-hidden="true" tabindex="-1"></a>|             Line Plot              |                                                      Path Plot                                                      |</span>
-<span id="cb57-519"><a href="#cb57-519" aria-hidden="true" tabindex="-1"></a>|:----------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|</span>
+<span id="cb57-519"><a href="#cb57-519" aria-hidden="true" tabindex="-1"></a>|:----------------:|:----------------------------------------------------:|</span>
 <span id="cb57-520"><a href="#cb57-520" aria-hidden="true" tabindex="-1"></a>| Plots the data from left to right. |                                Plots the points in the order they appear in dataset.                                |</span>
 <span id="cb57-521"><a href="#cb57-521" aria-hidden="true" tabindex="-1"></a>|        Show time on x-axis.        | Show how two variables simultaneously change over time, with time encoded in the way the data points are connected. |</span>
 <span id="cb57-522"><a href="#cb57-522" aria-hidden="true" tabindex="-1"></a></span>
