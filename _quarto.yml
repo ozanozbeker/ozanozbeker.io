@@ -42,7 +42,6 @@ website:
       category-id: "DIC_kwDOLeHEqM4Cfkfa"
       mapping: pathname
       reactions-enabled: true
-      loading: lazy
       language: "en"
       input-position: bottom
       theme:
