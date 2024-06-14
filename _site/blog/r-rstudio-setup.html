@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Ozan Ozbeker">
 <meta name="dcterms.date" content="2024-06-13">
-<meta name="description" content="The code any why behind my setup, as well as some shoutouts.">
+<meta name="description" content="The code and the ‘why’ behind my setup, as well as some shoutouts.">
 <title>My R &amp; RStudio Setup – Ozan Ozbeker</title>
 <style>
 code{white-space: pre-wrap;}
@@ -102,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <meta property="og:title" content="Ozan Ozbeker - My R &amp; RStudio Setup">
-<meta property="og:description" content="The code any why behind my setup, as well as some shoutouts.">
+<meta property="og:description" content="The code and the ‘why’ behind my setup, as well as some shoutouts.">
 <meta property="og:image" content="https://ozanozbeker.io/resources/images/rstudio_logo.png">
 <meta property="og:site_name" content="Ozan Ozbeker">
 <meta property="og:image:height" content="261">
@@ -147,11 +147,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro"><span class="header-section-number">1</span> Intro</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">2</span> Packages</a></li>
   <li>
-<a href="#rstudio-ide-configuration" id="toc-rstudio-ide-configuration" class="nav-link" data-scroll-target="#rstudio-ide-configuration"><span class="header-section-number">3</span> RStudio IDE Configuration</a>
+<a href="#rprofile" id="toc-rprofile" class="nav-link" data-scroll-target="#rprofile"><span class="header-section-number">2</span> .Rprofile</a>
   <ul class="collapse">
-<li><a href="#real-dark-mode-theme" id="toc-real-dark-mode-theme" class="nav-link" data-scroll-target="#real-dark-mode-theme"><span class="header-section-number">3.1</span> “Real” Dark Mode &amp; Theme</a></li>
+<li><a href="#options" id="toc-options" class="nav-link" data-scroll-target="#options"><span class="header-section-number">2.1</span> Options</a></li>
+  <li><a href="#r-completion-options" id="toc-r-completion-options" class="nav-link" data-scroll-target="#r-completion-options"><span class="header-section-number">2.2</span> R Completion Options</a></li>
+  <li><a href="#interactive-sessions" id="toc-interactive-sessions" class="nav-link" data-scroll-target="#interactive-sessions"><span class="header-section-number">2.3</span> Interactive Sessions</a></li>
+  </ul>
+</li>
+  <li><a href="#r.snippets-rstudio_bindings.json" id="toc-r.snippets-rstudio_bindings.json" class="nav-link" data-scroll-target="#r.snippets-rstudio_bindings.json"><span class="header-section-number">3</span> r.snippets &amp; rstudio_bindings.json</a></li>
+  <li>
+<a href="#r-rstudio-setup.qmd" id="toc-r-rstudio-setup.qmd" class="nav-link" data-scroll-target="#r-rstudio-setup.qmd"><span class="header-section-number">4</span> r-rstudio-setup.qmd</a>
+  <ul class="collapse">
+<li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">4.1</span> Packages</a></li>
+  <li><a href="#rstudio-configuration" id="toc-rstudio-configuration" class="nav-link" data-scroll-target="#rstudio-configuration"><span class="header-section-number">4.2</span> RStudio Configuration</a></li>
+  <li><a href="#real-dark-mode-theme" id="toc-real-dark-mode-theme" class="nav-link" data-scroll-target="#real-dark-mode-theme"><span class="header-section-number">4.3</span> “Real” Dark Mode &amp; Theme</a></li>
   </ul>
 </li>
   </ul><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/ozanozbeker/r-and-rstudio-setup"><i class="bi bi-github"></i>Repo</a></li></ul></div></nav>
@@ -168,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    The code any why behind my setup, as well as some shoutouts.
+    The code and the ‘why’ behind my setup, as well as some shoutouts.
   </div>
 </div>
 
@@ -197,13 +207,127 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header><section id="intro" class="level1" data-number="1"><h1 data-number="1">
 <span class="header-section-number">1</span> Intro</h1>
 <p>This is a hybrid blog post/README/code file where it is the actual code file I use when I update my R environment/computer, but also I wrote some descriptions along the way so if somebody else stumbles upon this and likes what they see, they can copy it or maybe even find something new that they didn’t know about before.</p>
-<p>I original wrote this as the README for the GitHub page, but if you are reading this in my blog, welcome!</p>
-</section><section id="packages" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Packages</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The link to my GitHub repo is on the right panel. Feel free to fork and customize it for your use!</p>
+</div>
+</div>
+</section><section id="rprofile" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> .Rprofile</h1>
+<p>The <code>.Rprofile</code> file is an R script that runs each time R starts up that lets you to customize your R environment. It can be used to set global options, load packages, define functions, and customize the R startup process. Or in my case, have some fun ;)</p>
+<section id="options" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="options">
+<span class="header-section-number">2.1</span> Options</h2>
+<p><code><a href="https://rdrr.io/r/base/options.html">options()</a></code> lets you set the global options for R. All of them have a default, and these are the ones I’ve changed for my preference. You can use <code><a href="https://rdrr.io/r/base/options.html">?options</a></code> to view the full list.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.Rprofile</strong></pre>
+</div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span></span>
+<span>  scipen <span class="op">=</span> <span class="fl">999999</span>,               <span class="co"># A penalty to be applied to turning regular values to scientific notation</span></span>
+<span>  setWidthOnResize <span class="op">=</span> <span class="cn">TRUE</span>,       <span class="co"># If set and TRUE, the terminal resize when the terminal pane is resized</span></span>
+<span>  useFancyQuotes <span class="op">=</span> <span class="cn">FALSE</span>,        <span class="co"># Turn off fancy quotes</span></span>
+<span>  warn <span class="op">=</span> <span class="fl">1</span>,                      <span class="co"># Prints warnings as they happen instead of when the top function ends.</span></span>
+<span>  warnPartialMatchArgs <span class="op">=</span> <span class="cn">TRUE</span>,   <span class="co"># Warns if partial matching is used in argument matching.</span></span>
+<span>  warnPartialMatchAttr <span class="op">=</span> <span class="cn">TRUE</span>,   <span class="co"># Warns if partial matching is used in extracting attributes via attr.</span></span>
+<span>  warnPartialMatchDollar <span class="op">=</span> <span class="cn">TRUE</span>, <span class="co"># Warns if partial matching is used for extraction by $.</span></span>
+<span>  prompt <span class="op">=</span> <span class="st">'R&gt; '</span>,                <span class="co"># This is complete personal preference</span></span>
+<span>  continue <span class="op">=</span> <span class="st">'+&gt; '</span>               <span class="co"># This is complete personal preference</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="r-completion-options" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="r-completion-options">
+<span class="header-section-number">2.2</span> R Completion Options</h2>
+<p>The <code>rc.settings</code> function is part of the utils package in R, which configures settings for the R completion mechanism. It can enable or disable specific completion features like inter-package completion, function argument completion, and fuzzy matching. You can use <code><a href="https://rdrr.io/r/utils/rcompgen.html">?rc.settings</a></code> to view the full list.</p>
+<ol type="1">
+<li>
+<p><code>ipck</code> (Inter-Package Completion):</p>
+<ul>
+<li>Description: This option enables or disables completion of object names across all loaded packages.</li>
+<li>Explanation: If you work with multiple packages, you can quickly access functions and objects from any loaded package without having to remember which package they belong to.</li>
+</ul>
+</li>
+<li>
+<p><code>func</code> (Function Argument Completion):</p>
+<ul>
+<li>Description: This option enables or disables completion of function argument names.</li>
+<li>Explanation: This helps you to write function calls more efficiently by providing argument suggestions, reducing the need to look up function documentation frequently.</li>
+</ul>
+</li>
+<li>
+<p><code>fuzzy</code> (Fuzzy Matching):</p>
+<ul>
+<li>Description: This option enables or disables fuzzy matching for completion.</li>
+<li>Explanation: This is useful when you cannot recall the exact name of a function or object. Fuzzy matching will suggest completions that closely resemble what you have typed, saving time and reducing frustration.</li>
+</ul>
+</li>
+</ol>
+<p>In short, the more help I can get coding, the better 😁</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.Rprofile</strong></pre>
+</div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/rcompgen.html">rc.settings</a></span><span class="op">(</span>ipck <span class="op">=</span> <span class="cn">TRUE</span>, func <span class="op">=</span> <span class="cn">TRUE</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="interactive-sessions" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="interactive-sessions">
+<span class="header-section-number">2.3</span> Interactive Sessions</h2>
+<p>You can use this code section if you want things to enable in an interactive session, like auto-loading certain packages. Some people use it to load packages that they always use, like <code>tidyverse</code>, <code>usethis</code>, <code>devtools</code>, and so on, but I’m in the camp that every script should be very explicit in what packages are being used, so I use this feature to have some fun.</p>
+<p>If in an interactive session, this code will output my message in the console everytime R starts. I’ve always wanted my own <a href="https://en.wikipedia.org/wiki/J.A.R.V.I.S.">J.A.R.V.I.S.</a>, R is close enough 🥲</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.Rprofile</strong></pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Welcome Mr. Ozbeker, how may I be of assistance?"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section></section><section id="r.snippets-rstudio_bindings.json" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> r.snippets &amp; rstudio_bindings.json</h1>
+<p>RStudio lets you add custom snippets (pieces of code that can be quickly inserted, useful for repetitive code) and key bindings that can really help your code flow if you use them. For both files, I only added one thing, but they’ve really improved my coding experience.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>r.snippets</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>snippet user</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  user <span class="ot">=</span> <span class="fu">Sys.info</span>()[[<span class="st">'user'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>rstudio_bindings.json</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"insertPipeOperator"</span><span class="fu">:</span> <span class="st">"Ctrl+</span><span class="ch">\\</span><span class="st">"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="r-rstudio-setup.qmd" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> r-rstudio-setup.qmd</h1>
+<p>Last but not least, we have this Quarto file that applies everything above as well as some custom code we will see below. As I write this, it feels a little 4th wall breaking, but hey that’s life 😎</p>
+<section id="packages" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="packages">
+<span class="header-section-number">4.1</span> Packages</h2>
 <p>These are the packages I most frequently use, loosely grouped into the categories below. This does not include dependency packages. So for example, I use <code>quarto</code> to render Quarto documents via R code, but I don’t directly use the <code>markdown</code> package myself, so it is not listed below.</p>
 <p>You can find the info page for each package at <code>https://cran.r-project.org/web/packages/[package_name]/index.html</code> where <code>[package_name]</code> is the name of the package.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>r-and-rstudio-setup.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span>  <span class="co"># Meta Packages</span></span>
 <span>  <span class="st">'tidyverse'</span>,  <span class="co"># Easily Install and Load the "Tidyverse" packages | https://tidyverse.tidyverse.org</span></span>
 <span>  <span class="st">'tidymodels'</span>, <span class="co"># Easily Install and Load the "Tidymodels" packages | https://tidymodels.tidymodels.org/</span></span>
@@ -263,31 +387,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="co"># 'devtools' # Tools to Make Developing R Packages Easier | https://devtools.r-lib.org/</span></span>
 <span><span class="co"># 'zoo'      # S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations) | https://zoo.R-Forge.R-project.org/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="rstudio-ide-configuration" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> RStudio IDE Configuration</h1>
+</div>
+</section><section id="rstudio-configuration" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="rstudio-configuration">
+<span class="header-section-number">4.2</span> RStudio Configuration</h2>
 <p>As I’ve been using R &amp; RStudio, I’ve learned which settings I like the most, whether they are RStudio settings or R options, as well as some custom snippets. This section of code takes the respective files and copies them to where the base files for R and RStudioa are. I really created this because of my job where we log into different virtual machines, and I got sick of resetting all of these options by hand, so now I just pull this repo from GitHub and run the code.</p>
 <p>The directories don’t exist by default, they are created when you manually change the respective settings, so this chunk takes care of that, especially if it’s a fresh install of RStudio.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/purrr/man/map.html">walk</a></span><span class="op">(</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>r-and-rstudio-setup.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/purrr/man/map.html">walk</a></span><span class="op">(</span></span>
 <span>  .x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'themes'</span>, <span class="st">'keybindings'</span>, <span class="st">'snippets'</span><span class="op">)</span>,</span>
-<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">directory</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"C:/Users/"</span>, <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'user'</span><span class="op">]</span><span class="op">]</span><span class="op">}</span>, <span class="st">"/AppData/Roaming/RStudio/"</span>, <span class="va">directory</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html">dir_create</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">directory</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"C:/Users/"</span>, <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'user'</span><span class="op">]</span><span class="op">]</span><span class="op">}</span>, <span class="st">"/AppData/Roaming/RStudio/"</span>, <span class="va">directory</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html">dir_create</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Then we copy the files from this folder to their appropriate locations.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/purrr/man/pmap.html">pwalk</a></span><span class="op">(</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>r-and-rstudio-setup.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/purrr/man/pmap.html">pwalk</a></span><span class="op">(</span></span>
 <span>  .l <span class="op">=</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tibble/man/tribble.html">tribble</a></span><span class="op">(</span></span>
 <span>    <span class="op">~</span><span class="va">file</span>,                   <span class="op">~</span><span class="va">destination</span>,</span>
-<span>    <span class="st">'rstudio_bindings.json'</span>,  <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/keybindings/rstudio_bindings.json"</span><span class="op">)</span>,</span>
-<span>    <span class="st">'KISS - OZBEKER.rstheme'</span>, <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/themes/KISS - OZBEKER.rstheme"</span><span class="op">)</span>,</span>
-<span>    <span class="st">'r.snippets'</span>,             <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/snippets/r.snippets"</span><span class="op">)</span>,</span>
-<span>    <span class="st">'rstudio-prefs.json'</span>,     <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/rstudio-prefs.json"</span><span class="op">)</span>,</span>
-<span>    <span class="st">'.Rprofile'</span>,              <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringr/man/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/Documents/.Rprofile"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="st">'rstudio_bindings.json'</span>,  <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/keybindings/rstudio_bindings.json"</span><span class="op">)</span>,</span>
+<span>    <span class="st">'KISS - OZBEKER.rstheme'</span>, <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/themes/KISS - OZBEKER.rstheme"</span><span class="op">)</span>,</span>
+<span>    <span class="st">'r.snippets'</span>,             <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/snippets/r.snippets"</span><span class="op">)</span>,</span>
+<span>    <span class="st">'rstudio-prefs.json'</span>,     <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/rstudio-prefs.json"</span><span class="op">)</span>,</span>
+<span>    <span class="st">'.Rprofile'</span>,              <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"C:/Users/{Sys.info()[['user']]}/Documents/.Rprofile"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  .f <span class="op">=</span> \<span class="op">(</span><span class="va">file</span>, <span class="va">destination</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/copy.html">file_copy</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">file</span>, new_path <span class="op">=</span> <span class="va">destination</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="real-dark-mode-theme" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="real-dark-mode-theme">
-<span class="header-section-number">3.1</span> “Real” Dark Mode &amp; Theme</h2>
+</div>
+</section><section id="real-dark-mode-theme" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="real-dark-mode-theme">
+<span class="header-section-number">4.3</span> “Real” Dark Mode &amp; Theme</h2>
 <p>I hate that when you use dark mode in RStudio, it’s just this dark blue shade for the UI, not actually dark/black. Also, I’m really not a fan of any of the themes that come with RStudio. Luckily for me, GitHub user <a href="https://github.com/rileytwo">rileytwo</a> made a fix for both of those problems for me.</p>
 <ul>
 <li>
@@ -297,8 +432,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>If either of these interest you, please go check them out as they have been the staple to my R experience and I like to support the creator as best as I can.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">'rileytwo/darkstudio'</span><span class="op">)</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>r-and-rstudio-setup.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">'rileytwo/darkstudio'</span><span class="op">)</span></span>
 <span><span class="fu">darkstudio</span><span class="fu">::</span><span class="fu">activate</span><span class="op">(</span><span class="op">)</span> <span class="co"># This requires admin privileges</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 
 
@@ -924,147 +1064,234 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My R &amp; RStudio Setup"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "The code any why behind my setup, as well as some shoutouts."</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-06-13"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["R", "RStudio", "Workstation"]</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ../resources/images/rstudio_logo.png</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">  cache: false</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">  html: </span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-links:</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: "Repo"</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: github</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/ozanozbeker/r-and-rstudio-setup</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># Intro</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>This is a hybrid blog post/README/code file where it is the actual code file I use when I update my R environment/computer, but also I wrote some descriptions along the way so if somebody else stumbles upon this and likes what they see, they can copy it or maybe even find something new that they didn't know about before.</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>I original wrote this as the README for the GitHub page, but if you are reading this in my blog, welcome!</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu"># Packages</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>These are the packages I most frequently use, loosely grouped into the categories below. This does not include dependency packages. So for example, I use <span class="in">`quarto`</span> to render Quarto documents via R code, but I don't directly use the <span class="in">`markdown`</span> package myself, so it is not listed below.</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>You can find the info page for each package at <span class="in">`https://cran.r-project.org/web/packages/[package_name]/index.html`</span> where <span class="in">`[package_name]`</span> is the name of the package.</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: install-packages</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Meta Packages</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  <span class="st">'tidyverse'</span>,  <span class="co"># Easily Install and Load the "Tidyverse" packages | https://tidyverse.tidyverse.org</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="st">'tidymodels'</span>, <span class="co"># Easily Install and Load the "Tidymodels" packages | https://tidymodels.tidymodels.org/</span></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Programming &amp; Development</span></span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>  <span class="st">'purrr'</span>,    <span class="co"># Functional Programming Tools | https://purrr.tidyverse.org/</span></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>  <span class="st">'forcats'</span>,  <span class="co"># Tools for Working with Categorical Variables (Factors) | https://forcats.tidyverse.org/</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  <span class="st">'keyring'</span>,  <span class="co"># Package for accessing OS's credential store | https://keyring.r-lib.org/</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  <span class="st">'fs'</span>,       <span class="co"># Cross-Platform File System Operations Based on 'libuv' | https://fs.r-lib.org/</span></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Import</span></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  <span class="st">'readr'</span>,    <span class="co"># Read Rectangular Data | https://readr.tidyverse.org/</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  <span class="st">'httr2'</span>,    <span class="co"># Perform HTTP Requests and Process the Responses | https://httr2.r-lib.org/</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  <span class="st">'readxl'</span>,   <span class="co"># Read Excel Files | https://readxl.tidyverse.org/</span></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  <span class="st">'rvest'</span>,    <span class="co"># Easily Harvest (Scrape) Web Pages | https://rvest.tidyverse.org/</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  <span class="st">'jsonlite'</span>, <span class="co"># A Simple and Robust JSON Parser and Generator for R | https://jeroen.r-universe.dev/jsonlite</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Tidy/Transform</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dplyr'</span>,     <span class="co"># A Grammar of Data Manipulation | https://dplyr.tidyverse.org/</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>  <span class="st">'tidyr'</span>,     <span class="co"># Tidy Messy Data | https://tidyr.tidyverse.org/</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>  <span class="st">'tibble'</span>,    <span class="co"># Simple Data Frames | https://tibble.tidyverse.org/</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>  <span class="st">'stringr'</span>,   <span class="co"># Simple, Consistent Wrappers for Common String Operations | https://stringr.tidyverse.org/</span></span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>  <span class="st">'lubridate'</span>, <span class="co"># Make Dealing with Dates a Little Easier | https://lubridate.tidyverse.org/</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>  <span class="st">'janitor'</span>,   <span class="co"># Simple Tools for Examining and Cleaning Dirty Data | https://sfirke.github.io/janitor/index.html </span></span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Visualize</span></span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>  <span class="st">'ggplot2'</span>, <span class="co"># Create Elegant Data Visualizations Using the Grammar of Graphics | https://ggplot2.tidyverse.org/</span></span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Model</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>  <span class="st">'rsample'</span>,   <span class="co"># General Re-sampling Infrastructure | https://rsample.tidymodels.org/</span></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>  <span class="st">'parsnip'</span>,   <span class="co"># A Common API to Modeling and Analysis Functions | https://parsnip.tidymodels.org/</span></span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>  <span class="st">'recipes'</span>,   <span class="co"># Pre-processing and Feature Engineering Steps for Modeling | https://recipes.tidymodels.org/</span></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>  <span class="st">'workflows'</span>, <span class="co"># Modeling Workflows | https://workflows.tidymodels.org/</span></span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>  <span class="st">'tune'</span>,      <span class="co"># Tidy Tuning Tools | https://tune.tidymodels.org/</span></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>  <span class="st">'yardstick'</span>, <span class="co"># Tidy Characterizations of Model Performance | https://yardstick.tidymodels.org/</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>  <span class="st">'broom'</span>,     <span class="co"># Convert Statistical Objects into Tidy Tibbles | https://broom.tidymodels.org/</span></span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dials'</span>,     <span class="co"># Tools for Creating Tuning Parameter Values | https://dials.tidymodels.org/</span></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>  <span class="st">'infer'</span>,     <span class="co"># Tidy Statistical Inference | https://infer.tidymodels.org/</span></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>  <span class="st">'corrr'</span>,     <span class="co"># Correlations in R | https://corrr.tidymodels.org/</span></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Communicate</span></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>  <span class="st">'quarto'</span>, <span class="co"># R Interface to 'Quarto' Markdown Publishing System</span></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Database</span></span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>  <span class="st">'DBI'</span>,     <span class="co"># R Database Interface | https://dbi.r-dbi.org/index.html</span></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>  <span class="st">'odbc'</span>,    <span class="co"># Connect to ODBC Compatible Databases (using the {DBI} Interface) | https://odbc.r-dbi.org/</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbplyr'</span>,  <span class="co"># A {dplyr} Back End for Databases | https://dbplyr.tidyverse.org/</span></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>  <span class="st">'duckdb'</span>,  <span class="co"># {DBI} Package for the DuckDB Database Management System | https://r.duckdb.org/</span></span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>  <span class="st">'duckplyr'</span> <span class="co"># A DuckDB-backed Version of {dplyr} | https://duckdblabs.github.io/duckplyr/</span></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Other packages I'm interested in:</span></span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="co"># 'profvis'  # Interactive Visualizations for Profiling R Code | https://rstudio.github.io/profvis/</span></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="co"># 'targets'  # Pipelining Tools in R | https://docs.ropensci.org/targets/</span></span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a><span class="co"># 'testthat' # Unit Testing for R | https://testthat.r-lib.org</span></span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="co"># 'usethis'  # Automate Package and Project Setup | https://usethis.r-lib.org/</span></span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="co"># 'devtools' # Tools to Make Developing R Packages Easier | https://devtools.r-lib.org/</span></span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="co"># 'zoo'      # S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations) | https://zoo.R-Forge.R-project.org/</span></span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="fu"># RStudio IDE Configuration</span></span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>As I've been using R &amp; RStudio, I've learned which settings I like the most, whether they are RStudio settings or R options, as well as some custom snippets. This section of code takes the respective files and copies them to where the base files for R and RStudioa are. I really created this because of my job where we log into different virtual machines, and I got sick of resetting all of these options by hand, so now I just pull this repo from GitHub and run the code.</span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>The directories don't exist by default, they are created when you manually change the respective settings, so this chunk takes care of that, especially if it's a fresh install of RStudio.</span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: create-rstudio-directories</span></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">walk</span>(</span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>  <span class="at">.x =</span> <span class="fu">c</span>(<span class="st">'themes'</span>, <span class="st">'keybindings'</span>, <span class="st">'snippets'</span>),</span>
-<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>  <span class="at">.f =</span> \(directory) stringr<span class="sc">::</span><span class="fu">str_c</span>(<span class="st">"C:/Users/"</span>, {<span class="fu">Sys.info</span>()[[<span class="st">'user'</span>]]}, <span class="st">"/AppData/Roaming/RStudio/"</span>, directory) <span class="sc">|&gt;</span> fs<span class="sc">::</span><span class="fu">dir_create</span>()</span>
-<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>Then we copy the files from this folder to their appropriate locations.</span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: copy-files</span></span>
-<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pwalk</span>(</span>
-<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>  <span class="at">.l =</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>    <span class="sc">~</span>file,                   <span class="sc">~</span>destination,</span>
-<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>    <span class="st">'rstudio_bindings.json'</span>,  stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/keybindings/rstudio_bindings.json"</span>),</span>
-<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>    <span class="st">'KISS - OZBEKER.rstheme'</span>, stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/themes/KISS - OZBEKER.rstheme"</span>),</span>
-<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>    <span class="st">'r.snippets'</span>,             stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/snippets/r.snippets"</span>),</span>
-<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>    <span class="st">'rstudio-prefs.json'</span>,     stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">"C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/rstudio-prefs.json"</span>),</span>
-<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>    <span class="st">'.Rprofile'</span>,              stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">"C:/Users/{Sys.info()[['user']]}/Documents/.Rprofile"</span>)),</span>
-<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">.f =</span> \(file, destination) fs<span class="sc">::</span><span class="fu">file_copy</span>(<span class="at">path =</span> file, <span class="at">new_path =</span> destination, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a><span class="fu">## "Real" Dark Mode &amp; Theme</span></span>
-<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>I hate that when you use dark mode in RStudio, it's just this dark blue shade for the UI, not actually dark/black. Also, I'm really not a fan of any of the themes that come with RStudio. Luckily for me, GitHub user <span class="co">[</span><span class="ot">rileytwo</span><span class="co">](https://github.com/rileytwo)</span> made a fix for both of those problems for me.</span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">{darkstudio}</span><span class="co">](https://github.com/rileytwo/darkstudio)</span> is a package that turns the IDE elements to shades of black whenever you are using a theme with <span class="in">`rs-theme-is-dark: TRUE`</span>.</span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Kiss: Keep It Stupid Simple</span><span class="co">](https://github.com/rileytwo/kiss)</span> is a theme from Riley that just looks so good, it's been my go to for over a year now.</span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>If either of these interest you, please go check them out as they have been the staple to my R experience and I like to support the creator as best as I can.</span>
-<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: activate-dark-studio</span></span>
-<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'rileytwo/darkstudio'</span>)</span>
-<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>darkstudio<span class="sc">::</span><span class="fu">activate</span>() <span class="co"># This requires admin privileges</span></span>
-<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My R &amp; RStudio Setup"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "The code and the 'why' behind my setup, as well as some shoutouts."</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-06-13"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["R", "RStudio", "Workstation"]</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ../resources/images/rstudio_logo.png</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">  cache: false</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">  html: </span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-links:</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: "Repo"</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: github</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/ozanozbeker/r-and-rstudio-setup</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># Intro</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>This is a hybrid blog post/README/code file where it is the actual code file I use when I update my R environment/computer, but also I wrote some descriptions along the way so if somebody else stumbles upon this and likes what they see, they can copy it or maybe even find something new that they didn't know about before.</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>The link to my GitHub repo is on the right panel. Feel free to fork and customize it for your use!</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="fu"># .Rprofile</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.Rprofile`</span> file is an R script that runs each time R starts up that lets you to customize your R environment. It can be used to set global options, load packages, define functions, and customize the R startup process. Or in my case, have some fun ;)</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Options</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="in">`options()`</span> lets you set the global options for R. All of them have a default, and these are the ones I've changed for my preference. You can use <span class="in">`?options`</span> to view the full list.</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r filename=".Rprofile"}</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: my-options</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="in">options(</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="in">  scipen = 999999,               # A penalty to be applied to turning regular values to scientific notation</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="in">  setWidthOnResize = TRUE,       # If set and TRUE, the terminal resize when the terminal pane is resized</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="in">  useFancyQuotes = FALSE,        # Turn off fancy quotes</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="in">  warn = 1,                      # Prints warnings as they happen instead of when the top function ends.</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="in">  warnPartialMatchArgs = TRUE,   # Warns if partial matching is used in argument matching.</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="in">  warnPartialMatchAttr = TRUE,   # Warns if partial matching is used in extracting attributes via attr.</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="in">  warnPartialMatchDollar = TRUE, # Warns if partial matching is used for extraction by $.</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="in">  prompt = 'R&gt; ',                # This is complete personal preference</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="in">  continue = '+&gt; '               # This is complete personal preference</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## R Completion Options</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>The <span class="in">`rc.settings`</span> function is part of the utils package in R, which configures settings for the R completion mechanism. It can enable or disable specific completion features like inter-package completion, function argument completion, and fuzzy matching. You can use <span class="in">`?rc.settings`</span> to view the full list.</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span><span class="in">`ipck`</span> (Inter-Package Completion):</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Description: This option enables or disables completion of object names across all loaded packages.</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Explanation: If you work with multiple packages, you can quickly access functions and objects from any loaded package without having to remember which package they belong to.</span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span><span class="in">`func`</span> (Function Argument Completion):</span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Description: This option enables or disables completion of function argument names.</span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Explanation: This helps you to write function calls more efficiently by providing argument suggestions, reducing the need to look up function documentation frequently.</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span><span class="in">`fuzzy`</span> (Fuzzy Matching):</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Description: This option enables or disables fuzzy matching for completion.</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Explanation: This is useful when you cannot recall the exact name of a function or object. Fuzzy matching will suggest completions that closely resemble what you have typed, saving time and reducing frustration.</span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>In short, the more help I can get coding, the better 😁</span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{r filename=".Rprofile"}</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: my-rc-settings</span></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a><span class="in">rc.settings(ipck = TRUE, func = TRUE, fuzzy = TRUE)</span></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interactive Sessions</span></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>You can use this code section if you want things to enable in an interactive session, like auto-loading certain packages. Some people use it to load packages that they always use, like <span class="in">`tidyverse`</span>, <span class="in">`usethis`</span>, <span class="in">`devtools`</span>, and so on, but I'm in the camp that every script should be very explicit in what packages are being used, so I use this feature to have some fun.</span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>If in an interactive session, this code will output my message in the console everytime R starts. I've always wanted my own <span class="co">[</span><span class="ot">J.A.R.V.I.S.</span><span class="co">](https://en.wikipedia.org/wiki/J.A.R.V.I.S.)</span>, R is close enough 🥲</span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r filename=".Rprofile"}</span></span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: my-startup-message</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a><span class="in">if (interactive()) {</span></span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a><span class="in">  message("Welcome Mr. Ozbeker, how may I be of assistance?")</span></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a><span class="fu"># r.snippets &amp; rstudio_bindings.json</span></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>RStudio lets you add custom snippets (pieces of code that can be quickly inserted, useful for repetitive code) and key bindings that can really help your code flow if you use them. For both files, I only added one thing, but they've really improved my coding experience.</span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r filename="r.snippets"}</span></span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: my-custom-snippets</span></span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a><span class="in">snippet user</span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a><span class="in">  user = Sys.info()[['user']]</span></span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{json filename="rstudio_bindings.json"}</span></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a><span class="in">    "insertPipeOperator": "Ctrl+\\"</span></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a><span class="fu"># r-rstudio-setup.qmd</span></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a>Last but not least, we have this Quarto file that applies everything above as well as some custom code we will see below. As I write this, it feels a little 4th wall breaking, but hey that's life 😎</span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a><span class="fu">## Packages</span></span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>These are the packages I most frequently use, loosely grouped into the categories below. This does not include dependency packages. So for example, I use <span class="in">`quarto`</span> to render Quarto documents via R code, but I don't directly use the <span class="in">`markdown`</span> package myself, so it is not listed below.</span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a>You can find the info page for each package at <span class="in">`https://cran.r-project.org/web/packages/[package_name]/index.html`</span> where <span class="in">`[package_name]`</span> is the name of the package.</span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r filename="r-and-rstudio-setup.qmd"}</span></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: install-packages</span></span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a><span class="in">install.packages(c(</span></span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a><span class="in">  # Meta Packages</span></span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a><span class="in">  'tidyverse',  # Easily Install and Load the "Tidyverse" packages | https://tidyverse.tidyverse.org</span></span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a><span class="in">  'tidymodels', # Easily Install and Load the "Tidymodels" packages | https://tidymodels.tidymodels.org/</span></span>
+<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a><span class="in">  # Programming &amp; Development</span></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="in">  'purrr',    # Functional Programming Tools | https://purrr.tidyverse.org/</span></span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a><span class="in">  'forcats',  # Tools for Working with Categorical Variables (Factors) | https://forcats.tidyverse.org/</span></span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a><span class="in">  'keyring',  # Package for accessing OS's credential store | https://keyring.r-lib.org/</span></span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a><span class="in">  'fs',       # Cross-Platform File System Operations Based on 'libuv' | https://fs.r-lib.org/</span></span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a><span class="in">  # Import</span></span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a><span class="in">  'readr',    # Read Rectangular Data | https://readr.tidyverse.org/</span></span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a><span class="in">  'httr2',    # Perform HTTP Requests and Process the Responses | https://httr2.r-lib.org/</span></span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a><span class="in">  'readxl',   # Read Excel Files | https://readxl.tidyverse.org/</span></span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a><span class="in">  'rvest',    # Easily Harvest (Scrape) Web Pages | https://rvest.tidyverse.org/</span></span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a><span class="in">  'jsonlite', # A Simple and Robust JSON Parser and Generator for R | https://jeroen.r-universe.dev/jsonlite</span></span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a><span class="in">  # Tidy/Transform</span></span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a><span class="in">  'dplyr',     # A Grammar of Data Manipulation | https://dplyr.tidyverse.org/</span></span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a><span class="in">  'tidyr',     # Tidy Messy Data | https://tidyr.tidyverse.org/</span></span>
+<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a><span class="in">  'tibble',    # Simple Data Frames | https://tibble.tidyverse.org/</span></span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a><span class="in">  'stringr',   # Simple, Consistent Wrappers for Common String Operations | https://stringr.tidyverse.org/</span></span>
+<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a><span class="in">  'lubridate', # Make Dealing with Dates a Little Easier | https://lubridate.tidyverse.org/</span></span>
+<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a><span class="in">  'janitor',   # Simple Tools for Examining and Cleaning Dirty Data | https://sfirke.github.io/janitor/index.html </span></span>
+<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a><span class="in">  # Visualize</span></span>
+<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a><span class="in">  'ggplot2', # Create Elegant Data Visualizations Using the Grammar of Graphics | https://ggplot2.tidyverse.org/</span></span>
+<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a><span class="in">  # Model</span></span>
+<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a><span class="in">  'rsample',   # General Re-sampling Infrastructure | https://rsample.tidymodels.org/</span></span>
+<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a><span class="in">  'parsnip',   # A Common API to Modeling and Analysis Functions | https://parsnip.tidymodels.org/</span></span>
+<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a><span class="in">  'recipes',   # Pre-processing and Feature Engineering Steps for Modeling | https://recipes.tidymodels.org/</span></span>
+<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a><span class="in">  'workflows', # Modeling Workflows | https://workflows.tidymodels.org/</span></span>
+<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a><span class="in">  'tune',      # Tidy Tuning Tools | https://tune.tidymodels.org/</span></span>
+<span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a><span class="in">  'yardstick', # Tidy Characterizations of Model Performance | https://yardstick.tidymodels.org/</span></span>
+<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a><span class="in">  'broom',     # Convert Statistical Objects into Tidy Tibbles | https://broom.tidymodels.org/</span></span>
+<span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a><span class="in">  'dials',     # Tools for Creating Tuning Parameter Values | https://dials.tidymodels.org/</span></span>
+<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a><span class="in">  'infer',     # Tidy Statistical Inference | https://infer.tidymodels.org/</span></span>
+<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a><span class="in">  'corrr',     # Correlations in R | https://corrr.tidymodels.org/</span></span>
+<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a><span class="in">  # Communicate</span></span>
+<span id="cb10-163"><a href="#cb10-163" aria-hidden="true" tabindex="-1"></a><span class="in">  'quarto', # R Interface to 'Quarto' Markdown Publishing System</span></span>
+<span id="cb10-164"><a href="#cb10-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-165"><a href="#cb10-165" aria-hidden="true" tabindex="-1"></a><span class="in">  # Database</span></span>
+<span id="cb10-166"><a href="#cb10-166" aria-hidden="true" tabindex="-1"></a><span class="in">  'DBI',     # R Database Interface | https://dbi.r-dbi.org/index.html</span></span>
+<span id="cb10-167"><a href="#cb10-167" aria-hidden="true" tabindex="-1"></a><span class="in">  'odbc',    # Connect to ODBC Compatible Databases (using the {DBI} Interface) | https://odbc.r-dbi.org/</span></span>
+<span id="cb10-168"><a href="#cb10-168" aria-hidden="true" tabindex="-1"></a><span class="in">  'dbplyr',  # A {dplyr} Back End for Databases | https://dbplyr.tidyverse.org/</span></span>
+<span id="cb10-169"><a href="#cb10-169" aria-hidden="true" tabindex="-1"></a><span class="in">  'duckdb',  # {DBI} Package for the DuckDB Database Management System | https://r.duckdb.org/</span></span>
+<span id="cb10-170"><a href="#cb10-170" aria-hidden="true" tabindex="-1"></a><span class="in">  'duckplyr' # A DuckDB-backed Version of {dplyr} | https://duckdblabs.github.io/duckplyr/</span></span>
+<span id="cb10-171"><a href="#cb10-171" aria-hidden="true" tabindex="-1"></a><span class="in">))</span></span>
+<span id="cb10-172"><a href="#cb10-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-173"><a href="#cb10-173" aria-hidden="true" tabindex="-1"></a><span class="in"># Other packages I'm interested in:</span></span>
+<span id="cb10-174"><a href="#cb10-174" aria-hidden="true" tabindex="-1"></a><span class="in"># 'profvis'  # Interactive Visualizations for Profiling R Code | https://rstudio.github.io/profvis/</span></span>
+<span id="cb10-175"><a href="#cb10-175" aria-hidden="true" tabindex="-1"></a><span class="in"># 'targets'  # Pipelining Tools in R | https://docs.ropensci.org/targets/</span></span>
+<span id="cb10-176"><a href="#cb10-176" aria-hidden="true" tabindex="-1"></a><span class="in"># 'testthat' # Unit Testing for R | https://testthat.r-lib.org</span></span>
+<span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a><span class="in"># 'usethis'  # Automate Package and Project Setup | https://usethis.r-lib.org/</span></span>
+<span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a><span class="in"># 'devtools' # Tools to Make Developing R Packages Easier | https://devtools.r-lib.org/</span></span>
+<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a><span class="in"># 'zoo'      # S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations) | https://zoo.R-Forge.R-project.org/</span></span>
+<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## RStudio Configuration</span></span>
+<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a>As I've been using R &amp; RStudio, I've learned which settings I like the most, whether they are RStudio settings or R options, as well as some custom snippets. This section of code takes the respective files and copies them to where the base files for R and RStudioa are. I really created this because of my job where we log into different virtual machines, and I got sick of resetting all of these options by hand, so now I just pull this repo from GitHub and run the code.</span>
+<span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a>The directories don't exist by default, they are created when you manually change the respective settings, so this chunk takes care of that, especially if it's a fresh install of RStudio.</span>
+<span id="cb10-187"><a href="#cb10-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-188"><a href="#cb10-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r filename="r-and-rstudio-setup.qmd"}</span></span>
+<span id="cb10-189"><a href="#cb10-189" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: create-rstudio-directories</span></span>
+<span id="cb10-190"><a href="#cb10-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-191"><a href="#cb10-191" aria-hidden="true" tabindex="-1"></a><span class="in">purrr::walk(</span></span>
+<span id="cb10-192"><a href="#cb10-192" aria-hidden="true" tabindex="-1"></a><span class="in">  .x = c('themes', 'keybindings', 'snippets'),</span></span>
+<span id="cb10-193"><a href="#cb10-193" aria-hidden="true" tabindex="-1"></a><span class="in">  .f = \(directory) stringr::str_c("C:/Users/", {Sys.info()[['user']]}, "/AppData/Roaming/RStudio/", directory) |&gt; fs::dir_create()</span></span>
+<span id="cb10-194"><a href="#cb10-194" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb10-195"><a href="#cb10-195" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-196"><a href="#cb10-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-197"><a href="#cb10-197" aria-hidden="true" tabindex="-1"></a>Then we copy the files from this folder to their appropriate locations.</span>
+<span id="cb10-198"><a href="#cb10-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r filename="r-and-rstudio-setup.qmd"}</span></span>
+<span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: copy-files</span></span>
+<span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a><span class="in">purrr::pwalk(</span></span>
+<span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a><span class="in">  .l = tibble::tribble(</span></span>
+<span id="cb10-204"><a href="#cb10-204" aria-hidden="true" tabindex="-1"></a><span class="in">    ~file,                   ~destination,</span></span>
+<span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a><span class="in">    'rstudio_bindings.json',  stringr::str_glue("C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/keybindings/rstudio_bindings.json"),</span></span>
+<span id="cb10-206"><a href="#cb10-206" aria-hidden="true" tabindex="-1"></a><span class="in">    'KISS - OZBEKER.rstheme', stringr::str_glue("C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/themes/KISS - OZBEKER.rstheme"),</span></span>
+<span id="cb10-207"><a href="#cb10-207" aria-hidden="true" tabindex="-1"></a><span class="in">    'r.snippets',             stringr::str_glue("C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/snippets/r.snippets"),</span></span>
+<span id="cb10-208"><a href="#cb10-208" aria-hidden="true" tabindex="-1"></a><span class="in">    'rstudio-prefs.json',     stringr::str_glue("C:/Users/{Sys.info()[['user']]}/AppData/Roaming/RStudio/rstudio-prefs.json"),</span></span>
+<span id="cb10-209"><a href="#cb10-209" aria-hidden="true" tabindex="-1"></a><span class="in">    '.Rprofile',              stringr::str_glue("C:/Users/{Sys.info()[['user']]}/Documents/.Rprofile")),</span></span>
+<span id="cb10-210"><a href="#cb10-210" aria-hidden="true" tabindex="-1"></a><span class="in">  .f = \(file, destination) fs::file_copy(path = file, new_path = destination, overwrite = TRUE)</span></span>
+<span id="cb10-211"><a href="#cb10-211" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## "Real" Dark Mode &amp; Theme</span></span>
+<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a>I hate that when you use dark mode in RStudio, it's just this dark blue shade for the UI, not actually dark/black. Also, I'm really not a fan of any of the themes that come with RStudio. Luckily for me, GitHub user <span class="co">[</span><span class="ot">rileytwo</span><span class="co">](https://github.com/rileytwo)</span> made a fix for both of those problems for me.</span>
+<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">{darkstudio}</span><span class="co">](https://github.com/rileytwo/darkstudio)</span> is a package that turns the IDE elements to shades of black whenever you are using a theme with <span class="in">`rs-theme-is-dark: TRUE`</span>.</span>
+<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Kiss: Keep It Stupid Simple</span><span class="co">](https://github.com/rileytwo/kiss)</span> is a theme from Riley that just looks so good, it's been my go to for over a year now.</span>
+<span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a>If either of these interest you, please go check them out as they have been the staple to my R experience and I like to support the creator as best as I can.</span>
+<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a><span class="in">```{r filename="r-and-rstudio-setup.qmd"}</span></span>
+<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: activate-dark-studio</span></span>
+<span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a><span class="in">devtools::install_github('rileytwo/darkstudio')</span></span>
+<span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a><span class="in">darkstudio::activate() # This requires admin privileges</span></span>
+<span id="cb10-228"><a href="#cb10-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
