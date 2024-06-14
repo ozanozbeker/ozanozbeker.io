@@ -6,6 +6,9 @@ execute:
 # Authoring
 author: "Ozan Ozbeker"
 
+# Navigation
+page-navigation: true
+
 # Editor
 editor_options:
   chunk_output_type: console

@@ -26,7 +26,6 @@ website:
         text: "Resume"
       - href: blog.qmd
         text: "Blog"
-  page-navigation: true
   back-to-top-navigation: true
   page-footer:
     left: "Copyright 2024, Ozan Ozbeker"
