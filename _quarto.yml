@@ -1,5 +1,6 @@
 project:
   type: website
+  resources: resources
   render:
     - index.qmd
     - resume.qmd
@@ -50,5 +51,3 @@ format:
     theme:
       light: [flatly, resources/themes/flatly-nord-ozbeker.scss]
       dark:  [darkly, resources/themes/darkly-nord-ozbeker.scss]
-
-editor: visual

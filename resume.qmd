@@ -5,10 +5,10 @@ format:
     toc-title: "Sections"
     other-links:
       - text: "Cover Letter PDF"
-        href: resources/documents/Ozan Ozbeker Cover Letter.pdf
+        href: resources/documents/ozan-ozbeker-cover-letter.pdf
         icon: file-earmark-text
       - text: "Resume PDF"
-        href: resources/documents/Ozan Ozbeker Resume.pdf
+        href: resources/documents/ozan-ozbeker-resume.pdf
         icon: file-earmark-text
       - text: "GitHub"
         href: https://github.com/ozanozbeker/
@@ -240,12 +240,12 @@ While I have dabbled in VBA for creating macros, I prefer using standard Excel f
 
 [**West Virginia University**](https://www.wvu.edu/) **- Morgantown, WV** \| August 2019 - May 2021
 
-As a Teaching Assistant at West Virginia University from August 2019 to May 2021, I contributed to the academic development of students across multiple courses in the Industrial Engineering department. I assisted in teaching: 
+As a Teaching Assistant at West Virginia University from August 2019 to May 2021, I contributed to the academic development of students across multiple courses in the Industrial Engineering department. I assisted in teaching:
 
-- **Spring 2021** \| IENG 220: Re-engineering Management Systems,
-- **Fall 2020** \| IENG 305: Intro to Systems Engineering,
-- **Spring 2020** \| IENG 331: Computer Applications in Industrial Engineering, and 
-- **Fall 2019** \| IENG 445: Project Management for Engineers. 
+-   **Spring 2021** \| IENG 220: Re-engineering Management Systems,
+-   **Fall 2020** \| IENG 305: Intro to Systems Engineering,
+-   **Spring 2020** \| IENG 331: Computer Applications in Industrial Engineering, and
+-   **Fall 2019** \| IENG 445: Project Management for Engineers.
 
 Throughout these roles, I gained valuable skills in teaching and curriculum development. My responsibilities included conducting lectures, leading lab sessions, grading assignments, and providing one-on-one support to students, helping them grasp complex concepts and apply theoretical knowledge to practical projects.
 

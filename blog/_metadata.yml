@@ -22,13 +22,13 @@ number-sections: true
 page-layout: article
 
 # External Links
-link-external-icon: false
+link-external-icon: true
 link-external-newwindow: true
 
 # Code options
 code-overflow: scroll
 code-copy: true
-code-link: true
+code-link: false
 code-tools: true
 code-block-bg: "#212529"
 highlight-style: "nord"
