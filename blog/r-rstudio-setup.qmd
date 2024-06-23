@@ -1,8 +1,8 @@
 ---
-title: "My R & RStudio Setup"
+title: "My R & RStudio Setup | 2024"
 description: "The code and the 'why' behind my setup, as well as some shoutouts."
 date: "2024-06-13"
-categories: ["R", "RStudio", "Work Setup", "\"Living\" Post"]
+categories: ["R", "RStudio", "Work Setup"]
 image: ../resources/images/rstudio_logo.png
 execute: 
   eval: false
@@ -19,10 +19,6 @@ format:
 # Intro
 
 This is a hybrid blog post/README/code file where it is the actual code file I use when I update my R environment/computer, but also I wrote some descriptions along the way so if somebody else stumbles upon this and likes what they see, they can copy it or maybe even find something new that they didn't know about before. The link to my GitHub repo is on the right panel. Feel free to fork and customize it for your use!
-
-::: callout-note
-This is what I'm going to call a "Living Post", where it's living in the sense that I plan on updating it over time, and just republish instead of creating a new one.
-:::
 
 # r-and-rstudio-setup.R
 

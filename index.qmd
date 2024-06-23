@@ -1,5 +1,7 @@
 ---
 title: "Ozan Ozbeker"
+subtitle: "Data Scientist"
+css: resources/themes/custom-index.scss
 image: resources/images/professional_picture.jpg
 page-layout: full
 about:
@@ -20,7 +22,6 @@ comments: false
 
 **As a Data Scientist**, I specialize in leveraging advanced analytics to solve complex business challenges, managing the entire data science process from importing and tidying data to modeling and communicating insights. With a strong foundation in R, I extensively use the Tidyverse and Tidymodels for data management and analysis, and I am skilled in importing data from databases, spreadsheets, web scraping, and API calls. My expertise includes creating automated ETL processes, developing complex SQL queries, and managing PostgreSQL databases. I have successfully led end-to-end client projects in the replacement parts business, building reporting tools and dashboards to support key decision-making for both B2B and B2C sales. I frequently use {ggplot2} for data visualization and deliver final insights through Tableau and other BI tools. My modeling experience includes forecasting, classification, and recommendation engines. Additionally, I am adept at building automated reports and executive dashboards using Quarto, incorporating HTML and CSS for customization. My ability to manage complete data pipelines and present findings to high-value stakeholders makes me a valuable asset in driving data-driven decision-making and strategic initiatives.
 
-**Outside of work**, I'm a huge fan of live music, especially Rock and EDM, and I'm making a bigger effort to travel and create experiences this year. I've been playing the guitar for about 10 years and creating a budget for around 3 years. When the weather's nice, I enjoy cycling, hiking, and taking photos. Recently, I've developed a keen interest in learning more about the R language outside of my direct work, inspired by the fantastic blogs I've come across, which led me to create this website.
+**Outside of work**, I'm a huge fan of live music, especially Metal and EDM, and I'm making a bigger effort to travel and create experiences this year. I've been playing the guitar for about 10 years and creating a budget for around 3 years. When the weather's nice, I enjoy cycling, hiking, and taking photos. Recently, I've developed a keen interest in learning more about the R language outside of my direct work, inspired by the fantastic blogs I've come across, which led me to create this website.
 
 **On this site**, you'll find my resume, personal projects, and a blog where I dive deep into various tools and technologies in the data world, along with other topics I find interesting. Feel free to reach out and connect!
-
