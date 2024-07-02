@@ -1,9 +1,7 @@
-p.subtitle {
+p.subtitle.lead {
+  font-family: "Lora";
   margin-top: 0em;
   margin-bottom: 0em;
-
-  &.lead {
-    font-size: 2rem;
-    font-weight: 300;
-  }
+  font-size: 2rem;
+  font-weight: 300;
 }
