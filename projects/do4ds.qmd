@@ -1,0 +1,18 @@
+---
+title: "DevOps for Data Science"
+description: "The culmination of the labs from the book."
+date: "2024-07-28"
+categories: ["R", "DevOps", "Docker", "APIs"]
+image: ../resources/images/do4ds.jpg
+execute: 
+  eval: false
+  cache: false
+format:
+  html: 
+    code-links:
+      - text: "Repo"
+        icon: github
+        href: https://github.com/ozanozbeker/do4ds
+---
+
+Running through the labs in DevOps for Data Science by Alex Gold.

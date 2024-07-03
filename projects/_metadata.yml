@@ -1,0 +1,34 @@
+# Execution
+execute:
+  echo: true
+  cache: true
+
+# Authoring
+author: "Ozan Ozbeker"
+
+# Navigation
+page-navigation: true
+
+# Editor
+editor_options:
+  chunk_output_type: console
+
+# Table of Contents
+toc: true
+toc-depth: 3
+number-sections: true
+
+# Layout
+page-layout: article
+
+# External Links
+link-external-icon: true
+link-external-newwindow: true
+
+# Code options
+code-overflow: scroll
+code-copy: true
+code-link: false
+code-tools: true
+code-block-bg: "#212529"
+highlight-style: "nord"

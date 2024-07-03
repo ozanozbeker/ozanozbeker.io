@@ -4,6 +4,8 @@ project:
   render:
     - index.qmd
     - resume.qmd
+    - projects.qmd
+    - projects/*.qmd
     - blog.qmd
     - blog/*.qmd
     - 404.qmd
@@ -25,6 +27,8 @@ website:
     left:
       - href: resume.qmd
         text: "Resume"
+      - href: projects.qmd
+        text: "Projects"
       - href: blog.qmd
         text: "Blog"
   back-to-top-navigation: true

@@ -1,0 +1,15 @@
+---
+title: "Projects"
+page-layout: full
+title-block-banner: false
+comments: false
+listing:
+  type: grid
+  contents: projects/*.qmd
+  sort: "date desc"
+  sort-ui: false
+  filter-ui: false
+  categories: false
+  image-placeholder: resources/images/web-development.png
+  fields: [image, title, date, reading-time, description, categories]
+---
