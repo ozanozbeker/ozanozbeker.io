@@ -1,10 +1,9 @@
-# Execution
-execute:
-  echo: true
-  cache: true
-
 # Authoring
 author: "Ozan Ozbeker"
+
+# Execution
+execute: 
+  cache: true
 
 # Navigation
 page-navigation: true
