@@ -3,10 +3,10 @@ project:
   resources: resources
   render:
     - index.qmd
-    - resume.qmd
-    - projects.qmd
+    - Resume.qmd
+    - Projects.qmd
     - projects/*.qmd
-    - blog.qmd
+    - Blog.qmd
     - blog/*.qmd
     - 404.qmd
   preview:
@@ -25,11 +25,11 @@ website:
     logo: resources/icons/code.svg
     search: false
     left:
-      - href: resume.qmd
+      - href: Resume.qmd
         text: "Resume"
-      #- href: projects.qmd
+      #- href: Projects.qmd
       #  text: "Projects"
-      - href: blog.qmd
+      - href: Blog.qmd
         text: "Blog"
   back-to-top-navigation: true
   page-footer:
