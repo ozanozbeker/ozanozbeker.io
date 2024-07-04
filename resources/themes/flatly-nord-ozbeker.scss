@@ -67,12 +67,12 @@ $link-color: $primary;
 
 // Typography
 $font-family-serif: "Lora";
-$font-family-sans-serif: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-monospace: Consolas, SFMono-Regular, Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
 
 /*-- scss:rules --*/
 // Import custom fonts from Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 // Headings
 h1 {
@@ -117,13 +117,75 @@ td code:not(.sourceCode) {
 .navbar {
     border: $nord4;
     box-shadow: none;
-    background-color: rgba($nord4, 0.3);
+    background-color: rgba($white, 0.8);
     backdrop-filter: blur(3px);
 }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
     color: $primary;
+}
+
+.navbar-container {
+  .navbar-brand-container {
+    .navbar-brand {
+      .navbar-title {
+        &:hover {
+          color: $ozan1;
+        }
+      }
+    }
+  }
+
+  #quarto-search {
+    .aa-Autocomplete {
+      button {
+        .aa-DetachedSearchButtonIcon,
+        .aa-DetachedSearchButtonPlaceholder,
+        .aa-DetachedSearchButtonQuery {
+          &:hover {
+            color: $ozan1;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    .navbar-toggler-icon {
+      &:hover {
+        color: $ozan1;
+      }
+    }
+  }
+
+  .collapse {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          .menu-text {
+            &:hover {
+              color: $ozan1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .quarto-navbar-tools {
+    .quarto-color-scheme-toggle {
+      &:hover {
+        color: $ozan1;
+      }
+
+      i {
+        &:hover {
+          color: $ozan1;
+        }
+      }
+    }
+  }
 }
 
 // Blog

@@ -27,8 +27,8 @@ website:
     left:
       - href: resume.qmd
         text: "Resume"
-      - href: projects.qmd
-        text: "Projects"
+      #- href: projects.qmd
+      #  text: "Projects"
       - href: blog.qmd
         text: "Blog"
   back-to-top-navigation: true
