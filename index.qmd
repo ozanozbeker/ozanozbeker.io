@@ -23,6 +23,6 @@ Hey! I’m a data scientist at [OneMagnify](https://onemagnify.com), where I get
 
 When I'm not crunching numbers, you’ll likely find me at a live music event, especially if it’s Metal or EDM. If I’m not at a concert, I’m probably cycling, playing the guitar, or tinkering with a new data science project.
 
-On this site, you’ll find my [resume](https://ozanozbeker.io/Resume.html), projects, and [blog](https://ozanozbeker.io/Blog.html) where I explore various tools and technologies in the data world, along with other topics that pique my interest.
+On this site, you’ll find my [resume](resume.qmd), projects, and [blog](blog.qmd) where I explore various tools and technologies in the data world, along with other topics that pique my interest.
 
 Feel free to reach out and connect!

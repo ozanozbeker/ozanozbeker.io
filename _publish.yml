@@ -1,4 +1,4 @@
 - source: project
   netlify:
-    - id: "4d6c0962-ff57-4171-abf2-48ebed4dbe40"
-      url: "https://ozanozbeker.io"
+    - id: 4d6c0962-ff57-4171-abf2-48ebed4dbe40
+      url: 'https://ozanozbeker.io'
