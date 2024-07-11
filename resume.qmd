@@ -219,19 +219,19 @@ While I have dabbled in VBA for creating macros, I prefer using standard Excel f
 
 [**RXA \@ OneMagnify**](https://rxa.io/) **- Remote, USA** \| January 2023 - Current
 
-- **Amazon Competitive Marketplace Dashboard:** Led comprehensive data science projects with R & the {Tidyverse} framework, including a Tableau Dashboard for monitoring Parts Distributors' performance on Amazon, integrating sales, inventory, return, and review data, while also providing competitive marketplace analysis for Amazon with web scrapes and tools like Oxylabs, Helium10, and {httr2}.
+-   **Marketplace Performance Dashboards:** Created Tableau dashboards to monitor sales performance and competition for client's (Sales & Marketing team) products on Amazon & Walmart. Aggregated information from distributor flat files using ETLs & web scrapes (R, {tidyverse}, {httr2}, {rvest}), and custom SQL queries from client’s SQL Server and SAP HANA within Tableau. The dashboards track and visualize sales, returns, and other metrics for $30M YoY across 6,000 SKUs.
 
-- **Weekly Amazon Price Recommendation Report:** Implemented monthly Amazon marketplace scrapes to track knock-off parts and estimate sales and developed weekly price recommendation reports using R and Quarto, incorporating competitive data and pricing strategies. Report designed & rendered with {gt} and {ggplot2}.
+-   **Weekly Amazon Marketplace Report:** Designed a semi-automatic weekly report using R, {gt}, {ggplot2}, and Quarto, tracking 15 ASINs on Amazon for the client (Pricing Manager), providing price recommendations based on internal margin requirements, competitive ASIN performance, and seller performance. Aggregated data from hourly web-scrapes and weekly marketplace scrapes to identify competitive knockoffs and track performance.
 
-- **Client Communication:** Maintained and strengthened client relationships, building rapport and technical trust through continuous communication, biweekly meetings, and regular email updates.
+-   **Database & Model Maintenance:** Enhanced existing ETLs that ingest flat files from FTP folders into the internal PostgreSQL database, incorporating new features in R packages ({dplyr}, {tidyr}, {readr}, {janitor}, etc.) and utilizing DuckDB for heavier analytical workflows in monthly model development. Implemented Git and GitHub for code maintenance and added comprehensive documentation for manual steps and business logic to support model development.
 
-- **Internal Communication:** Set up an internal chat for R programming discussions, fostering active communication and debugging collaboration across teams. Led workshops on open-source tools like Quarto, implemented version control with Git/GitHub, standardized folder structures, and instituted reproducible environments with {renv}.
+-   **Tableau Server Management:** Maintained 5 dashboards on the client’s Tableau Server, documenting and standardizing Custom SQL queries across reports, performing quality assurance checks on data and sources, and implementing version control for Custom SQL queries to ensure accuracy, consistency, and integrity.
 
 ## Continuous Improvement Specialist (OLDP Rotation 2)
 
 [**Xylem, Inc**](https://www.xylem.com/en-us/) **- Chicago, IL** \| July 2022 - December 2022
 
--   **Excess & Obsolete Inventory Identification & Disposition:** Employed the DMAIC/DMADV methodology to create a process aimed at reducing the site’s E&O financial reserve and material in warehouses by identifying obsolete items and creating opportunities for rework, resale, and disposal. The control plan included establishing a cross-departmental E&O taskforce, with the new process projected to achieve estimated hard savings of \$1M - \$4M over the next 3-5 years. Utilized skills in Process Flowcharts, Value Stream Mapping, and Control Charts.
+-   **Excess & Obsolete Disposition:** Employed the DMAIC/DMADV methodology to create a process aimed at reducing the site’s E&O financial reserve and material in warehouses by identifying obsolete items and creating opportunities for rework, resale, and disposal. The control plan included establishing a cross-departmental E&O taskforce, with the new process projected to achieve estimated hard savings of \$1M - \$4M over the next 3-5 years. Utilized skills in Process Flowcharts, Value Stream Mapping, and Control Charts.
 
 -   **Ad-Hoc Floor Workshops:** Led and assisted various projects to drive Continuous Improvement initiatives at the site. These included 5S audits, lean methodology seminars, inventory audits, and cycle counts, applying skills in 5S, FMEA, and Process Capability Analysis.
 
@@ -239,11 +239,13 @@ While I have dabbled in VBA for creating macros, I prefer using standard Excel f
 
 [**Xylem, Inc**](https://www.xylem.com/en-us/) **- Uniontown, PA** \| July 2021 - July 2022
 
--   **Excess & Obsolete Reserve:** Designed a recommendation engine for the quarterly report, focusing on reducing ETL time and standardizing the process across all Sensus NA sites to comply with new financial policies. This effort reduced process time by 72 hours per month and enabled new reporting and forecasting capabilities. Leveraged Advanced Excel (Power Query, PivotTables, XLOOKUP) and Microsoft SQL Server.
+-   **Excess & Obsolete Identification:** Built an automated SQL query/view in the PostgreSQL database & restricted Excel workbook (Power Query, Pivot Tables, & XLOOKUP) template to enforce standardization of the quarterly E&O report across three manufacturing sites. This project led to a 90% process reduction time on the Materials side while meeting the new standards set by finance for audit.
 
--   **Sensus North America Physical Inventory:** Created documentation for the annual NA physical inventory event, including process flowcharts, work instructions, and manager checklists for tasks leading up to the event. This documentation package standardized the process across all NA sites and eliminated non-value-added activities during the event, utilizing skills in Project Management and Process Flowcharts.
+-   **Physical Inventory:** Collaborated with Finance & Materials teams to overhaul the annual cycle count event across three sites with process flowcharts, work instructions, and manager checklists to tasks leading up to the event. The project reduced the time of the event by a day for 2 of 3 sites, and reduced prep time for managers.
 
--   **Ad-Hoc Reporting:** Developed various data pipelines, dashboards, and reports to meet unique business needs. This included tracking forecasting accuracy, comparing supplier and internal bill of materials, gathering and visualizing quality control measures, and synchronizing lot sizes across multiple sites.
+-   **SQL Reporting:** Developed ad-hoc reports for stakeholders like validating supplier quotes to internal BOMs, synchronizing lot sizes across facilities, & measuring excess inventory by work cell.
+
+-   **Tableau Reporting:** Created dashboards for internal audits for Quality & Finance teams. The dashboards measured forecasting accuracy, quality benchmarks for different product lines, and performance KPIs for units produced.
 
 ## Undergraduate Teaching Assistant
 
