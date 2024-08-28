@@ -3,7 +3,8 @@ author: "Ozan Ozbeker"
 
 # Execution
 execute: 
-  cache: true
+  eval: false
+  cache: false
   
 # Navigation
 page-navigation: true

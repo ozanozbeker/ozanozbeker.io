@@ -80,9 +80,9 @@ Throughout these roles, I gained valuable skills in teaching and curriculum deve
 
 [**JLG Industries**](https://www.jlg.com/) **- McConnellsburg, PA** \| June 2019 - August 2019
 
--   **Long-term Project, Test – Inspect – Green Tag (TIG) Line:** Conducted a comprehensive 6S audit, removing unnecessary equipment and parts from workstations and organizing the layout to enhance efficiency. I developed detailed Standard Work Instructions (SWIs) from scratch for all five stations of the TIG Line, covering three different products to ensure consistent and efficient processes.
+-   **Test – Inspect – Green Tag (TIG) Line:** Conducted a comprehensive 6S audit, removing unnecessary equipment and parts from workstations and organizing the layout to enhance efficiency. I developed detailed Standard Work Instructions (SWIs) from scratch for all five stations of the TIG Line, covering three different products to ensure consistent and efficient processes.
 
--   **Short-term Project, Tire Manipulator:** Implemented a scanner-based system for defect entry into Electronic Quality Control (EQC), standardizing the process, reducing variability in defect types, and improving data collection. In a short-term project focused on the Tire Manipulator, I created detailed floor plans for current and future station layouts using laser measurements and AutoCAD.
+-   **Tire Manipulator:** Implemented a scanner-based system for defect entry into Electronic Quality Control (EQC), standardizing the process, reducing variability in defect types, and improving data collection. In a short-term project focused on the Tire Manipulator, I created detailed floor plans for current and future station layouts using laser measurements and AutoCAD.
 
 # Education {#sec-education .title}
 

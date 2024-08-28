@@ -1,0 +1,15 @@
+---
+title: "WV Tourism Interactive Map"
+description: "An interactive map of attractions in West Virginia, powered by R & friends."
+date: "2024-07-19"
+categories: ["R", "Web Scraping", "Shiny", "MapGL"]
+image: ../resources/images/
+format:
+  html: 
+    code-links:
+      - text: "Repo"
+        icon: github
+        href: https://github.com/ozanozbeker/wv-tourism
+---
+
+# WV Tourism Interactive Map

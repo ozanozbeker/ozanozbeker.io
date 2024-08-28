@@ -4,9 +4,6 @@ description: "The culmination of the labs from the book."
 date: "2024-07-28"
 categories: ["R", "DevOps", "Docker", "APIs"]
 image: ../resources/images/do4ds.jpg
-execute: 
-  eval: false
-  cache: false
 format:
   html: 
     code-links:
